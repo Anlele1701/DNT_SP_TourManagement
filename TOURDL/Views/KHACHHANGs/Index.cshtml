@@ -1,0 +1,116 @@
+﻿@model IEnumerable<TOURDL.Models.KHACHHANG>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+    
+}
+<style>
+   a{
+        text-decoration:none;
+    }
+   a:hover{
+       color:black;
+       transition: 0.5s ease-in-out;
+   }
+   button{
+       padding:5px;
+       border-radius:10px;
+   }
+   .edit{
+       color: green;
+   }
+   .detail {
+       color:blue;
+   }
+   .delete{
+       color:red;
+   }
+</style>
+<div style=" background: #FFFFFF; border-radius:10px; padding:1rem;">
+    <h2 style="">QUẢN LÝ KHÁCH HÀNG</h2>
+
+    <p>
+        <button>@Html.ActionLink("Thêm mới khách hàng", "Create")</button>
+    </p>
+
+    <table class="table table-bordered table-sm" style="border-width:thick">
+        <thead class="thead-dark" style="background:black;color:snow;">
+            <tr style="text-align:center; align-items:center;">
+                <th>
+                    ID
+                </th>
+                <th>
+                    Họ và tên
+                </th>
+                <th>
+                    Giới tính
+                </th>
+                <th>
+                    Ngày sinh
+                </th>
+                <th>
+                    Mật khẩu
+                </th>
+                <th>
+                    CCCD
+                </th>
+                <th>
+                    SĐT
+                </th>
+                <th>
+                    Email
+                </th>
+                <th>
+                    Điểm
+                </th>
+                <th>
+                    Hành động
+                </th>
+            </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+            <tr >
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID_KH)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HoTen_KH)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GioiTinh_KH)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgaySinh_KH)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MatKhau)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CCCD)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SDT_KH)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Mail_KH)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Diem)
+                </td>
+                <td>
+                    <button>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ID_KH }, new { @class = "edit" })
+                    </button>
+                    <button>
+                        @Html.ActionLink("Details", "Details", new { id = item.ID_KH }, new { @class = "detail" })
+                    </button>
+                    <button>
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ID_KH }, new { @class = "delete" })
+                    </button>
+                </td>
+            </tr>
+        }
+    </table>
+</div>

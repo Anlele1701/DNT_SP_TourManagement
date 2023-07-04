@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin dashboard</title>
+    <link rel="stylesheet" href="~/CSS/AdminLayout.css" />
+    <!--Icon-->
+    <script src="https://kit.fontawesome.com/b94d6d5661.js"
+            crossorigin="anonymous"></script>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="sidebar">
+        <div class="menu">
+            <ul class="main">
+                <li class="active">
+                    <a>
+                        <i class="fas fa-tachometer-alt"></i>
+                        Trang chủ
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <i class="fa-regular fa-user"></i>
+                        Tài khoản
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <i class="fa-solid fa-users-gear"></i>
+                        Quản lý nhân viên
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <i class="fa-solid fa-list-ul"></i>
+                        Quản lý tour
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <i class="fa-solid fa-wind"></i>
+                        Quản lý sản phẩm tour
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <i class="fa-solid fa-face-smile"></i>
+                        Quản lý khách hàng
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <i class="fa-solid fa-file-contract"></i>
+                        Quản lý hóa đơn
+                    </a>
+                </li>
+                <li class="logout">
+                    <a>
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        Đăng xuất
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="main-content">
+        @RenderBody()
+    </div>
+</body>
+</html>
