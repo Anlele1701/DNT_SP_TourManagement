@@ -1,0 +1,14 @@
+﻿ol li a
+{
+    text-decoration:none;
+    color:black;
+    opacity:0.6;
+}
+a:hover{
+    transition:0.2s ease-in-out;
+}
+.contains{
+    padding:10px;
+    background:white;
+    border-radius:8px;
+}

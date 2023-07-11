@@ -1,0 +1,106 @@
+﻿@model IEnumerable<TOURDL.Models.TOUR>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<style>
+    a {
+        text-decoration: none;
+    }
+
+        a:hover {
+            color: black;
+            transition: 0.5s ease-in-out;
+        }
+
+    button {
+        padding: 5px;
+        border-radius: 10px;
+    }
+
+    .edit {
+        color: green;
+    }
+
+    .detail {
+        color: blue;
+    }
+
+    .delete {
+        color: red;
+    }
+</style>
+<div style=" background: #FFFFFF; border-radius:10px; padding:1rem;">
+    <h2 style="">QUẢN LÝ TOUR</h2>
+    <p>
+        <button>@Html.ActionLink("Thêm mới Tour", "Create")</button>
+    </p>
+    <table class="table table-bordered table-sm table-striped" style="border-width:thick">
+        <thead class="thead-dark" style="background:black;color:snow;">
+            <tr style="text-align:center; align-items:center;">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ID_TOUR)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TenTour)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GiaTour)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MoTa)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.HinhTour)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TinhThanh)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LoaiTour)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID_TOUR)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenTour)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GiaTour)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MoTa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HinhTour)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TinhThanh)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LoaiTour)
+                </td>
+                <td>
+                    <button>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ID_TOUR }, new { @class = "edit" })
+                    </button>
+                    <button>
+                        @Html.ActionLink("Details", "Details", new { id = item.ID_TOUR }, new { @class = "detail" })
+                    </button>
+                    <button>
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ID_TOUR }, new { @class = "delete" })
+                    </button>
+                </td>
+            </tr>
+        }
+
+    </table>
+    </div>

@@ -1,0 +1,107 @@
+﻿@model IEnumerable<TOURDL.Models.NHANVIEN>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<style>
+    a {
+        text-decoration: none;
+    }
+
+        a:hover {
+            color: black;
+            transition: 0.5s ease-in-out;
+        }
+
+    button {
+        padding: 5px;
+        border-radius: 10px;
+    }
+
+    .edit {
+        color: green;
+    }
+
+    .detail {
+        color: blue;
+    }
+
+    .delete {
+        color: red;
+    }
+</style>
+<div style=" background: #FFFFFF; border-radius:10px; padding:1rem;">
+
+    <h2 style="">QUẢN LÝ NHÂN VIÊN</h2>
+
+    <p>
+        <button>  @Html.ActionLink("Thêm nhân viên mới", "Create")</button>
+    </p>
+    <table class="table table-bordered table-sm" style="border-width:thick">
+        <thead class="thead-dark" style="background:black;color:snow;">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.HoTen_NV)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GioiTinh_NV)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NgaySinh_NV)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MatKhau)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Mail_NV)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ChucVu)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SDT_NV)
+                </th>
+                <th></th>
+            </tr>
+            </thead>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HoTen_NV)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GioiTinh_NV)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NgaySinh_NV)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MatKhau)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Mail_NV)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ChucVu)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SDT_NV)
+                    </td>
+                    <td>
+                        <button>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.ID_NV }, new { @class = "edit" })
+                        </button>
+                        <button>
+                            @Html.ActionLink("Details", "Details", new { id = item.ID_NV }, new { @class = "detail" })
+                        </button>
+                        <button>
+                            @Html.ActionLink("Delete", "Delete", new { id = item.ID_NV }, new { @class = "delete" })
+                        </button>
+                    </td>
+                </tr>
+            }
+
+    </table>
+    </div>

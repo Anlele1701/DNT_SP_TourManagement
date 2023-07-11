@@ -1,0 +1,87 @@
+﻿@model IEnumerable<TOURDL.Models.HOADON>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<style>
+    a {
+        text-decoration: none;
+    }
+
+        a:hover {
+            color: black;
+            transition: 0.5s ease-in-out;
+        }
+
+    button {
+        padding: 5px;
+        border-radius: 10px;
+    }
+</style>
+<div style=" background: #FFFFFF; border-radius:10px; padding:1rem;">
+
+    <h2 style="">QUẢN LÝ HÓA ĐƠN</h2>
+    <button>
+        @Html.ActionLink("Xuất excel ", "ExportToExcel")
+    </button>
+    <p>
+        <button>@Html.ActionLink("THÊM HÓA ĐƠN MỚI", "Create")</button>
+    </p>
+    <table class="table table-bordered table-sm" style="border-width:thick">
+        <thead class="thead-dark" style="background:black;color:snow;">
+            <tr style="text-align:center;">
+                <th>
+                    ID Hóa đơn
+                </th>
+                <th>
+                    ID Khách hàng
+                </th>
+                <th>
+                    Tên khách hàng
+                </th>
+                <th>
+                    Tình trạng
+                </th>
+                <th>
+                    Ngày đặt
+                </th>
+                <th>
+                    Hành động
+                </th>
+            </tr>
+            </thead>
+            @foreach (var item in Model)
+            {
+                <tr style="text-align:center;">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ID_HoaDon)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ID_KH)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.KHACHHANG.HoTen_KH)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TinhTrang)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NgayDat)
+                    </td>
+                    <td style="text-align:center;">
+                        <button>
+                            @Html.ActionLink(" ", "Edit", new { id = item.ID_HoaDon }, new { @class = "fa-solid fa-pen-to-square" })
+                        </button>
+                        <button>
+                            @Html.ActionLink(" ", "Details", new { id = item.ID_HoaDon }, new { @class = "fa-solid fa-circle-info" })
+                        </button>
+                        <button>
+                            @Html.ActionLink(" ", "Delete", new { id = item.ID_HoaDon }, new { @class = "fa-solid fa-trash" })
+                        </button>
+                    </td>
+                </tr>
+            }
+
+    </table>
+</div>

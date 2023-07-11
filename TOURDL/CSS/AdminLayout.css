@@ -12,32 +12,62 @@
 body {
     display: flex;
 }
-
 .sidebar {
     position: sticky;
     top: 0;
     left: 0;
     bottom: 0;
-    width: fit-content;
+    width: 110px;
     height: 100vh;
+    padding: 0 1.7rem;
     color: white;
     background: rgb(40, 40, 40);
-    overflow: hidden;
-    transition: all 0.5s linear;
+    overflow-x: hidden;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+    transition: width 0.25s linear;
 }
-.menu {
-    height: 100%;
-    position: relative;
-    padding: 0;
-    padding-top: 85px;
+.sidebar .logo {
+        display: flex;
+        align-items: center;
+        transition: all 0.5s ease;
+        overflow: hidden;
+        padding-top: 20px;
 }
 
+.logo img {
+    height: 45px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.logo span {
+    font-weight: bold;
+    padding: 15px;
+    font-size: 18px;
+    text-transform: uppercase;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.menu {
+    padding-top: 20px;
+}
+.main{
+    padding-left:0px;
+}
     .menu li {
         list-style: none;
         padding: 1rem;
+        margin: 8px 0;
         border-radius: 8px;
+        white-space: nowrap;
         transition: all 0.3s ease-in-out;
     }
+
+        .menu li i {
+            display: flex;
+            margin-left: 4px;
+        }
 
         .menu li:hover,
         .active {
@@ -45,24 +75,29 @@ body {
             border-radius: 10px;
         }
 
-    .menu a {
-        align-items: center;
-        display: flex;
-        gap: 1.5rem;
-        font-size: 15px;
-    }
+.sidebar:hover {
+    width:350px;
+    transition: width 0.25s linear;
+}
 
-        .menu a span {
-            overflow: hidden;
-        }
+.menu a {
+    align-items: center;
+    display: flex;
+    gap: 15px;
+    font-size: 14px;
+    color:white;
+}
+.head
+{
 
-.logout {
-    position: absolute;
-    bottom:0px;
-    width:100%;
+}
+.menu a span {
+        overflow: hidden;
 }
 .main-content {
-    background: #EDE9EB;
-    width: 100%;
-    padding:1rem;
+    width: 100vw;
+    background: #EEEDEC;
+}
+.inner{
+    padding:20px;
 }

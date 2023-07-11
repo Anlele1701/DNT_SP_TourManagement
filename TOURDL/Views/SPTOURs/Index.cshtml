@@ -1,0 +1,110 @@
+﻿@model IEnumerable<TOURDL.Models.SPTOUR>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<style>
+    a {
+        text-decoration: none;
+    }
+
+        a:hover {
+            color: black;
+            transition: 0.5s ease-in-out;
+        }
+
+    button {
+        padding: 5px;
+        border-radius: 10px;
+    }
+
+    .edit {
+        color: green;
+    }
+
+    .detail {
+        color: blue;
+    }
+
+    .delete {
+        color: red;
+    }
+</style>
+<div style=" background: #FFFFFF; border-radius:10px; padding:1rem;">
+
+    <h2 style="">QUẢN LÝ SẢN PHẨM TOUR</h2>
+
+    <p>
+        <button>@Html.ActionLink("THÊM SẢN PHẨM MỚI", "Create")</button>
+    </p>
+    <table class="table table-bordered table-sm" style="border-width:thick">
+        <thead class="thead-dark" style="background:black;color:snow;">
+            <tr style="text-align:center; align-items:center;">
+                <th>
+                    ID SP Tour
+                </th>
+                <th>
+                    Tên sản phẩm tour
+                </th>
+                <th>
+                    Tour thuộc
+                </th>
+                <th>
+                    Ngày khởi hành
+                </th>
+                <th>
+                    Ngày kết thúc
+                </th>
+                <th>
+                    Số người
+                </th>
+                <th>
+                    Nhân viên phụ trách
+                </th>
+                <th>
+                    Hành động
+                </th>
+            </tr>
+        </thead>
+
+        @foreach (var item in Model)
+        {
+            <tr style="text-align:center">
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID_SPTour)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenSPTour)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TOUR.ID_TOUR)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgayKhoiHanh)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgayKetThuc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SoNguoi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NHANVIEN.HoTen_NV)
+                </td>
+                <td>
+                    <button>  
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID_SPTour }, new { @class = "edit" })
+                    </button>
+                    <button>
+                        @Html.ActionLink("Details", "Details", new { id = item.ID_SPTour }, new { @class = "detail" })
+                    </button>
+                    <button>
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ID_SPTour }, new { @class = "delete" })
+                    </button>
+                </td>
+            </tr>
+        }
+
+    </table>
+    </div>
