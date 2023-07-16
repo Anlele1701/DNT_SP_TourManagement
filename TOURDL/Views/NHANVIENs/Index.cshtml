@@ -40,34 +40,30 @@
     </p>
     <table class="table table-bordered table-sm" style="border-width:thick">
         <thead class="thead-dark" style="background:black;color:snow;">
-            <tr>
+            <tr style="text-align:center;">
                 <th>
-                    @Html.DisplayNameFor(model => model.HoTen_NV)
+                    ID Nhân viên
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.GioiTinh_NV)
+                    Họ và tên 
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.NgaySinh_NV)
+                    Giới tính nhân viên
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.MatKhau)
+                    Chúc vụ nhân viên
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Mail_NV)
+                    Hành động
                 </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.ChucVu)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.SDT_NV)
-                </th>
-                <th></th>
             </tr>
             </thead>
             @foreach (var item in Model)
             {
-                <tr>
+                <tr style="text-align:center">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ID_NV)
+                    </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.HoTen_NV)
                     </td>
@@ -75,19 +71,7 @@
                         @Html.DisplayFor(modelItem => item.GioiTinh_NV)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.NgaySinh_NV)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.MatKhau)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Mail_NV)
-                    </td>
-                    <td>
                         @Html.DisplayFor(modelItem => item.ChucVu)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.SDT_NV)
                     </td>
                     <td>
                         <button>

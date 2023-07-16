@@ -9,9 +9,14 @@
 
 namespace TOURDL.Models
 {
+    using DocumentFormat.OpenXml.Wordprocessing;
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+
+
     public partial class NHANVIEN
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,12 +24,17 @@ namespace TOURDL.Models
         {
             this.SPTOURs = new HashSet<SPTOUR>();
         }
-    
         public int ID_NV { get; set; }
+
         public string HoTen_NV { get; set; }
         public string GioiTinh_NV { get; set; }
         public Nullable<System.DateTime> NgaySinh_NV { get; set; }
+
         public string MatKhau { get; set; }
+   
+        public string ConfirmPass { get; set; }
+        public string ErrorLogin { get; set; }
+
         public string Mail_NV { get; set; }
         public string ChucVu { get; set; }
         public string SDT_NV { get; set; }

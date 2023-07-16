@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="TourDLModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="TourDLModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="HOADON">
           <Key>
             <PropertyRef Name="ID_HoaDon" />
@@ -60,7 +60,7 @@
           <Property Name="DiemTapTrung" Type="nvarchar" MaxLength="50" />
           <Property Name="DiemDen" Type="nvarchar" MaxLength="50" />
           <Property Name="SoNguoi" Type="int" />
-          <Property Name="HinhAnh" Type="varbinary(max)" />
+          <Property Name="HinhAnh" Type="varchar(max)" />
           <Property Name="GiaTreEm" Type="int" />
           <Property Name="ID_NV" Type="int" />
           <Property Name="ID_TOUR" Type="char" MaxLength="2" Nullable="false" />
@@ -73,7 +73,7 @@
           <Property Name="TenTour" Type="nvarchar" MaxLength="50" />
           <Property Name="GiaTour" Type="int" />
           <Property Name="MoTa" Type="nvarchar" MaxLength="500" />
-          <Property Name="HinhTour" Type="varbinary(max)" />
+          <Property Name="HinhTour" Type="varchar(max)" />
           <Property Name="TinhThanh" Type="nvarchar" MaxLength="50" />
           <Property Name="LoaiTour" Type="nvarchar" MaxLength="25" />
         </EntityType>
@@ -89,7 +89,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__HOADON__ID_SPTou__403A8C7D">
+        <Association Name="FK__HOADON__ID_SPTou__4BAC3F29">
           <End Role="SPTOUR" Type="Self.SPTOUR" Multiplicity="0..1" />
           <End Role="HOADON" Type="Self.HOADON" Multiplicity="*" />
           <ReferentialConstraint>
@@ -101,7 +101,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SPTOUR__ID_NV__3C69FB99">
+        <Association Name="FK__SPTOUR__ID_NV__49C3F6B7">
           <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="0..1" />
           <End Role="SPTOUR" Type="Self.SPTOUR" Multiplicity="*" />
           <ReferentialConstraint>
@@ -113,7 +113,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SPTOUR__ID_TOUR__3D5E1FD2">
+        <Association Name="FK__SPTOUR__ID_TOUR__5CD6CB2B">
           <End Role="TOUR" Type="Self.TOUR" Multiplicity="1" />
           <End Role="SPTOUR" Type="Self.SPTOUR" Multiplicity="*" />
           <ReferentialConstraint>
@@ -135,21 +135,20 @@
             <End Role="KHACHHANG" EntitySet="KHACHHANG" />
             <End Role="HOADON" EntitySet="HOADON" />
           </AssociationSet>
-          <AssociationSet Name="FK__HOADON__ID_SPTou__403A8C7D" Association="Self.FK__HOADON__ID_SPTou__403A8C7D">
+          <AssociationSet Name="FK__HOADON__ID_SPTou__4BAC3F29" Association="Self.FK__HOADON__ID_SPTou__4BAC3F29">
             <End Role="SPTOUR" EntitySet="SPTOUR" />
             <End Role="HOADON" EntitySet="HOADON" />
           </AssociationSet>
-          <AssociationSet Name="FK__SPTOUR__ID_NV__3C69FB99" Association="Self.FK__SPTOUR__ID_NV__3C69FB99">
+          <AssociationSet Name="FK__SPTOUR__ID_NV__49C3F6B7" Association="Self.FK__SPTOUR__ID_NV__49C3F6B7">
             <End Role="NHANVIEN" EntitySet="NHANVIEN" />
             <End Role="SPTOUR" EntitySet="SPTOUR" />
           </AssociationSet>
-          <AssociationSet Name="FK__SPTOUR__ID_TOUR__3D5E1FD2" Association="Self.FK__SPTOUR__ID_TOUR__3D5E1FD2">
+          <AssociationSet Name="FK__SPTOUR__ID_TOUR__5CD6CB2B" Association="Self.FK__SPTOUR__ID_TOUR__5CD6CB2B">
             <End Role="TOUR" EntitySet="TOUR" />
             <End Role="SPTOUR" EntitySet="SPTOUR" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="TourDLModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -212,7 +211,7 @@
           <Property Name="DiemTapTrung" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="DiemDen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="SoNguoi" Type="Int32" />
-          <Property Name="HinhAnh" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="HinhAnh" Type="String" />
           <Property Name="GiaTreEm" Type="Int32" />
           <Property Name="ID_NV" Type="Int32" />
           <Property Name="ID_TOUR" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
@@ -228,7 +227,7 @@
           <Property Name="TenTour" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="GiaTour" Type="Int32" />
           <Property Name="MoTa" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="HinhTour" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="HinhTour" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
           <Property Name="TinhThanh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="LoaiTour" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="SPTOURs" Relationship="Self.FK__SPTOUR__ID_TOUR__3D5E1FD2" FromRole="TOUR" ToRole="SPTOUR" />

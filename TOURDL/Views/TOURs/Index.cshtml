@@ -31,76 +31,36 @@
         color: red;
     }
 </style>
-<div style=" background: #FFFFFF; border-radius:10px; padding:1rem;">
+<div style=" background: #FFFFFF; border-radius:10px; padding:10px;">
     <h2 style="">QUẢN LÝ TOUR</h2>
     <p>
         <button>@Html.ActionLink("Thêm mới Tour", "Create")</button>
     </p>
-    <table class="table table-bordered table-sm table-striped" style="border-width:thick">
-        <thead class="thead-dark" style="background:black;color:snow;">
-            <tr style="text-align:center; align-items:center;">
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.ID_TOUR)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.TenTour)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.GiaTour)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.MoTa)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.HinhTour)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.TinhThanh)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.LoaiTour)
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ID_TOUR)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TenTour)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.GiaTour)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.MoTa)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.HinhTour)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TinhThanh)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.LoaiTour)
-                </td>
-                <td>
-                    <button>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.ID_TOUR }, new { @class = "edit" })
-                    </button>
-                    <button>
-                        @Html.ActionLink("Details", "Details", new { id = item.ID_TOUR }, new { @class = "detail" })
-                    </button>
-                    <button>
-                        @Html.ActionLink("Delete", "Delete", new { id = item.ID_TOUR }, new { @class = "delete" })
-                    </button>
-                </td>
-            </tr>
-        }
-
-    </table>
-    </div>
+</div>
+    @foreach (var item in Model)
+    {
+        <div class="card" style="border-color:gray; flex-direction:row; margin-bottom:20px; padding:10px; margin-top:20px;">
+            <img class="card-img-top" src="~/Images/@item.HinhTour" alt="Card image cap" style="max-width:300px; padding:0.5em; border-radius:50%;" />
+            <div class="card-body" style="padding-left:30px;">
+                <h2 class=" card-header-pills">
+                    #@Html.DisplayFor(modelItem => item.ID_TOUR)
+                </h2>
+                <h4 class="card-title">@Html.DisplayFor(modelItem => item.TenTour) </h4>
+                <p class="card-text"> Giá tour: @Html.DisplayFor(modelItem => item.GiaTour) </p>
+                <p class="card-text">Loại tour: @Html.DisplayFor(modelItem => item.LoaiTour) </p>
+                <p class="card-text">Tỉnh thành: @Html.DisplayFor(modelItem=>item.TinhThanh)</p>
+                <p class="card-text">Mô tả: @Html.DisplayFor(modelItem => item.MoTa)</p>
+            </div> 
+            <p style="float:right;padding-top:15px;">
+                <button>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID_TOUR }, new { @class = "edit" })
+                </button>
+                <button>
+                    @Html.ActionLink("Details", "Details", new { id = item.ID_TOUR }, new { @class = "detail" })
+                </button>
+                <button>
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID_TOUR }, new { @class = "delete" })
+                </button>
+            </p>
+        </div>
+    }

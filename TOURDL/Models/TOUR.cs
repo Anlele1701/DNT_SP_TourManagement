@@ -18,13 +18,14 @@ namespace TOURDL.Models
         public TOUR()
         {
             this.SPTOURs = new HashSet<SPTOUR>();
+            HinhTour = "Images/logo3.jpg"; 
         }
-    
+        
         public string ID_TOUR { get; set; }
         public string TenTour { get; set; }
         public Nullable<int> GiaTour { get; set; }
         public string MoTa { get; set; }
-        public byte[] HinhTour { get; set; }
+        public string HinhTour { get; set; }
         public string TinhThanh { get; set; }
         public string LoaiTour { get; set; }
     

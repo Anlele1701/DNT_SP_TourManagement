@@ -29,7 +29,7 @@ namespace TOURDL.Models
         public string DiemTapTrung { get; set; }
         public string DiemDen { get; set; }
         public Nullable<int> SoNguoi { get; set; }
-        public byte[] HinhAnh { get; set; }
+        public string HinhAnh { get; set; }
         public Nullable<int> GiaTreEm { get; set; }
         public Nullable<int> ID_NV { get; set; }
         public string ID_TOUR { get; set; }

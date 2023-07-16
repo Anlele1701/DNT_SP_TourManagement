@@ -18,6 +18,17 @@
         padding: 5px;
         border-radius: 10px;
     }
+    .edit {
+        color: green;
+    }
+
+    .detail {
+        color: blue;
+    }
+
+    .delete {
+        color: red;
+    }
 </style>
 <div style=" background: #FFFFFF; border-radius:10px; padding:1rem;">
 
@@ -71,13 +82,13 @@
                     </td>
                     <td style="text-align:center;">
                         <button>
-                            @Html.ActionLink(" ", "Edit", new { id = item.ID_HoaDon }, new { @class = "fa-solid fa-pen-to-square" })
+                            @Html.ActionLink("Edit ", "Edit", new { id = item.ID_HoaDon }, new { @class = "edit" })
                         </button>
                         <button>
-                            @Html.ActionLink(" ", "Details", new { id = item.ID_HoaDon }, new { @class = "fa-solid fa-circle-info" })
+                            @Html.ActionLink("Detail", "Details", new { id = item.ID_HoaDon }, new { @class = "detail" })
                         </button>
                         <button>
-                            @Html.ActionLink(" ", "Delete", new { id = item.ID_HoaDon }, new { @class = "fa-solid fa-trash" })
+                            @Html.ActionLink("Delete", "Delete", new { id = item.ID_HoaDon }, new { @class = "delete" })
                         </button>
                     </td>
                 </tr>
