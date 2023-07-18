@@ -286,10 +286,38 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="CSS\AdminAdd.css" />
     <Content Include="CSS\AdminLayout.css" />
+    <Content Include="CSS\TrangChu.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\banner.png" />
+    <Content Include="Images\beautiful-girl-standing-boat-looking-mountains-ratchaprapha-dam-khao-sok-national-park-surat-thani-province-thailand.jpg" />
+    <Content Include="Images\Dalat.jpg" />
+    <Content Include="Images\DaLatMain.jpg" />
+    <Content Include="Images\dalattour.jpg" />
+    <Content Include="Images\dalatvn.jpg" />
+    <Content Include="Images\dao-binh-ba.jpg" />
+    <Content Include="Images\facebook.jpg" />
+    <Content Include="Images\ggmap.png" />
+    <Content Include="Images\gmail.png" />
+    <Content Include="Images\halongbay.jpg" />
+    <Content Include="Images\Hanoi.jpg" />
+    <Content Include="Images\HoXuanHuong.jpg" />
+    <Content Include="Images\hue.jpg" />
+    <Content Include="Images\logo-visa.png" />
+    <Content Include="Images\logo.png" />
     <Content Include="Images\logo3.jpg" />
+    <Content Include="Images\Main.png" />
+    <Content Include="Images\momo.jpg" />
+    <Content Include="Images\nhaTrang.jpg" />
+    <Content Include="Images\ocean.mp4" />
+    <Content Include="Images\ocean_-_65560 %28720p%29.mp4" />
+    <Content Include="Images\saigon.jpg" />
+    <Content Include="Images\suongmudalat.jpg" />
+    <Content Include="Images\TravelDalat.png" />
+    <Content Include="Images\videoHome.mp4" />
+    <Content Include="Images\visa.jpg" />
+    <Content Include="Images\zalo.jpg" />
     <Content Include="Models\TourDL.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>TourDL.edmx</DependentUpon>
@@ -367,6 +395,8 @@
     <Content Include="Views\TOURs\Index.cshtml" />
     <Content Include="Views\Login\Authen.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Shared\CusLayout.cshtml" />
+    <Content Include="Views\Home\TrangChu.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

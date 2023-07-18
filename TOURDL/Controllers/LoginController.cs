@@ -32,11 +32,17 @@ namespace TOURDL.Controllers
             {
                 tourDL.Configuration.ValidateOnSaveEnabled = false;
                 Session["IDUser"] = nhanvien.ID_NV;
+                Session["HoTen"] = nhanvien.HoTen_NV;
                 Session["Email"] = nhanvien.Mail_NV;
                 return RedirectToAction
-                    ("Index", "Home");
+                    ("Index", "NHANVIENs",new { id = check.ID_NV });
             }
              
+        }
+        public ActionResult Logout()
+        {
+            Session.Clear();
+            return RedirectToAction("Login");
         }
         //public ActionResult Register(NHANVIEN nhanvien)
         //{

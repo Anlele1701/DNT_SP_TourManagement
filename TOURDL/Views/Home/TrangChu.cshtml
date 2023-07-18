@@ -1,0 +1,159 @@
+﻿
+@{
+    ViewBag.Title = "TrangChu";
+    Layout = "~/Views/Shared/CusLayout.cshtml";
+}
+<link rel="stylesheet" href="~/CSS/TrangChu.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,800&family=Roboto+Condensed&display=swap" rel="stylesheet">
+<style>
+    .card-tour {
+        display: flex;
+        margin: 5px;
+        border: none;
+        margin: 32px;
+    }
+
+        .card-tour img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+    .responsive {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+    }
+
+    .card-tour h3 {
+        color: #0094ff;
+        font-weight: 600;
+        margin: 10px;
+    }
+
+    .card-tour p {
+        color: black;
+        font-weight: 200;
+        margin-left: 10px;
+    }
+</style>
+
+<!-- Home start-->
+<div class="home">
+    <div class="content">
+        <video autoplay loop muted plays-inline class="back-video-image"><source src="~/Images/ocean.mp4" /></video>
+        <br /><br /><br /><br />
+        <h1>Bạn muốn đi du lịch<span class="changecontent"></span></h1>
+        <p>Cùng khám phá và trải nghiệm những điều thú vị mà chúng tôi sắp mang đến cho bạn</p>
+        @*<a href="#book">Đặt ngay</a>*@
+    </div>
+</div>
+<div class="card mb-3 card-tour">
+    <div class="row g-0">
+        <div class="col-md-1"></div>
+        <div class="col-md-6">
+            <img src="~/Images/saigon.jpg" class="img-fluid rounded-start" alt="..." style="object-fit:cover;height:100%;width:100%">
+        </div>
+        <div class="col-md-4">
+            <div class="card-body" style="text-align:right">
+                <h3 class="card-title">Sài Gòn</h3>
+                <p>
+                    Vivamus sed porttitor felis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Sed lorem enim,
+                </p>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>
+<div class="card mb-3 card-tour">
+    <div class="row g-0">
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+            <div class="card-body" style="text-align:left">
+                <h3 class="card-title">Hà Nội</h3>
+                <p>
+                    Vivamus sed porttitor felis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Sed lorem enim,
+
+                </p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <img src="~/Images/Hanoi.jpg" class="img-fluid" alt="..." style="object-fit:cover;height:100%;width:100%">
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>
+<div class="container-back-image img-fluid">
+    <div class="back-image-gradients">
+        <img class="img-fluid back-image" style="width:100vw;height:400px" src="~/Images/beautiful-girl-standing-boat-looking-mountains-ratchaprapha-dam-khao-sok-national-park-surat-thani-province-thailand.jpg" />
+    </div>
+    <div class="row back-image-text">
+        <div class="col-3">
+            <i class="fa-solid fa-plane-departure" style="color:#0026ff"></i>
+            <p>Hơn 7800 Tour đã hoàn thành</p>
+        </div>
+        <div class="col-3">
+            <i class="fa-sharp fa-solid fa-star" style="color:yellow"></i>
+            <p>Hơn 3800 lượt đánh giá 5 sao</p>
+        </div>
+        <div class="col-3">
+            <i class="fa-solid fa-route" style="color:#0094ff"></i>
+            <p>Hơn 1200 địa điểm du lịch</p>
+        </div>
+        <div class="col-3" style="color:#ffffff">
+            <i class="fa-solid fa-comments"></i>
+            <p>Giải đáp hơn 13400 thắc mắc</p>
+        </div>
+    </div>
+</div>
+<div class="position-relative marquee-container" style="margin:16px;">
+    <div class="marquee d-flex justify-content-around" style="font-size:55px;font-weight:600">
+        <span>Các Tour Du Lịch</span>
+        <span>Các Tour Du Lịch</span>
+    </div>
+    <div class="marquee marquee2 d-flex justify-content-around" style="font-size:55px;font-weight:600">
+        <span>Các Tour Du Lịch</span>
+        <span>Các Tour Du Lịch</span>
+    </div>
+</div>
+<div style="text-align:center">
+    <div class="row g-0" style="text-align:center">
+        <div class="col-md-4 col-tours">
+            <div class="wrapper">
+                <div class="wrapper-image">
+                    <img src="~/Images/nhaTrang.jpg" />
+                    <div class="wrapper-content">
+                        <h3>Nha Trang</h3>
+                        <p>Mô tả</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-tours">
+            <div class="wrapper">
+                <div class="wrapper-image">
+                    <img src="~/Images/DaLatMain.jpg" />
+                    <div class="wrapper-content">
+                        <h3>Đà Lạt</h3>
+                        <p>Mô tả</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-tours">
+            <div class="wrapper anim">
+                <div class="wrapper-image">
+                    <img src="~/Images/dao-binh-ba.jpg" />
+                    <div class="wrapper-content">
+                        <h3>Đảo Bình Ba</h3>
+                        <p>Mô Tả</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

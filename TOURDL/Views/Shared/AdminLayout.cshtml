@@ -97,9 +97,12 @@
             
             <div class="main-content">
                 <nav class="navbar navbar-light bg-light" style=" padding: 10px; box-shadow: 5px 0px 10px">
-                <span class="navbar-brand mb-0 h1">ADMIN</span>
-                    <span>Tài khoản</span>
-                 </nav>
+                    <span class="navbar-brand mb-0 h1">ADMIN</span>
+                    @if (Session["Email"] != null)
+                    {
+                        <span>Xin chào @Session["Email"]</span>
+                    }
+                </nav>
                 <div class="inner">
                     @RenderBody()
                 </div>

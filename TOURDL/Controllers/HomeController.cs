@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TOURDL.Models;
 
 namespace TOURDL.Controllers
 {
@@ -10,7 +11,8 @@ namespace TOURDL.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            var entities = new TourDLEntities();
+            return View(entities.TOURs.ToList());
         }
 
         public ActionResult About()
