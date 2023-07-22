@@ -53,18 +53,18 @@
     <div class="row g-0">
         <div class="col-md-2"></div>
         <div class="col-md-8 text">
-            <h3>@Html.DisplayFor(modelItem => item.TenSPTour)</h3>
+            <h3>TOUR: @Html.DisplayFor(modelItem => item.TenSPTour)</h3>
             <h3>Giới thiệu</h3>
             <p>@Html.DisplayFor(modelItem => item.MoTa)</p>
-            <p>@Html.DisplayFor(modelItem => item.DiemTapTrung)</p>
-            <p>@Html.DisplayFor(modelItem => item.DiemDen)</p>
-            <p>@Html.DisplayFor(modelItem => item.NgayKhoiHanh)</p>
-            <p>@Html.DisplayFor(modelItem => item.NgayKetThuc)</p>
+            <p>Điểm tập trung: @Html.DisplayFor(modelItem => item.DiemTapTrung)</p>
+            <p>Điểm đến: @Html.DisplayFor(modelItem => item.DiemDen)</p>
+            <p>Ngày khởi hành: @Html.DisplayFor(modelItem => item.NgayKhoiHanh)</p>
+            <p>Ngày kết thúc: @Html.DisplayFor(modelItem => item.NgayKetThuc)</p>
             <br /><hr />
             <h3>Dịch vụ</h3>
-            <p>@Html.DisplayFor(modelItem => item.NHANVIEN)</p>
-            <p>@Html.DisplayFor(modelItem => item.GiaNguoiLon)</p>
-            <p>@Html.DisplayFor(modelItem => item.GiaTreEm)</p>
+            <p>Tên Nhân Viên: @Html.DisplayFor(modelItem => item.NHANVIEN.HoTen_NV)</p>
+            <p>Giá người lớn: @Html.DisplayFor(modelItem => item.GiaNguoiLon)</p>
+            <p>Giá trẻ em: @Html.DisplayFor(modelItem => item.GiaTreEm)</p>
         </div>
 
         <div class="col-md-2"></div>

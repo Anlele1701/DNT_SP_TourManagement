@@ -14,9 +14,8 @@ namespace MVC_Dulich.Controllers
 
         public ActionResult Index(string id)
         {
-            var category = db.SPTOURs.Find(id);
-            var tours = db.TOURs.Where(t => t.ID_TOUR == id).ToList();
-            return View(tours);
+            var data = db.SPTOURs.Where(s => s.ID_SPTour == id);
+            return View(data);
         }
     }
 }
