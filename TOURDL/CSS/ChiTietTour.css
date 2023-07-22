@@ -1,0 +1,46 @@
+﻿body {
+}
+img {
+    background-attachment: fixed;
+    object-fit: cover;
+    border: 1px solid white;
+}
+
+.mySlides {
+    display: none;
+}
+
+.div-navbar {
+    text-transform: uppercase;
+    padding: 0px;
+    height: auto;
+    width: 100%;
+    background-image: linear-gradient(to bottom right, #00FFB4 0%, #0EB0DC 48%, #1D43B7 80%, #06006D 100%);
+    padding:25px 0 25px 0;
+}
+
+.nav-item .nav-link:hover {
+    color: white;
+    font-weight: bold;
+    opacity: 1;
+}
+.chitiettour h2 {
+    font-weight: bold;
+    text-align: center;
+}
+
+.chitiettour h3 {
+    font-weight: bold;
+}
+
+.chitiettour h5 {
+    font-weight: bold;
+}
+
+.chitiettour p {
+    font-style: italic;
+}
+
+.chitiettour img {
+    margin: 16px 0 16px 0;
+}

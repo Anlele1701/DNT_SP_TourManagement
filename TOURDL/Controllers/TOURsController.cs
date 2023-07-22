@@ -124,5 +124,10 @@ namespace TOURDL.Controllers
             }
             base.Dispose(disposing);
         }
+        public ActionResult DanhMucSanPham(string id)
+        {
+            var data = db.SPTOURs.Where(s => s.ID_TOUR==id);
+            return View(data.ToList());
+        }
     }
 }

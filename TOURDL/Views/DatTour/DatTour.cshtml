@@ -1,0 +1,99 @@
+﻿@model TOURDL.Models.SPTOUR
+
+@{
+    ViewBag.Title = "DatTour";
+    Layout = "~/Views/Shared/CusLayout.cshtml";
+}
+
+<link href="~/CSS/TrangChu.css" rel="stylesheet" />
+<link href="~/CSS/DatTour.css" rel="stylesheet" />
+<link href="~/Content/bootstrap5/bootstrap.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+
+<div class="container">
+    <h2 style="text-align:center;margin-top:20px;color:black;font-weight:700">Đặt Tour</h2>
+    <form action="#DatTour">
+        <div class="row">
+            <div class="col-25">
+                <label for="fname">Họ và tên</label><label style="color:red">*</label>
+            </div>
+            <div class="col-75">
+                <input type="text" name="email" placeholder="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label>Email</label><label style="color:red">*</label>
+            </div>
+            <div class="col-75">
+                <input type="text" name="SoDienThoai" placeholder="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label>Số điện thoại</label><label style="color:red">*</label>
+            </div>
+            <div class="col-75">
+                <input type="text" name="SoDienThoai" placeholder="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label>Số khách</label><label style="color:red">*</label>
+            </div>
+            <div class="col-75">
+                <select name="SoNguoi">
+                    <option value="10">dưới 10 người</option>
+                    <option value="20">dưới 20 người</option>
+                    <option value="30">dưới 30 người</option>
+                    <option value="40">dưới 40 người</option>
+                    <option value="50">dưới 50 người</option>
+                </select>
+            </div>
+        </div>
+        <div class="row" style="margin:10px">
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+</div>
+<div class="card mb-3" style="max-width: 100%;border:none">
+    <div class="row g-0">
+        <div class="col-md-1"></div>
+        <div class="col-md-3">
+            <img src="~/Images/nhaTrang.jpg" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-7">
+            <div class="card-body">
+                <h3 class="card-title">Tên Tour</h3>
+                <h6>
+                    <i class="fa-solid fa-house-chimney"></i>Điểm khởi hành:
+                </h6>
+                <h6>
+                    <i class="fa-solid fa-clock"></i>Thời gian:
+                </h6>
+                <h6>
+                    <i class="fa-solid fa-car-side"></i>Điểm đến:
+                </h6>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>
+<div class="card mb-3" style="max-width: 100%;border:none">
+    <div class="row g-0">
+        <div class="col-md-1"></div>
+        <div class="card-body col-md-10" style="border: 2px solid black">
+            <h3 class="card-title">Hỗ trợ thanh toán</h3>
+            <img class="img-visa" src="~/Images/visa.jpg" />
+            <img class="img-visa" style="max-width:22%" src="~/Images/logo-visa.png" />
+            <h6 style="font-weight:600">
+                Thanh toán tại văn phòng :
+            </h6>
+            <p class="card-text">
+                Địa chỉ: 828 Sư Vạn Hạnh, phường 5, quận 10, TP.HCM
+            </p>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>

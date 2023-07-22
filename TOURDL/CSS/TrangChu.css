@@ -403,7 +403,7 @@
 /*scrolling text css-----------------------------------------------------------------------------------------------------*/
 
 .marquee-container {
-    height: 70px;
+    height: 80px;
     overflow: hidden;
     margin: 16px;
     color: black;
@@ -419,11 +419,10 @@
     overflow: hidden;
     position: absolute;
     white-space: nowrap;
-    animation: marquee 8s linear infinite;
+    animation: marquee 14s linear infinite;
 }
-
 .marquee2 {
-    animation-delay: 3s;
+    animation-delay: 7s;
 }
 @keyframes marquee {
     0% {

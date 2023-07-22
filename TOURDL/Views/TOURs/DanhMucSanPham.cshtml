@@ -1,0 +1,74 @@
+﻿@model IEnumerable<TOURDL.Models.SPTOUR>
+
+@{
+    ViewBag.Title = "DanhMucSanPham";
+    Layout = "~/Views/Shared/CusLayout.cshtml";
+}
+<style>
+    .div-navbar {
+        text-transform: uppercase;
+        padding: 0px;
+        height: auto;
+        width: 100%;
+        background-image: linear-gradient(to bottom right, #00FFB4 0%, #0EB0DC 48%, #1D43B7 80%, #06006D 100%);
+        padding: 25px 0 25px 0;
+    }
+
+    .nav-item .nav-link:hover {
+        color: white;
+        font-weight: bold;
+        opacity: 1;
+    }
+    .border-card {
+        border: 15px solid #D9D9D9;
+        border-radius: 10px;
+        background: #D9D9D9;
+        margin: 10px;
+    }
+    .img-border{
+        border-radius:10px;
+    }       
+    .card-list-tour p {
+        font-style: italic;
+        margin:0 20px 0 20px;
+    }
+        .card-list-tour h3 {
+            margin-top: 10px;
+            font-weight: bold;
+            margin: 0 20px 0 20px;
+        }
+        .card-list-tour a {
+            color: white;
+            margin: 0 20px 0 20px;
+            font-weight: bold;
+            font-size: 32px;
+            padding: 0 20px 0 20px;
+            border: 3px solid none;
+            border-radius: 10px;
+            background: #C1390E;
+        }
+</style>
+
+
+<div>
+    @foreach (var item in Model)
+    {
+        <div class="card mb-3" style="max-width: 100%;border:none">
+            <div class="row g-0 border-card">
+                    <div class="col-md-6">
+                        <img src="~/Images/@item.HinhAnh" class="img-fluid rounded-start img-border" alt="...">
+                    </div>
+                    <div class="col-md-3 card-list-tour">
+                        <h3>@Html.DisplayFor(modelItem => item.TenSPTour)</h3>
+                        <p>@Html.DisplayFor(modelItem => item.MoTa)</p>
+                    </div>
+                    <div class="col-md-3 card-list-tour">
+                        <h3>@Html.DisplayFor(modelItem => item.ID_TOUR)</h3>
+                        <a href="@Url.Action("Index","ChiTietTour", new {id=item.ID_SPTour})" style="color:white">@Html.DisplayFor(modelItem => item.GiaNguoiLon)VND</a>
+
+                        @*<a href="@Url.Action("Index", "ChiTietTour", new {id=item.ID_SPTour})">Giá</a>*@
+                    </div>
+            </div>
+        </div>
+    }
+</div>

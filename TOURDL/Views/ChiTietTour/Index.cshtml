@@ -1,0 +1,94 @@
+﻿@model IEnumerable<TOURDL.Models.SPTOUR>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/CusLayout.cshtml";
+}
+
+<link rel="stylesheet" href="~/CSS/TrangChu.css" />
+<link rel="stylesheet" href="~/CSS/ChiTietTour.css" />
+<link href="~/Content/bootstrap5/bootstrap.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+@*<div class="w3-content w3-display-container img-fluid chitiettour">
+        <img class="mySlides img-fluid" src="~/Images/dao-binh-ba.jpg" style="width: 1080px; height: 500px ">
+        <img class="mySlides img-fluid" src="~/Images/DaLatMain.jpg" style="width: 1080px; height: 500px ">
+        <img class="mySlides img-fluid" src="~/Images/halongbay.jpg" style="width: 1080px; height: 500px ">
+
+        <button class="w3-button w3-black" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="w3-button w3-black" onclick="plusDivs(1)">&#10095;</button>
+    </div>
+
+    <div class="card mb-3 card-tour chitiettour" style="border:none">
+        <h2>Chi tiết tour</h2>
+        <div class="row g-0">
+            <div class="col-md-2"></div>
+            <div class="col-md-8 text">
+                <h3>Tên tour</h3>
+                <h3>Giới thiệu</h3>
+                <p>Mô tả</p>
+                <br /><hr />
+                <h3>Dịch vụ</h3>
+                <p>Mô tả</p>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>*@
+
+@foreach (var item in Model)
+{
+    <div class="w3-content w3-display-container img-fluid chitiettour">
+        
+        <img class="mySlides img-fluid" src="~/Images/@item.HinhAnh" style="width: 1080px; height: 500px ">
+
+
+            <button class="w3-button w3-black" onclick="plusDivs(-1)">&#10094;</button>
+            <button class="w3-button w3-black" onclick="plusDivs(1)">&#10095;</button>
+        
+
+    </div>
+
+<div class="card mb-3 card-tour chitiettour" style="border:none">
+    <h2>Chi tiết tour</h2>
+    <div class="row g-0">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 text">
+            <h3>@Html.DisplayFor(modelItem => item.TenSPTour)</h3>
+            <h3>Giới thiệu</h3>
+            <p>@Html.DisplayFor(modelItem => item.MoTa)</p>
+            <p>@Html.DisplayFor(modelItem => item.DiemTapTrung)</p>
+            <p>@Html.DisplayFor(modelItem => item.DiemDen)</p>
+            <p>@Html.DisplayFor(modelItem => item.NgayKhoiHanh)</p>
+            <p>@Html.DisplayFor(modelItem => item.NgayKetThuc)</p>
+            <br /><hr />
+            <h3>Dịch vụ</h3>
+            <p>@Html.DisplayFor(modelItem => item.NHANVIEN)</p>
+            <p>@Html.DisplayFor(modelItem => item.GiaNguoiLon)</p>
+            <p>@Html.DisplayFor(modelItem => item.GiaTreEm)</p>
+        </div>
+
+        <div class="col-md-2"></div>
+    </div>
+</div>}
+
+
+<script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+        showDivs(slideIndex += n);
+    }
+
+    function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        if (n > x.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = x.length }
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        x[slideIndex - 1].style.display = "block";
+    }
+</script>
+

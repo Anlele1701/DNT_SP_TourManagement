@@ -65,6 +65,12 @@
       <HintPath>..\packages\Irony.NetCore.1.0.11\lib\net461\Irony.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="SixLabors.Fonts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d998eea7b14cab13, processorArchitecture=MSIL">
       <HintPath>..\packages\SixLabors.Fonts.1.0.0-beta19\lib\netstandard2.0\SixLabors.Fonts.dll</HintPath>
     </Reference>
@@ -221,6 +227,8 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ChiTietTourController.cs" />
+    <Compile Include="Controllers\DatTourController.cs" />
     <Compile Include="Controllers\HOADONsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KHACHHANGsController.cs" />
@@ -284,8 +292,11 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="CSS\AdminAdd.css" />
     <Content Include="CSS\AdminLayout.css" />
+    <Content Include="CSS\ChiTietTour.css" />
+    <Content Include="CSS\DatTour.css" />
     <Content Include="CSS\TrangChu.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -296,6 +307,7 @@
     <Content Include="Images\DaLatMain.jpg" />
     <Content Include="Images\dalattour.jpg" />
     <Content Include="Images\dalatvn.jpg" />
+    <Content Include="Images\Danang.jpg" />
     <Content Include="Images\dao-binh-ba.jpg" />
     <Content Include="Images\facebook.jpg" />
     <Content Include="Images\ggmap.png" />
@@ -318,6 +330,7 @@
     <Content Include="Images\videoHome.mp4" />
     <Content Include="Images\visa.jpg" />
     <Content Include="Images\zalo.jpg" />
+    <Content Include="Images\Hanoi1.jpg" />
     <Content Include="Models\TourDL.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>TourDL.edmx</DependentUpon>
@@ -397,6 +410,9 @@
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Shared\CusLayout.cshtml" />
     <Content Include="Views\Home\TrangChu.cshtml" />
+    <Content Include="Views\ChiTietTour\Index.cshtml" />
+    <Content Include="Views\TOURs\DanhMucSanPham.cshtml" />
+    <Content Include="Views\DatTour\DatTour.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -1,0 +1,72 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+.div-navbar {
+    text-transform: uppercase;
+    padding: 0px;
+    height: auto;
+    width: 100%;
+    background-image: linear-gradient(to bottom right, #00FFB4 0%, #0EB0DC 48%, #1D43B7 80%, #06006D 100%);
+}
+
+.nav-item .nav-link:hover {
+    color: white;
+    opacity: 1;
+}
+
+input {
+    border: 10px solid #ccc;
+    border-radius: 20px;
+}
+
+    input[type=text], select, textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+    }
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+    font-style: normal;
+    font-weight: 700;
+}
+
+input[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+    input[type=submit]:hover {
+        background-color: #45a049;
+    }
+
+.container {
+    border-radius: 5px;
+    padding: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.img-visa {
+    max-width: 7%;
+    height: auto;
+    float: left;
+    flex-direction: row;
+    margin: 3px;
+    margin-right: 20px;
+    object-fit: cover;
+}
