@@ -37,16 +37,20 @@
             font-weight: bold;
             margin: 0 20px 0 20px;
         }
-        .card-list-tour a {
-            color: white;
-            margin: 0 20px 0 20px;
-            font-weight: bold;
-            font-size: 32px;
-            padding: 0 20px 0 20px;
-            border: 3px solid none;
-            border-radius: 10px;
-            background: #C1390E;
-        }
+    .card-list-tour a {
+        color: black;
+        margin: 0 20px 0 20px;
+        font-weight: bold;
+        font-size: 32px;
+        padding: 0 20px 0 20px;
+        border: 3px solid none;
+        border-radius: 10px;
+        background: #C1390E;
+        white-space: nowrap
+    }
+    .hover-link:hover{
+            color:dodgerblue
+    }
 </style>
 
 
@@ -55,18 +59,20 @@
     {
         <div class="card mb-3" style="max-width: 100%;border:none;margin:20px">
             <div class="row g-0 border-card">
-                    <div class="col-md-6">
-                        <img src="~/Images/@item.HinhAnh" class="img-fluid rounded-start img-border" alt="...">
+                <div class="col-md-6">
+                    <img src="~/Images/@item.HinhAnh" class="img-fluid rounded-start img-border" alt="...">
+                </div>
+                <div class="col-md-3 card-list-tour">
+                    <h3>@Html.DisplayFor(modelItem => item.TenSPTour)</h3>
+                    <p>@Html.DisplayFor(modelItem => item.MoTa)</p>
+                    <div>
+                        <a class="hover-link" style="background:none;font-size:20px" href="@Url.Action("Index","ChiTietTour", new {id=item.ID_SPTour})">Xem chi tiết</a>
                     </div>
-                    <div class="col-md-3 card-list-tour">
-                        <h3>@Html.DisplayFor(modelItem => item.TenSPTour)</h3>
-                        <p>@Html.DisplayFor(modelItem => item.MoTa)</p>
-                    </div>
-                    <div class="col-md-3 card-list-tour">
-                        <h3>@Html.DisplayFor(modelItem => item.ID_TOUR)</h3>
-                        <a href="@Url.Action("Index","ChiTietTour", new {id=item.ID_SPTour})" style="color:white">@Html.DisplayFor(modelItem => item.GiaNguoiLon)VND</a>
-                        @*<a href="@Url.Action("Index", "ChiTietTour", new {id=item.ID_SPTour})">Giá</a>*@
-                    </div>
+                </div>
+                <div class="col-md-3 card-list-tour">
+                    <a style="color:white">Giá: @Html.DisplayFor(modelItem => item.GiaNguoiLon)VND</a>
+                    @*<a href="@Url.Action("Index", "ChiTietTour", new {id=item.ID_SPTour})">Giá</a>*@
+                </div>
             </div>
         </div>
     }
