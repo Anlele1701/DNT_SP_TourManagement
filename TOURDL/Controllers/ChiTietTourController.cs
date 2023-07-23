@@ -12,10 +12,11 @@ namespace MVC_Dulich.Controllers
         // GET: ChiTietTour
         private TourDLEntities db = new TourDLEntities();
 
-        public ActionResult Index(string id)
+        public ActionResult ChiTietTour(string id)
         {
             var data = db.SPTOURs.Where(s => s.ID_SPTour == id);
             return View(data);
         }
+
     }
 }

@@ -1,0 +1,109 @@
+/* BEGIN EXTERNAL SOURCE */
+
+    .card-tour {
+        display: flex;
+        margin: 5px;
+        border: none;
+        margin: 32px;
+    }
+
+        .card-tour img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+    .responsive {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+    }
+
+    .card-tour h3 {
+        color: #0094ff;
+        font-weight: 600;
+        margin: 10px;
+    }
+
+    .card-tour p {
+        color: black;
+        font-weight: 200;
+        margin-left: 10px;
+    }
+
+/* END EXTERNAL SOURCE */
+/* BEGIN EXTERNAL SOURCE */
+img {
+object-fit:cover;height:100%;width:100%
+}
+/* END EXTERNAL SOURCE */
+/* BEGIN EXTERNAL SOURCE */
+div {
+text-align:right
+}
+/* END EXTERNAL SOURCE */
+/* BEGIN EXTERNAL SOURCE */
+div {
+text-align:left
+}
+/* END EXTERNAL SOURCE */
+/* BEGIN EXTERNAL SOURCE */
+img {
+object-fit:cover;height:100%;width:100%
+}
+/* END EXTERNAL SOURCE */
+/* BEGIN EXTERNAL SOURCE */
+img {
+width:100vw;height:400px
+}
+/* END EXTERNAL SOURCE */
+/* BEGIN EXTERNAL SOURCE */
+div {
+font-size:50px; top:100px !important
+}
+/* END EXTERNAL SOURCE */
+/* BEGIN EXTERNAL SOURCE */
+i {
+color:#0026ff
+}
+/* END EXTERNAL SOURCE */
+/* BEGIN EXTERNAL SOURCE */
+i {
+color:yellow
+}
+/* END EXTERNAL SOURCE */
+/* BEGIN EXTERNAL SOURCE */
+i {
+color:#0094ff
+}
+/* END EXTERNAL SOURCE */
+/* BEGIN EXTERNAL SOURCE */
+div {
+color:#ffffff
+}
+/* END EXTERNAL SOURCE */
+/* BEGIN EXTERNAL SOURCE */
+div {
+margin:16px;
+}
+/* END EXTERNAL SOURCE */
+/* BEGIN EXTERNAL SOURCE */
+div {
+font-size: 55px; font-family: 'Ruslan Display', cursive;font-weight:500 
+}
+/* END EXTERNAL SOURCE */
+/* BEGIN EXTERNAL SOURCE */
+div {
+font-size: 55px; font-family: 'Ruslan Display', cursive;font-weight:500 
+}
+/* END EXTERNAL SOURCE */
+/* BEGIN EXTERNAL SOURCE */
+div {
+text-align:center
+}
+/* END EXTERNAL SOURCE */
+/* BEGIN EXTERNAL SOURCE */
+div {
+text-align:center
+}
+/* END EXTERNAL SOURCE */

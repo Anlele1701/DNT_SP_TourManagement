@@ -8,7 +8,7 @@ namespace TOURDL.Controllers
 {
     public class LoginController : Controller
     {
-        TourDLEntities tourDL = new TourDLEntities();   
+        TourDLEntities db = new TourDLEntities();   
         // GET: Login
         public ActionResult Index()
         {
@@ -22,7 +22,7 @@ namespace TOURDL.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Authen(NHANVIEN nhanvien)
         {
-            var check = tourDL.NHANVIENs.Where(s=>s.Mail_NV.Equals(nhanvien.Mail_NV)
+            var check = db.NHANVIENs.Where(s=>s.Mail_NV.Equals(nhanvien.Mail_NV)
             &&s.MatKhau.Equals(nhanvien.MatKhau)).FirstOrDefault();
             if (check == null)
             {
@@ -30,7 +30,7 @@ namespace TOURDL.Controllers
             }
             else
             {
-                tourDL.Configuration.ValidateOnSaveEnabled = false;
+                db.Configuration.ValidateOnSaveEnabled = false;
                 Session["IDUser"] = nhanvien.ID_NV;
                 Session["HoTen"] = nhanvien.HoTen_NV;
                 Session["Email"] = nhanvien.Mail_NV;
@@ -64,5 +64,26 @@ namespace TOURDL.Controllers
         //    }    
         //    return View();
         //}
+        public ActionResult Signup()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Signup(KHACHHANG khachhang)
+        {
+            if (db.KHACHHANGs.Any(x => x.Mail_KH == khachhang.Mail_KH))
+            {
+                ViewBag.Notification = "Tài khoản đã tồn tại";
+                return View();
+            }
+            else
+            {
+                db.KHACHHANGs.Add(khachhang);
+                db.SaveChanges();
+                Session["IdUserSS"]=khachhang.ID_KH.ToString();
+                Session["UsernameSS"]=khachhang.HoTen_KH.ToString();
+                return RedirectToAction("Index", "Home");
+            }
+        }
     }
 }

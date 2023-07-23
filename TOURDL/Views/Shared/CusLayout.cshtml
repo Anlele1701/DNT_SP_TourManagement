@@ -10,35 +10,11 @@
     <link rel="stylesheet" href="~/CSS/TrangChu.css" />
 </head>
 <body>
-    @*<header>
-            <div class="logo">Travel Dalats</div>
-            <div class="hamburger">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-            </div>
-            <nav class="nav-bar">
-                <ul>
-                    <li>
-                        <a href="" class="active">Home</a>
-                    </li>
-                    <li>
-                        <a href="" >Tour</a>
-                    </li>
-                    <li>
-                        <a href="" >Danh Mục Tour</a>
-                    </li>
-                    <li>
-                        <a href="" >Về chúng tôi</a>
-                    </li>
-                    <li>
-                        <a href="" >Liên hệ</a>
-                    </li>
-                </ul>
-            </nav>
-        </header>*@
     <!-- Navbar Start-->
-    <div class="loader"></div>
+    <div class="loader">
+        <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExb253Y3Y3dnhnZnp1ZW9yNGJxYjZtNjh5YjBzZnNkejg1ZzkzNmpwZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/dYUslDahf6Uw71gH3t/giphy.gif" 
+             style="max-width:50%; max-height:50%"/>
+    </div>
     <div class="div-navbar">
         <nav class="navbar navbar-expand-lg" id="navbar">
             <div class="container">
@@ -49,13 +25,13 @@
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="navbar-nav me-auto" style="color:white">
                         <li class="nav-item">
-                            <a class="nav-link" href="#DanhMucTour">Home</a>
+                            <a class="nav-link" href="@Url.Action("Index","Home")">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#book">Đặt tour</a>
+                            <a class="nav-link" href="@Url.Action("DatTour","DatTour")">Đặt tour</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#DanhMucTour">Danh mục Tour</a>
+                            <a class="nav-link" href="@Url.Action("DanhMucTour","TOURs")">Danh mục Tour</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#DichVu">Dịch vụ</a>

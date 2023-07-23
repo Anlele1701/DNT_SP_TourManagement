@@ -34,9 +34,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: linear-gradient(to bottom right, #00FFB4 0%, #0EB0DC 48%, #1D43B7 80%, #06006D 100%);
+    background-color:white;
     transition: opacity 1s,visibility 1s;
-    z-index: 10;
+    z-index: 1;
 }
 
     .loader::after {

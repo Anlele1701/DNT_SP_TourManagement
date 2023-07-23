@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<TOURDL.Models.SPTOUR>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "ChiTietTour";
     Layout = "~/Views/Shared/CusLayout.cshtml";
 }
 
@@ -38,38 +38,41 @@
 @foreach (var item in Model)
 {
     <div class="w3-content w3-display-container img-fluid chitiettour">
-        
+
         <img class="mySlides img-fluid" src="~/Images/@item.HinhAnh" style="width: 1080px; height: 500px ">
 
 
-            <button class="w3-button w3-black" onclick="plusDivs(-1)">&#10094;</button>
-            <button class="w3-button w3-black" onclick="plusDivs(1)">&#10095;</button>
-        
+        <button class="w3-button w3-black" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="w3-button w3-black" onclick="plusDivs(1)">&#10095;</button>
+
 
     </div>
 
-<div class="card mb-3 card-tour chitiettour" style="border:none">
-    <h2>Chi tiết tour</h2>
-    <div class="row g-0">
-        <div class="col-md-2"></div>
-        <div class="col-md-8 text">
-            <h3>TOUR: @Html.DisplayFor(modelItem => item.TenSPTour)</h3>
-            <h3>Giới thiệu</h3>
-            <p>@Html.DisplayFor(modelItem => item.MoTa)</p>
-            <p>Điểm tập trung: @Html.DisplayFor(modelItem => item.DiemTapTrung)</p>
-            <p>Điểm đến: @Html.DisplayFor(modelItem => item.DiemDen)</p>
-            <p>Ngày khởi hành: @Html.DisplayFor(modelItem => item.NgayKhoiHanh)</p>
-            <p>Ngày kết thúc: @Html.DisplayFor(modelItem => item.NgayKetThuc)</p>
-            <br /><hr />
-            <h3>Dịch vụ</h3>
-            <p>Tên Nhân Viên Chịu Trách nhiệm: @Html.DisplayFor(modelItem => item.NHANVIEN.HoTen_NV)</p>
-            <p>Giá người lớn: @Html.DisplayFor(modelItem => item.GiaNguoiLon)</p>
-            <p>Giá trẻ em: @Html.DisplayFor(modelItem => item.GiaTreEm)</p>
+    <div class="card mb-3 card-tour chitiettour" style="border:none">
+        <h2>Chi tiết tour</h2>
+        <div class="row g-0">
+            <div class="col-md-2"></div>
+            <div class="col-md-8 text">
+                <h3>TOUR: @Html.DisplayFor(modelItem => item.TenSPTour)</h3>
+                <h3>Giới thiệu</h3>
+                <p>@Html.DisplayFor(modelItem => item.MoTa)</p>
+                <p>Điểm tập trung: @Html.DisplayFor(modelItem => item.DiemTapTrung)</p>
+                <p>Điểm đến: @Html.DisplayFor(modelItem => item.DiemDen)</p>
+                <p>Ngày khởi hành: @Html.DisplayFor(modelItem => item.NgayKhoiHanh)</p>
+                <p>Ngày kết thúc: @Html.DisplayFor(modelItem => item.NgayKetThuc)</p>
+                <br /><hr />
+                <h3>Dịch vụ</h3>
+                <p>Tên Nhân Viên Chịu Trách nhiệm: @Html.DisplayFor(modelItem => item.NHANVIEN.HoTen_NV)</p>
+                <p>Giá người lớn: @Html.DisplayFor(modelItem => item.GiaNguoiLon)</p>
+                <p>Giá trẻ em: @Html.DisplayFor(modelItem => item.GiaTreEm)</p>
+            </div>
+
+            <div class="col-md-2"></div>
         </div>
-
-        <div class="col-md-2"></div>
-    </div>
-</div>}
+        <div class="ngoaitour" style="text-align:center;">
+            <a style="color: white;text-decoration:none" href="@Url.Action("DatTour","DatTour")">Đặt Tour</a>
+        </div>
+    </div>}
 
 
 <script>

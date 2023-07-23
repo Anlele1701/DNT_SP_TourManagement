@@ -129,5 +129,10 @@ namespace TOURDL.Controllers
             var data = db.SPTOURs.Where(s => s.ID_TOUR==id);
             return View(data.ToList());
         }
+        public ActionResult DanhMucTour()
+        {
+            var data=db.SPTOURs.ToList();
+            return View(data);
+        }
     }
 }

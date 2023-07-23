@@ -1,15 +1,17 @@
 ﻿@model IEnumerable<TOURDL.Models.SPTOUR>
 
 @{
-    ViewBag.Title = "DanhMucSanPham";
+    ViewBag.Title = "DanhMucTour";
     Layout = "~/Views/Shared/CusLayout.cshtml";
 }
+
 <link rel="stylesheet" href="~/CSS/DanhMucSanPhamVaTour.css" />
 
+<div style="text-align:center;font-size:32px;font-weight:bold;text-transform:uppercase;margin-top:20px;">Danh mục tour</div>
 <div>
     @foreach (var item in Model)
     {
-        <div class="card mb-3">
+        <div class="card mb-3" style="border:none;width:auto;height:auto;margin:20px">
             <div class="row g-0 border-card">
                 <div class="col-md-4">
                     <img src="~/Images/@item.HinhAnh" class="img-fluid rounded-start img-border" alt="...">
@@ -29,3 +31,4 @@
         </div>
     }
 </div>
+

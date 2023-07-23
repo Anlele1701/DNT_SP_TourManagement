@@ -1,0 +1,59 @@
+﻿body {
+}
+.div-navbar {
+    text-transform: uppercase;
+    padding: 0px;
+    height: auto;
+    width: 100%;
+    background-image: linear-gradient(to bottom right, #00FFB4 0%, #0EB0DC 48%, #1D43B7 80%, #06006D 100%);
+    padding: 25px 0 25px 0;
+}
+
+.nav-item .nav-link:hover {
+    color: white;
+    font-weight: bold;
+    opacity: 1;
+}
+
+.border-card {
+    border: 15px solid #D9D9D9;
+    border-radius: 10px;
+    background: #D9D9D9;
+}
+
+.img-border {
+    border-radius: 10px;
+}
+
+.card-list-tour p {
+    font-style: italic;
+    margin: 0 20px 0 20px;
+}
+
+.card-list-tour h3 {
+    margin-top: 10px;
+    font-weight: bold;
+    margin: 0 20px 0 20px;
+}
+.card-list-tour-text-center {
+    text-align: center;
+    padding: 30px 0;
+}
+.card-list-tour a {
+    color: black;
+    font-weight: bold;
+    font-size: 25px;
+    border: 3px solid none;
+    border-radius: 10px;
+    white-space: nowrap
+}
+
+.border-card img {
+    width: 450px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.hover-link:hover {
+    color: dodgerblue
+}
