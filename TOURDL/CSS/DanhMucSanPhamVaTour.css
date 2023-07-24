@@ -5,15 +5,20 @@
     padding: 0px;
     height: auto;
     width: 100%;
-    background-image: linear-gradient(to bottom right, #00FFB4 0%, #0EB0DC 48%, #1D43B7 80%, #06006D 100%);
+    top: 50%;
+    background: hsl(0, 0%, 93%);
     padding: 25px 0 25px 0;
+    position: absolute;
 }
 
-.nav-item .nav-link:hover {
-    color: white;
-    font-weight: bold;
-    opacity: 1;
+.nav-item .nav-link {
+    color: #0A3F72;
 }
+    .nav-item .nav-link:hover {
+        color: rgba(19, 148, 235, 0.345);
+        font-weight: bold;
+        opacity: 1;
+    }
 
 .border-card {
     border: 15px solid #D9D9D9;
@@ -56,4 +61,16 @@
 
 .hover-link:hover {
     color: dodgerblue
+}
+.hero-image {
+   /* background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),url("https://img.freepik.com/free-photo/portrait-beautiful-young-asian-woman-relaxing-around-beach-with-white-clouds-blue-sky-travel-vacation_74190-13314.jpg?w=1060&t=st=1690128768~exp=1690129368~hmac=52350b79b45a70c89e521bd2d89d032a624e562e34010117a9317396c89edbe1");
+    height: 40vh;
+    width: 100vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;*/ 
+   background:red;
+   height:50vh;
+   width:100vw;
+    position:relative;
 }

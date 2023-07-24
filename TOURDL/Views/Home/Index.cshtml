@@ -44,6 +44,14 @@
         font-weight: 200;
         margin-left: 10px;
     }
+    .back-image-gradients {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 40vh;
+        width: 100%;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("../../Images/beautiful-girl-standing-boat-looking-mountains-ratchaprapha-dam-khao-sok-national-park-surat-thani-province-thailand.jpg");
+    }
 </style>
 <div class="home">
     <div class="content">
@@ -90,7 +98,7 @@
             </div>
         </div>
         <div class="col-md-6">
-             <img src="~/Images/Hanoi.jpg" class="img-fluid" alt="..." style="object-fit:cover;height:100%;width:100%">
+             <img src="~/Images/Hanoi.jpg" class="img-fluid" alt="..." style="object-fit:cover;height:100%;width:100%; border-radius:20px;">
         </div>
         <div class="col-md-1"></div>
 
@@ -99,7 +107,7 @@
 
 <div class="container-back-image img-fluid">
     <div class="back-image-gradients">
-        <img class="img-fluid back-image" style="width:100vw;height:300px" src="~/Images/beautiful-girl-standing-boat-looking-mountains-ratchaprapha-dam-khao-sok-national-park-surat-thani-province-thailand.jpg" />
+        @*<img class="img-fluid back-image" style="width:100vw;height:300px; filter:blur(1px);" src="~/Images/beautiful-girl-standing-boat-looking-mountains-ratchaprapha-dam-khao-sok-national-park-surat-thani-province-thailand.jpg" />*@
     </div>
     <div class="row back-image-text" style="font-size:50px; top:100px !important">
         <div class="col-3">
