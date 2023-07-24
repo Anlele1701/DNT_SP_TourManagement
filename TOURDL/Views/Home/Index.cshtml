@@ -34,23 +34,15 @@
     }
 
     .card-tour h3 {
-        color: black;
+        color: #0094ff;
         font-weight: 600;
-        font-size:40px;
+        margin: 10px;
     }
 
     .card-tour p {
         color: black;
         font-weight: 200;
         margin-left: 10px;
-    }
-    .back-image-gradients {
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: 40vh;
-        width: 100%;
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("../../Images/beautiful-girl-standing-boat-looking-mountains-ratchaprapha-dam-khao-sok-national-park-surat-thani-province-thailand.jpg");
     }
 </style>
 <div class="home">
@@ -63,51 +55,48 @@
     </div>
 </div>
 
-<div class="card mb-3 card-tour pt-5 py-5" >
+<div class="card mb-3 card-tour">
     <div class="row g-0">
         <div class="col-md-1"></div>
         <div class="col-md-6">
-                <img src="https://www.weather2travel.com/images_blog/island-resort-in-the-maldives.jpg" class="img-fluid" alt="..." style="object-fit:cover;max-width:100%;height:auto; border-radius:20px;">
+            <a href="@Url.Action("DanhMucSanPham", "TOURs", new { id = "SG"})">
+                <img src="~/Images/saigon.jpg" class="img-fluid rounded-start" alt="..." style="object-fit:cover;height:100%;width:100%"><
+            </a>
         </div>
         <div class="col-md-5">
             <div class="card-body" style="text-align:right">
-                <h3 class="card-title" style="text-transform:uppercase">chúng tôi <font color="#0094ff">cung cấp</font></h3>
-                <p class="pt-5" style="font-size:20px;">
-                    Với đội ngũ nhân viên nhiệt tình, giàu kinh nghiệm và giàu kiến thức về du lịch, chúng tôi không chỉ cung cấp cho khách hàng các dịch vụ chuyên nghiệp mà còn giúp khách hàng lên kế hoạch chuyến đi một cách tỉ mỉ và hiệu quả nhất.
-                </p>
-                <p class="pt-5" style="font-size:20px;">
-                    Cung cấp đầy đủ các dịch vụ du lịch, bao gồm đặt vé máy bay, đặt khách sạn, tour du lịch, vé tham quan, hướng dẫn viên du lịch, và nhiều dịch vụ khác liên quan đến hoạt động du lịch.
+                <h3 class="card-title">Sài Gòn</h3>
+                <p>
+                    Vivamus sed porttitor felis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Sed lorem enim,
                 </p>
             </div>
         </div>
         <div class="col-md-1"></div>
     </div>
 </div>
-<div class="card mb-3 card-tour pt-5 py-5">
+<div class="card mb-3 card-tour">
     <div class="row g-0">
         <div class="col-md-1"></div>
-        <div class="col-md-5">
+        <div class="col-md-4">
             <div class="card-body" style="text-align:left">
-                <h3 class="card-title" style="text-transform:uppercase">chúng tôi <font color="#0094ff">đảm bảo</font> </h3>
-                <p class="pt-5" style="font-size:20px;">
-                    Mang đến cho khách hàng những trải nghiệm du lịch tuyệt vời và đảm bảo sự hài lòng của khách hàng.
-                </p>
-                <p class="pt-5" style="font-size:20px;">
-                    Để đảm bảo chất lượng dịch vụ, chúng tôi luôn lựa chọn những đối tác tin cậy trong ngành du lịch, từ các hãng hàng không, khách sạn, đến các nhà cung cấp dịch vụ khác. Chúng tôi đảm bảo rằng các đối tác của chúng tôi đều đáp ứng được các tiêu chuẩn chất lượng cao và đáp ứng các yêu cầu khắt khe của khách hàng.
+                <h3 class="card-title">Hà Nội</h3>
+                <p>
+                    Vivamus sed porttitor felis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Sed lorem enim,
                 </p>
             </div>
         </div>
         <div class="col-md-6">
-             <img src="~/Images/Hanoi.jpg" class="img-fluid" alt="..." style="object-fit:cover;height:100%;width:100%; border-radius:20px;">
+            <a href="@Url.Action("DanhMucSanPham", "TOURs", new { id = "HN"})">
+                <img src="~/Images/Hanoi.jpg" class="img-fluid" alt="..." style="object-fit:cover;height:100%;width:100%">
+            </a>
         </div>
         <div class="col-md-1"></div>
-
     </div>
 </div>
 
 <div class="container-back-image img-fluid">
     <div class="back-image-gradients">
-        @*<img class="img-fluid back-image" style="width:100vw;height:300px; filter:blur(1px);" src="~/Images/beautiful-girl-standing-boat-looking-mountains-ratchaprapha-dam-khao-sok-national-park-surat-thani-province-thailand.jpg" />*@
+        <img class="img-fluid back-image" style="width:100vw;height:400px" src="~/Images/beautiful-girl-standing-boat-looking-mountains-ratchaprapha-dam-khao-sok-national-park-surat-thani-province-thailand.jpg" />
     </div>
     <div class="row back-image-text" style="font-size:50px; top:100px !important">
         <div class="col-3">
@@ -128,21 +117,19 @@
         </div>
     </div>
 </div>
-<div class="position-relative marquee-container py-5" style="margin:16px; border-bottom:solid;border-color:gainsboro;border-width:thin;">
-    <div class="marquee d-flex justify-content-around" style="font-size: 55px;font-weight:bold;text-transform:uppercase; ">
+<div class="position-relative marquee-container" style="margin:16px;">
+    <div class="marquee d-flex justify-content-around" style="font-size: 55px; font-family: 'Ruslan Display', cursive;font-weight:500 ">
         <span>
             Khám phá thế giới cùng chúng tôi
         </span>
     </div>
-    <div class="marquee marquee2 d-flex justify-content-around" style="font-size: 55px; font-weight:bold;text-transform:uppercase;">
+    <div class="marquee marquee2 d-flex justify-content-around" style="font-size: 55px; font-family: 'Ruslan Display', cursive;font-weight:500 ">
         <span>
             Khám phá thế giới cùng chúng tôi
         </span>
     </div>
 </div>
-<p style="font-size: 30px;padding-top:20px;padding-left:20px; text-transform: uppercase; font-weight: bold; color:#5B5961">
-    Các tour chúng tôi đang có
-</p>
+
 <div style="text-align:center">
     <div class="row g-0" style="text-align:center">
         @foreach (var item in Model)

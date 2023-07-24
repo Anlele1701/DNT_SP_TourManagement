@@ -5,21 +5,15 @@
     padding: 0px;
     height: auto;
     width: 100%;
-    background-color: rgba(225,225,225,0.1);
-    -webkit-backdrop-filter: blur(3px);
-    backdrop-filter: blur(3px);
-    position:absolute;
-    z-index:3;
+    background-image: linear-gradient(to bottom right, #00FFB4 0%, #0EB0DC 48%, #1D43B7 80%, #06006D 100%);
+    padding: 25px 0 25px 0;
 }
 
-.nav-item .nav-link {
+.nav-item .nav-link:hover {
     color: white;
+    font-weight: bold;
+    opacity: 1;
 }
-    .nav-item .nav-link:hover {
-        color: rgba(19, 148, 235, 0.345);
-        font-weight: bold;
-        opacity: 1;
-    }
 
 .border-card {
     border: 15px solid #D9D9D9;
@@ -62,23 +56,4 @@
 
 .hover-link:hover {
     color: dodgerblue
-}
-.head
-{
-    height:40vh;
-    position:relative;
-}
-#hero-image {
-    height: 40vh;
-    width:100%;
-    position: absolute;
-    object-fit:cover;
-    object-position:bottom;
-}
-.hero-image {
- height:40vh;
- width:100%;
- object-fit:cover;
- filter:brightness(99%)blur(0.5px);
-
 }
