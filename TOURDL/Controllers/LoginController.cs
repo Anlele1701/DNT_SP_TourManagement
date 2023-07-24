@@ -84,8 +84,67 @@ namespace TOURDL.Controllers
                 Session["IDUserSS"]=khachhang.ID_KH.ToString();
                 Session["EmailUserSS"]=khachhang.Mail_KH.ToString();
                 Session["UsernameSS"]=khachhang.HoTen_KH.ToString();
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("DangNhap", "Login");
             }
         }
+        public ActionResult DangXuat()
+        {
+            Session.Clear();
+            return RedirectToAction ("Index", "Home");
+        }
+
+        [HttpGet]
+        public ActionResult DangNhap()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult DangNhap(KHACHHANG khachhang)
+        {
+            var kiemTraDangNhap = db.KHACHHANGs.Where(x => x.Mail_KH.Equals(khachhang.Mail_KH) && x.MatKhau.Equals(khachhang.MatKhau)).FirstOrDefault();
+            if (kiemTraDangNhap == null)
+            {
+                ViewBag.Notification = "Tài khoản và mật khẩu không đúng";
+                return View();
+            }
+            else
+            {
+                db.Configuration.ValidateOnSaveEnabled = false;
+                db.KHACHHANGs.Add(khachhang);
+                db.SaveChanges();
+
+                Session["IDUser"] = khachhang.ID_KH;
+                Session["HoTenSS"] = khachhang.HoTen_KH;
+                Session["Email"] = khachhang.Mail_KH;
+                return RedirectToAction
+                    ("Index", "Home", new { id = kiemTraDangNhap.ID_KH });
+            }
+        }
+        //public ActionResult KhachHang()
+        //{
+        //    return View();
+        //}
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult KhachHang(KHACHHANG khachhang)
+        //{
+        //    var check = db.KHACHHANGs.Where(s => s.Mail_KH.Equals(khachhang.Mail_KH)
+        //    && s.MatKhau.Equals(khachhang.MatKhau)).FirstOrDefault();
+        //    if (check == null)
+        //    {
+        //        return View("Index","Home");
+        //    }
+        //    else
+        //    {
+        //        db.Configuration.ValidateOnSaveEnabled = false;
+        //        Session["IDUser"] = khachhang.ID_KH;
+        //        Session["HoTen"] = khachhang.HoTen_KH;
+        //        Session["Email"] = khachhang.Mail_KH;
+        //        return RedirectToAction
+        //            ("Index", "Home", new { id = check.ID_KH });
+        //    }
+
+        //}
     }
 }

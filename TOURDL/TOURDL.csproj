@@ -299,6 +299,7 @@
     <Content Include="CSS\DanhMucSanPhamVaTour.css" />
     <Content Include="CSS\DatTour.css" />
     <Content Include="CSS\Login.css" />
+    <Content Include="CSS\Register.css" />
     <Content Include="CSS\TrangChu.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -419,6 +420,8 @@
     <Content Include="Views\ChiTietTour\ChiTietTour.cshtml" />
     <Content Include="Views\TOURs\DanhMucTour.cshtml" />
     <Content Include="Views\Login\Signup.cshtml" />
+    <Content Include="Views\Login\DangNhap.cshtml" />
+    <Content Include="Views\Login\KhachHang.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
