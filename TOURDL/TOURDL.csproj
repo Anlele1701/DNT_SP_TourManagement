@@ -305,6 +305,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="Images\banner.png" />
     <Content Include="Images\beautiful-girl-standing-boat-looking-mountains-ratchaprapha-dam-khao-sok-national-park-surat-thani-province-thailand.jpg" />
+    <Content Include="Images\bua\pic2.jpg" />
+    <Content Include="Images\bua\pic1.jpg" />
     <Content Include="Images\Dalat.jpg" />
     <Content Include="Images\DaLatMain.jpg" />
     <Content Include="Images\dalattour.jpg" />
