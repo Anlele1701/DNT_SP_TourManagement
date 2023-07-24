@@ -12,7 +12,7 @@ namespace TOURDL.Controllers
         // GET: Login
         public ActionResult Index()
         {
-            return View();
+            return View(db.KHACHHANGs.ToList());
         }
         public ActionResult Authen()
         {
@@ -66,6 +66,7 @@ namespace TOURDL.Controllers
         //}
         public ActionResult Signup()
         {
+
             return View();
         }
         [HttpPost]
@@ -80,7 +81,8 @@ namespace TOURDL.Controllers
             {
                 db.KHACHHANGs.Add(khachhang);
                 db.SaveChanges();
-                Session["IdUserSS"]=khachhang.ID_KH.ToString();
+                Session["IDUserSS"]=khachhang.ID_KH.ToString();
+                Session["EmailUserSS"]=khachhang.Mail_KH.ToString();
                 Session["UsernameSS"]=khachhang.HoTen_KH.ToString();
                 return RedirectToAction("Index", "Home");
             }
