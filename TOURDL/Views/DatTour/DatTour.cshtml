@@ -1,4 +1,4 @@
-﻿@model TOURDL.Models.SPTOUR
+﻿@model IEnumerable<TOURDL.Models.SPTOUR>
 
 @{
     ViewBag.Title = "DatTour";
@@ -9,7 +9,6 @@
 <link href="~/CSS/DatTour.css" rel="stylesheet" />
 <link href="~/Content/bootstrap5/bootstrap.css" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
 
 <div class="container">
     <h2 style="text-align:center;margin-top:20px;color:black;font-weight:700">Đặt Tour</h2>
@@ -57,29 +56,31 @@
         </div>
     </form>
 </div>
+@foreach (var item in Model)
+{
 <div class="card mb-3" style="max-width: 100%;border:none">
     <div class="row g-0">
         <div class="col-md-1"></div>
         <div class="col-md-3">
-            <img src="~/Images/nhaTrang.jpg" class="img-fluid rounded-start" alt="...">
+            <img src="~/Images/@item.HinhAnh" class="img-fluid rounded-start" alt="...">
         </div>
         <div class="col-md-7">
             <div class="card-body">
-                <h3 class="card-title">Tên Tour</h3>
+                <h3 class="card-title">@Html.DisplayFor(modelItem => item.TenSPTour)</h3>
                 <h6>
-                    <i class="fa-solid fa-house-chimney"></i>Điểm khởi hành:
+                    <i class="fa-solid fa-house-chimney"></i>Điểm khởi hành: @Html.DisplayFor(modelItem => item.DiemTapTrung)
+                </h6> 
+                <h6>
+                    <i class="fa-solid fa-clock"></i>Thời gian: 
                 </h6>
                 <h6>
-                    <i class="fa-solid fa-clock"></i>Thời gian:
-                </h6>
-                <h6>
-                    <i class="fa-solid fa-car-side"></i>Điểm đến:
+                    <i class="fa-solid fa-car-side"></i>Điểm đến: @Html.DisplayFor(modelItem => item.DiemDen)
                 </h6>
             </div>
         </div>
         <div class="col-md-1"></div>
     </div>
-</div>
+</div>}
 <div class="card mb-3" style="max-width: 100%;border:none">
     <div class="row g-0">
         <div class="col-md-1"></div>
