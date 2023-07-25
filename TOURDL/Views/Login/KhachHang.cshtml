@@ -1,0 +1,30 @@
+﻿@model TOURDL.Models.KHACHHANG
+
+@{
+    ViewBag.Title = "KhachHang";
+    Layout = null;
+}
+
+<link rel="stylesheet" href="~/CSS/Login.css" />
+
+<body>
+    <h2>Đăng nhập</h2>
+    @using (Html.BeginForm("KhachHang", "Login", FormMethod.Post))
+    {
+        <div class="container">
+            <div class="card">
+                <h2>Đăng Nhập</h2>
+                <form>
+                    <label for="username">Username</label>
+                    <p>@Html.TextBoxFor(m => m.Mail_KH)</p>
+                    <label for="password">Password</label>
+                    <p>@Html.TextBoxFor(m => m.MatKhau)</p>
+
+                    @Html.ValidationMessageFor(m => m.MatKhau)
+                    @Html.AntiForgeryToken()
+                    <button value="login" type="submit">Login</button>
+                </form>
+            </div>
+        </div>
+    }
+</body>

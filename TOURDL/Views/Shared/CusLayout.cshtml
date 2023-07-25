@@ -40,6 +40,30 @@
                             <a class="nav-link" href="#About">Về chúng tôi</a>
                         </li>
                     </ul>
+                    <ul class="navbar-nav me-auto" style="color:white;float:right!important">
+                        @if (Session["IDUser"]!=null)
+                        {
+                            <li class="nav-item" style="margin:0 40px 0 40px">
+                                
+                                <a style="text-decoration:none;color:#fff" href="#Profile">Hello, @Session["UsernameSS"]</a>
+                            </li>
+                            <li class="nav-item" style="margin:0 40px 0 40px">
+                                <div style="color:white;font-weight:bold;">@Html.ActionLink("Đăng xuất", "DangXuat", "Login")</div>
+                            </li>
+
+                        }
+                        else
+                        {
+                            <li class="nav-item" style="margin:0 40px 0 40px;color:white">
+                                <div style="color:white;font-weight:bold;">@Html.ActionLink("Đăng ký", "Signup", "Login")</div>
+                            </li>
+                            <li class="nav-item" style="margin:0 40px 0 40px;color:white">
+                                <div style="color:white;font-weight:bold;">
+                                    @Html.ActionLink("Đăng nhập", "DangNhap", "Login")
+                                </div>
+                            </li>
+                        }
+                    </ul>
                 </div>
             </div>
         </nav>
