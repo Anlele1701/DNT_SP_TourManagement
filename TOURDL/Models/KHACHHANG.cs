@@ -20,7 +20,6 @@ namespace TOURDL.Models
         {
             this.HOADONs = new HashSet<HOADON>();
         }
-
         [Display(Name ="ID User")]
         public int ID_KH { get; set; }
         [Display(Name = "Họ Tên")]
@@ -49,4 +48,6 @@ namespace TOURDL.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HOADON> HOADONs { get; set; }
     }
+    
+
 }

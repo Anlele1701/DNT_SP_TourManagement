@@ -51,8 +51,8 @@ p {
 }
 .div-div {
     margin-bottom: 10px;
-    border: none;
-    
+    border:none;
+    border-radius:5px;
 }
 
 button {

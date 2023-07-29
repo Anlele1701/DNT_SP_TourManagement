@@ -1,0 +1,79 @@
+﻿@model TOURDL.Models.KHACHHANG
+
+@{
+    ViewBag.Title = "profile";
+    Layout = "~/Views/Shared/CusLayout.cshtml";
+}
+<link rel="stylesheet" href="~/CSS/Profile.css"/>
+<h2>profile</h2>
+
+<div>
+    <h4>KHACHHANG</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.HoTen_KH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HoTen_KH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GioiTinh_KH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GioiTinh_KH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NgaySinh_KH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgaySinh_KH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MatKhau)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MatKhau)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CCCD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CCCD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SDT_KH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SDT_KH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mail_KH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mail_KH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Diem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Diem)
+        </dd>
+
+    </dl>
+</div>

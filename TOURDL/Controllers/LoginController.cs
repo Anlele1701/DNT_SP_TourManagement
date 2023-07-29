@@ -31,11 +31,11 @@ namespace TOURDL.Controllers
             else
             {
                 db.Configuration.ValidateOnSaveEnabled = false;
-                Session["IDUser"] = nhanvien.ID_NV;
-                Session["HoTen"] = nhanvien.HoTen_NV;
-                Session["Email"] = nhanvien.Mail_NV;
+                Session["IDUserAdmin"] = check.ID_NV;
+                Session["HoTen"] = check.HoTen_NV;
+                Session["Email"] = check.Mail_NV;
                 return RedirectToAction
-                    ("Index", "NHANVIENs",new { id = check.ID_NV });
+                    ("Index", "NHANVIENs");
             }
              
         }
@@ -75,7 +75,6 @@ namespace TOURDL.Controllers
             if (db.KHACHHANGs.Any(x => x.Mail_KH == khachhang.Mail_KH))
             {
                 ViewBag.Notification = "Tài khoản đã tồn tại";
-                return View();
             }
             else
             {
@@ -86,6 +85,7 @@ namespace TOURDL.Controllers
                 Session["UsernameSS"]=khachhang.HoTen_KH.ToString();
                 return RedirectToAction("DangNhap", "Login");
             }
+            return View();
         }
         public ActionResult DangXuat()
         {
@@ -103,23 +103,28 @@ namespace TOURDL.Controllers
         public ActionResult DangNhap(KHACHHANG khachhang)
         {
             var kiemTraDangNhap = db.KHACHHANGs.Where(x => x.Mail_KH.Equals(khachhang.Mail_KH) && x.MatKhau.Equals(khachhang.MatKhau)).FirstOrDefault();
-            if (kiemTraDangNhap == null)
+            if (kiemTraDangNhap != null)
             {
-                ViewBag.Notification = "Tài khoản và mật khẩu không đúng";
-                return View();
+                Session["IDUser"] = kiemTraDangNhap.ID_KH;
+                Session["EmailUserSS"] = kiemTraDangNhap.Mail_KH.ToString();
+                Session["UsernameSS"] = kiemTraDangNhap.HoTen_KH.ToString();
+                return RedirectToAction
+                    ("Index", "Home",new {id=khachhang.ID_KH});
             }
             else
             {
-                db.Configuration.ValidateOnSaveEnabled = false;
-                db.KHACHHANGs.Add(khachhang);
-                db.SaveChanges();
+                ViewBag.Notification = "Tài khoản và mật khẩu không đúng";
+                //db.Configuration.ValidateOnSaveEnabled = false;
+                //db.KHACHHANGs.Add(khachhang);
+                //db.SaveChanges();
 
-                Session["IDUser"] = khachhang.ID_KH;
-                Session["HoTenSS"] = khachhang.HoTen_KH;
-                Session["Email"] = khachhang.Mail_KH;
-                return RedirectToAction
-                    ("Index", "Home", new { id = kiemTraDangNhap.ID_KH });
+                //Session["IDUser"] = khachhang.ID_KH;
+                //Session["HoTenSS"] = khachhang.HoTen_KH;
+                //Session["Email"] = khachhang.Mail_KH;
+                //return RedirectToAction
+                //    ("Index", "Home", new { id = kiemTraDangNhap.ID_KH });
             }
+            return View();
         }
         //public ActionResult KhachHang()
         //{

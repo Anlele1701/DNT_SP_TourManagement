@@ -45,7 +45,7 @@
                         {
                             <li class="nav-item" style="margin:0 40px 0 40px">
                                 
-                                <a style="text-decoration:none;color:#fff" href="#Profile">Hello, @Session["UsernameSS"]</a>
+                                <a style="text-decoration:none;color:#fff" href="@Url.Action("profile","Profile",new { id = Session["IDUser"] })">Hello, @Session["UsernameSS"]</a>
                             </li>
                             <li class="nav-item" style="margin:0 40px 0 40px">
                                 <div style="color:white;font-weight:bold;">@Html.ActionLink("Đăng xuất", "DangXuat", "Login")</div>

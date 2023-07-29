@@ -234,8 +234,10 @@
     <Compile Include="Controllers\KHACHHANGsController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\NHANVIENsController.cs" />
+    <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\SPTOURsController.cs" />
     <Compile Include="Controllers\TOURsController.cs" />
+    <Compile Include="DisplayName.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -299,6 +301,7 @@
     <Content Include="CSS\DanhMucSanPhamVaTour.css" />
     <Content Include="CSS\DatTour.css" />
     <Content Include="CSS\Login.css" />
+    <Content Include="CSS\Profile.css" />
     <Content Include="CSS\Register.css" />
     <Content Include="CSS\TrangChu.css" />
     <Content Include="favicon.ico" />
@@ -422,6 +425,7 @@
     <Content Include="Views\Login\Signup.cshtml" />
     <Content Include="Views\Login\DangNhap.cshtml" />
     <Content Include="Views\Login\KhachHang.cshtml" />
+    <Content Include="Views\Profile\profile.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
