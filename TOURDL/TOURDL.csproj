@@ -374,6 +374,19 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="w3layout\w3layout\css\font-awesome.css" />
+    <Content Include="w3layout\w3layout\css\jquery-ui.css" />
+    <Content Include="w3layout\w3layout\css\style.css" />
+    <Content Include="w3layout\w3layout\css\wickedpicker.css" />
+    <Content Include="w3layout\w3layout\fonts\fontawesome-webfont.svg" />
+    <Content Include="w3layout\w3layout\fonts\fontello.svg" />
+    <Content Include="w3layout\w3layout\images\banner3.jpg" />
+    <Content Include="w3layout\w3layout\images\c-arrows.png" />
+    <Content Include="w3layout\w3layout\index.html" />
+    <Content Include="w3layout\w3layout\js\jquery-2.1.4.min.js" />
+    <Content Include="w3layout\w3layout\js\jquery-ui.js" />
+    <Content Include="w3layout\w3layout\js\wickedpicker.js" />
+    <Content Include="w3layout\w3layout\w3layouts-License.txt" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -426,6 +439,17 @@
     <Content Include="Views\Login\DangNhap.cshtml" />
     <Content Include="Views\Login\KhachHang.cshtml" />
     <Content Include="Views\Profile\profile.cshtml" />
+    <Content Include="Views\DatTour\Booking.cshtml" />
+    <Content Include="w3layout\w3layout\fonts\fontawesome-webfont.eot" />
+    <Content Include="w3layout\w3layout\fonts\fontawesome-webfont.ttf" />
+    <Content Include="w3layout\w3layout\fonts\fontawesome-webfont.woff" />
+    <Content Include="w3layout\w3layout\fonts\fontawesome-webfont.woff2" />
+    <Content Include="w3layout\w3layout\fonts\FontAwesome.otf" />
+    <Content Include="w3layout\w3layout\fonts\fontello.eot" />
+    <Content Include="w3layout\w3layout\fonts\fontello.ttf" />
+    <Content Include="w3layout\w3layout\fonts\fontello.woff" />
+    <Content Include="Views\DatTour\Index.cshtml" />
+    <Content Include="Views\DatTour\Create.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

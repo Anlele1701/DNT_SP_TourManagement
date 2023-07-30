@@ -13,13 +13,14 @@
 
 <div class="container">
     <h2 style="text-align:center;margin-top:20px;color:black;font-weight:700">Đặt Tour</h2>
-    <form action="#">
+    @using (Html.BeginForm("DatTour", "DatTour", FormMethod.Post))
+    {
         <div class="row">
             <div class="col-25">
                 <label for="fname">Họ và tên</label><label style="color:red">*</label>
             </div>
             <div class="col-75">
-                <input type="text" name="email" placeholder="">
+                <input type="text" name="hoten" value="@Session["UsernameSS"]" readonly="readonly">
             </div>
         </div>
         <div class="row">
@@ -27,7 +28,7 @@
                 <label>Email</label><label style="color:red">*</label>
             </div>
             <div class="col-75">
-                <input type="text" name="SoDienThoai" placeholder="">
+                <input type="text" name="email" placeholder="@Session["EmailUserSS"]" readonly="readonly">
             </div>
         </div>
         <div class="row">
@@ -35,15 +36,27 @@
                 <label>Số điện thoại</label><label style="color:red">*</label>
             </div>
             <div class="col-75">
-                <input type="text" name="SoDienThoai" placeholder="">
+                <input type="text" name="sdt" placeholder="@Session["SDT"]" readonly="readonly">
             </div>
-        </div>
-        <div class="row">
+        </div><div class="row">
             <div class="col-25">
                 <label>Số khách</label><label style="color:red">*</label>
             </div>
             <div class="col-75">
-                <select name="SoNguoi">
+                <select name="songuoilon">
+                    <option value="10">dưới 10 người</option>
+                    <option value="20">dưới 20 người</option>
+                    <option value="30">dưới 30 người</option>
+                    <option value="40">dưới 40 người</option>
+                    <option value="50">dưới 50 người</option>
+                </select>
+            </div>
+        </div><div class="row">
+            <div class="col-25">
+                <label>Số khách</label><label style="color:red">*</label>
+            </div>
+            <div class="col-75">
+                <select name="sotreem">
                     <option value="10">dưới 10 người</option>
                     <option value="20">dưới 20 người</option>
                     <option value="30">dưới 30 người</option>
@@ -52,34 +65,43 @@
                 </select>
             </div>
         </div>
-        <div class="row" style="margin:10px">
+        <input type="hidden" name="idkh" value="@Session["IDUser"]" />
+        <input type="hidden" name="gianguoilon" value="@Model.GiaNguoiLon" />
+        <input type="hidden" name="giatreem" value="@Model.GiaTreEm" />
+        <input type="hidden" name="idsptour" value="@Model.ID_SPTour" />
+            <div class="row" style="margin:10px">
             <input type="submit" value="Submit">
         </div>
-    </form>
+    }
 </div>
+
 <div class="card mb-3" style="max-width: 100%;border:none">
     <div class="row g-0">
         <div class="col-md-1"></div>
         <div class="col-md-3">
-            <img src="~/Images/nhaTrang.jpg" class="img-fluid rounded-start" alt="...">
+            <img src="~/Images/@Model.HinhAnh" class="img-fluid rounded-start" alt="...">
         </div>
         <div class="col-md-7">
             <div class="card-body">
                 <h3 class="card-title">Tên Tour</h3>
                 <h6>
-                    <i class="fa-solid fa-house-chimney"></i>Điểm khởi hành:
+                    <i class="fa-solid fa-house-chimney" style="margin-left:20px"></i>Điểm khởi hành:
+                    @Html.DisplayFor(modelItem => Model.DiemTapTrung)
                 </h6>
                 <h6>
-                    <i class="fa-solid fa-clock"></i>Thời gian:
+                    <i class="fa-solid fa-clock" style="margin-left:20px"></i>Thời gian:
+                    @Html.DisplayFor(modelItem => Model.NgayDi)
                 </h6>
                 <h6>
-                    <i class="fa-solid fa-car-side"></i>Điểm đến:
+                    <i class="fa-solid fa-car-side" style="margin-left:20px"></i>Điểm đến:
+                    @Html.DisplayFor(modelItem => Model.DiemDen)
                 </h6>
             </div>
         </div>
         <div class="col-md-1"></div>
     </div>
 </div>
+
 <div class="card mb-3" style="max-width: 100%;border:none">
     <div class="row g-0">
         <div class="col-md-1"></div>

@@ -83,6 +83,7 @@ namespace TOURDL.Controllers
                 Session["IDUserSS"]=khachhang.ID_KH.ToString();
                 Session["EmailUserSS"]=khachhang.Mail_KH.ToString();
                 Session["UsernameSS"]=khachhang.HoTen_KH.ToString();
+                Session["SDT"]=khachhang.SDT_KH.ToString();
                 return RedirectToAction("DangNhap", "Login");
             }
             return View();
@@ -109,7 +110,7 @@ namespace TOURDL.Controllers
                 Session["EmailUserSS"] = kiemTraDangNhap.Mail_KH.ToString();
                 Session["UsernameSS"] = kiemTraDangNhap.HoTen_KH.ToString();
                 return RedirectToAction
-                    ("Index", "Home",new {id=khachhang.ID_KH});
+                    ("Index", "Home",new {id= Session["IDUser"] });
             }
             else
             {
