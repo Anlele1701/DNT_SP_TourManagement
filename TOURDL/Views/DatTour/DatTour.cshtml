@@ -4,12 +4,11 @@
     ViewBag.Title = "DatTour";
     Layout = "~/Views/Shared/CusLayout.cshtml";
 }
-
+<link href="~/CSS/ModalDatTour.css" rel="stylesheet" />
 <link href="~/CSS/TrangChu.css" rel="stylesheet" />
 <link href="~/CSS/DatTour.css" rel="stylesheet" />
 <link href="~/Content/bootstrap5/bootstrap.css" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
 
 <div class="container">
     <h2 style="text-align:center;margin-top:20px;color:black;font-weight:700">Đặt Tour</h2>
@@ -69,9 +68,39 @@
         <input type="hidden" name="gianguoilon" value="@Model.GiaNguoiLon" />
         <input type="hidden" name="giatreem" value="@Model.GiaTreEm" />
         <input type="hidden" name="idsptour" value="@Model.ID_SPTour" />
+
+        if (Session["IDUser"] != null)
+        {
+            <div class="row" style="margin:10px"><input type="submit" value="Đặt Tour"></div>
+        }
+        else
+        {
             <div class="row" style="margin:10px">
-            <input type="submit" value="Submit">
-        </div>
+                <div class="div-modal" id="myBtn">Đặt Tour</div>
+            </div>
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 style="font-size: 28px; font-weight: bold;">Welcome</h4>
+                        <span class="close">&times;</span>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <h2 style="margin:15px">Vui lòng đăng nhập để đặt tour</h2>
+                            <a href="@Url.Action("DangNhap","Login")" style="padding:15px;">Đăng nhập</a>
+                            <i class="fa-solid fa-right-to-bracket" style="font-size:25px;padding:15px 15px 15px 0px"></i>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <i class="fa-solid fa-clover"></i>
+                        <h5 style="text-align:center!important">Xin cảm ơn!</h5>
+                    </div>
+                </div>
+            </div>
+        }
     }
 </div>
 
@@ -119,3 +148,31 @@
         <div class="col-md-1"></div>
     </div>
 </div>
+
+<script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal
+    btn.onclick = function () {
+        modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>

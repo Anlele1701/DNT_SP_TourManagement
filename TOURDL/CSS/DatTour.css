@@ -44,7 +44,19 @@ input[type=submit] {
     cursor: pointer;
     float: right;
 }
-
+.div-modal {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    text-align:center;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+    .div-modal:hover {
+        background-color: #45a049;
+    }
     input[type=submit]:hover {
         background-color: #45a049;
     }

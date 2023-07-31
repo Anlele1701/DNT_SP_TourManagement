@@ -168,5 +168,26 @@ namespace TOURDL.Controllers
             }
             base.Dispose(disposing);
         }
+        public ActionResult HoaDon(int id)
+        {
+            var data = db.HOADONs.Find(id);
+            return View(data);
+        }
+        public ActionResult DeleteHD(int? id)
+        {           
+            HOADON hOADON = db.HOADONs.Find(id);
+            return View(hOADON);
+        }
+
+        // POST: HOADONs/Delete/5
+        [HttpPost, ActionName("XOA")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmedHD(int id)
+        {
+            HOADON hOADON = db.HOADONs.Find(id);
+            db.HOADONs.Remove(hOADON);
+            db.SaveChanges();
+            return RedirectToAction("Index","Home");
+        }
     }
 }

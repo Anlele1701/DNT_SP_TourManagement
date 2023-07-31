@@ -1,5 +1,7 @@
-﻿using DocumentFormat.OpenXml.Office.CustomUI;
+﻿using DocumentFormat.OpenXml.Drawing.Diagrams;
+using DocumentFormat.OpenXml.Office.CustomUI;
 using DocumentFormat.OpenXml.Office2010.Excel;
+using Microsoft.Ajax.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.ModelConfiguration.Conventions;
@@ -92,7 +94,7 @@ namespace TOURDL.Controllers
                 HOADON hOADON = new HOADON();
                 hOADON.ID_SPTour = form["idsptour"];
                 hOADON.NgayDat = DateTime.Now;
-                hOADON.TinhTrang = "chuaTT";
+                hOADON.TinhTrang = "Chưa TT";
                 hOADON.ID_KH = int.Parse(form["idkh"]);
                 hOADON.SLNguoiLon = int.Parse(form["songuoilon"]);
                 hOADON.SLTreEm = int.Parse(form["sotreem"]);
@@ -101,10 +103,12 @@ namespace TOURDL.Controllers
                 int giaguoilon = int.Parse(form["gianguoilon"]);
                 int giatreem = int.Parse(form["giatreem"]);
                 int tongtien =(slnguoilon * giaguoilon)+(sltreem * giatreem);
+                int soluong=slnguoilon+sltreem;
+                Session["SoLuong"] = soluong;
                 hOADON.TongTienTour = tongtien;
                 db.HOADONs.Add(hOADON);
                 db.SaveChanges();
-                return RedirectToAction("Index","Home");
+                return RedirectToAction("HoaDon","HOADONs",new {id=hOADON.ID_HoaDon});
             }
         }
         //public ActionResult Booking()

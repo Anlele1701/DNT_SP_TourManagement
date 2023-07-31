@@ -77,7 +77,7 @@
     padding: 0px;
     height: auto;
     width: 100%;
-    background-color: rgba(225,225,225,0.1);
+    background-color: #91C8E4;
     -webkit-backdrop-filter: blur(3px);
     backdrop-filter: blur(3px);
 }

@@ -300,7 +300,9 @@
     <Content Include="CSS\ChiTietTour.css" />
     <Content Include="CSS\DanhMucSanPhamVaTour.css" />
     <Content Include="CSS\DatTour.css" />
+    <Content Include="CSS\HoaDon.css" />
     <Content Include="CSS\Login.css" />
+    <Content Include="CSS\ModalDatTour.css" />
     <Content Include="CSS\Profile.css" />
     <Content Include="CSS\Register.css" />
     <Content Include="CSS\TrangChu.css" />
@@ -450,6 +452,8 @@
     <Content Include="w3layout\w3layout\fonts\fontello.woff" />
     <Content Include="Views\DatTour\Index.cshtml" />
     <Content Include="Views\DatTour\Create.cshtml" />
+    <Content Include="Views\HOADONs\HoaDon.cshtml" />
+    <Content Include="Views\HOADONs\DeleteHD.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -38,6 +38,7 @@ namespace TOURDL.Models
         public string CCCD { get; set; }
         [Display(Name ="Số Điện Thoại")]
         [DataType(DataType.PhoneNumber)]
+        [Required(ErrorMessage = "This field is required")]
         public string SDT_KH { get; set; }
         [Display(Name = "Email")]
         [Required(ErrorMessage = "This field is required")]

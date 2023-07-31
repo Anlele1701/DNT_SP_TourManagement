@@ -80,7 +80,7 @@ namespace TOURDL.Controllers
             {
                 db.KHACHHANGs.Add(khachhang);
                 db.SaveChanges();
-                Session["IDUserSS"]=khachhang.ID_KH.ToString();
+                Session["IDUser"]=khachhang.ID_KH.ToString();
                 Session["EmailUserSS"]=khachhang.Mail_KH.ToString();
                 Session["UsernameSS"]=khachhang.HoTen_KH.ToString();
                 Session["SDT"]=khachhang.SDT_KH.ToString();
@@ -109,6 +109,8 @@ namespace TOURDL.Controllers
                 Session["IDUser"] = kiemTraDangNhap.ID_KH;
                 Session["EmailUserSS"] = kiemTraDangNhap.Mail_KH.ToString();
                 Session["UsernameSS"] = kiemTraDangNhap.HoTen_KH.ToString();
+                Session["GioiTinh"] = kiemTraDangNhap.GioiTinh_KH;
+                Session["SDT"] = kiemTraDangNhap.SDT_KH.ToString();
                 return RedirectToAction
                     ("Index", "Home",new {id= Session["IDUser"] });
             }
