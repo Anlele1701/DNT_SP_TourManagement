@@ -20,7 +20,6 @@ namespace TOURDL.Models
         {
             this.HOADONs = new HashSet<HOADON>();
         }
-
         [Display(Name ="ID User")]
         public int ID_KH { get; set; }
         [Display(Name = "Họ Tên")]
@@ -39,6 +38,7 @@ namespace TOURDL.Models
         public string CCCD { get; set; }
         [Display(Name ="Số Điện Thoại")]
         [DataType(DataType.PhoneNumber)]
+        [Required(ErrorMessage = "This field is required")]
         public string SDT_KH { get; set; }
         [Display(Name = "Email")]
         [Required(ErrorMessage = "This field is required")]
@@ -49,4 +49,6 @@ namespace TOURDL.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HOADON> HOADONs { get; set; }
     }
+    
+
 }

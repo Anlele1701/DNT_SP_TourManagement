@@ -11,7 +11,10 @@ namespace TOURDL.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Globalization;
+
     public partial class SPTOUR
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,19 +24,27 @@ namespace TOURDL.Models
         }
     
         public string ID_SPTour { get; set; }
+        [StringLength(100)]
         public string TenSPTour { get; set; }
+        [StringLength(100)]
         public Nullable<int> GiaNguoiLon { get; set; }
         public Nullable<System.DateTime> NgayKhoiHanh { get; set; }
+        [Required]
+        public string NgayDi { set; get; }
+        public string ThoiGianDi { get; set; }
         public Nullable<System.DateTime> NgayKetThuc { get; set; }
+        [Required]
+        public string NgayVe { set; get; }
+        public string ThoiGianVe { get; set; }
         public string MoTa { get; set; }
         public string DiemTapTrung { get; set; }
         public string DiemDen { get; set; }
         public Nullable<int> SoNguoi { get; set; }
+        [Required]
         public string HinhAnh { get; set; }
         public Nullable<int> GiaTreEm { get; set; }
         public Nullable<int> ID_NV { get; set; }
         public string ID_TOUR { get; set; }
-    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HOADON> HOADONs { get; set; }
         public virtual NHANVIEN NHANVIEN { get; set; }

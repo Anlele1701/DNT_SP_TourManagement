@@ -98,9 +98,9 @@
             <div class="main-content">
                 <nav class="navbar navbar-light bg-light" style=" padding: 10px; box-shadow: 5px 0px 10px">
                     <span class="navbar-brand mb-0 h1">ADMIN</span>
-                    @if (Session["Email"] != null)
+                    @if (Session["IDUserAdmin"] != null)
                     {
-                        <span>Xin chào @Session["Email"]</span>
+                        <span>Xin chào @Session["HoTen"]</span>
                     }
                 </nav>
                 <div class="inner">

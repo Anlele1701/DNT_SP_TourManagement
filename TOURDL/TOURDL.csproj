@@ -234,8 +234,10 @@
     <Compile Include="Controllers\KHACHHANGsController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\NHANVIENsController.cs" />
+    <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\SPTOURsController.cs" />
     <Compile Include="Controllers\TOURsController.cs" />
+    <Compile Include="DisplayName.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -298,7 +300,10 @@
     <Content Include="CSS\ChiTietTour.css" />
     <Content Include="CSS\DanhMucSanPhamVaTour.css" />
     <Content Include="CSS\DatTour.css" />
+    <Content Include="CSS\HoaDon.css" />
     <Content Include="CSS\Login.css" />
+    <Content Include="CSS\ModalDatTour.css" />
+    <Content Include="CSS\Profile.css" />
     <Content Include="CSS\Register.css" />
     <Content Include="CSS\TrangChu.css" />
     <Content Include="favicon.ico" />
@@ -371,6 +376,19 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="w3layout\w3layout\css\font-awesome.css" />
+    <Content Include="w3layout\w3layout\css\jquery-ui.css" />
+    <Content Include="w3layout\w3layout\css\style.css" />
+    <Content Include="w3layout\w3layout\css\wickedpicker.css" />
+    <Content Include="w3layout\w3layout\fonts\fontawesome-webfont.svg" />
+    <Content Include="w3layout\w3layout\fonts\fontello.svg" />
+    <Content Include="w3layout\w3layout\images\banner3.jpg" />
+    <Content Include="w3layout\w3layout\images\c-arrows.png" />
+    <Content Include="w3layout\w3layout\index.html" />
+    <Content Include="w3layout\w3layout\js\jquery-2.1.4.min.js" />
+    <Content Include="w3layout\w3layout\js\jquery-ui.js" />
+    <Content Include="w3layout\w3layout\js\wickedpicker.js" />
+    <Content Include="w3layout\w3layout\w3layouts-License.txt" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -422,6 +440,20 @@
     <Content Include="Views\Login\Signup.cshtml" />
     <Content Include="Views\Login\DangNhap.cshtml" />
     <Content Include="Views\Login\KhachHang.cshtml" />
+    <Content Include="Views\Profile\profile.cshtml" />
+    <Content Include="Views\DatTour\Booking.cshtml" />
+    <Content Include="w3layout\w3layout\fonts\fontawesome-webfont.eot" />
+    <Content Include="w3layout\w3layout\fonts\fontawesome-webfont.ttf" />
+    <Content Include="w3layout\w3layout\fonts\fontawesome-webfont.woff" />
+    <Content Include="w3layout\w3layout\fonts\fontawesome-webfont.woff2" />
+    <Content Include="w3layout\w3layout\fonts\FontAwesome.otf" />
+    <Content Include="w3layout\w3layout\fonts\fontello.eot" />
+    <Content Include="w3layout\w3layout\fonts\fontello.ttf" />
+    <Content Include="w3layout\w3layout\fonts\fontello.woff" />
+    <Content Include="Views\DatTour\Index.cshtml" />
+    <Content Include="Views\DatTour\Create.cshtml" />
+    <Content Include="Views\HOADONs\HoaDon.cshtml" />
+    <Content Include="Views\HOADONs\DeleteHD.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
