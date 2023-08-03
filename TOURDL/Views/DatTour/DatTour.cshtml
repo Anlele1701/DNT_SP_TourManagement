@@ -1,5 +1,5 @@
-﻿@model IEnumerable<TOURDL.Models.SPTOUR>
-
+﻿@*@model IEnumerable<TOURDL.Models.SPTOUR>*@
+@model TOURDL.Models.HOADON
 @{
     ViewBag.Title = "DatTour";
     Layout = "~/Views/Shared/CusLayout.cshtml";
@@ -15,7 +15,7 @@
     <form action="#">
         <div class="row">
             <div class="col-25">
-                <label for="fname">Họ và tên</label><label style="color:red">*</label>
+                <label for="fname">Họ và tên</label><label style="color:red"> </label>
             </div>
             <div class="col-75">
                 <input type="text" name="email" placeholder="">
@@ -56,6 +56,7 @@
         </div>
     </form>
 </div>
+    
 @foreach (var item in Model)
 {
 <div class="card mb-3" style="max-width: 100%;border:none">
