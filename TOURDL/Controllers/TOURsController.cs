@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DocumentFormat.OpenXml.Wordprocessing;
+using PagedList;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -124,15 +126,49 @@ namespace TOURDL.Controllers
             }
             base.Dispose(disposing);
         }
+        [HttpGet]
         public ActionResult DanhMucSanPham(string id)
         {
             var data = db.SPTOURs.Where(s => s.ID_TOUR==id);
             return View(data.ToList());
         }
-        public ActionResult DanhMucTour()
+        [HttpGet]
+        public ActionResult DanhMucTour(string name,int? to,int? from,int page=1)
         {
-            var data=db.SPTOURs.ToList();
-            return View(data);
+            page = page < 1 ? 1 : page;
+            int pageSize = 3;
+            var tours = from t in db.SPTOURs select t;
+            if (!string.IsNullOrEmpty(name))
+            {
+                if(to!=null && from!=null)
+                {
+                    tours=tours.Where(x=>x.TenSPTour.StartsWith(name) && x.GiaNguoiLon>=to && x.GiaNguoiLon<=from);
+                }
+                else
+                {
+                    tours = tours.Where(x => x.TenSPTour.StartsWith(name));
+                }
+            }
+            else
+            {
+                if (to != null && from != null)
+                {
+                    tours = tours.Where(x => x.TenSPTour.StartsWith(name) && x.GiaNguoiLon >= to && x.GiaNguoiLon <= from);
+                }
+            }
+            tours = tours.OrderBy(x => x.ID_SPTour);
+            var toursPage = tours.ToPagedList(page, pageSize);
+            return View(toursPage);
         }
+        //[HttpGet]
+        //public ActionResult TimKiem(string name)
+        //{
+        //    var tours = from t in db.SPTOURs select t;
+        //    if (!string.IsNullOrEmpty(name))
+        //    {
+        //        tours=tours.Where(x=>x.TenSPTour.Contains(name));
+        //    }
+        //    return View(tours);
+        //}
     }
 }

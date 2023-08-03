@@ -1,0 +1,85 @@
+﻿@model IEnumerable<TOURDL.Models.HOADON>
+
+@{
+    ViewBag.Title = "TourHistory";
+    Layout = "~/Views/Shared/CusLayout.cshtml";
+}
+<link href="~/CSS/TourHistory.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<h2 style="text-align:center">Lịch sử đặt Tour</h2>
+
+@foreach (var item in Model)
+{
+    <div class="row lichsutour">
+         <div class="col-2">
+             <p>ID Hoá Đơn</p>
+             <div>
+                 HD @Html.DisplayFor(model => item.ID_HoaDon)
+             </div>
+         </div>
+         <div class="col-2">
+             <p>Tên Khách Hàng</p>
+             <div>
+                 @Html.DisplayFor(model=>item.KHACHHANG.HoTen_KH)
+             </div>
+         </div>
+         <div class="col-2">
+             <p>Tên Tour</p>
+             <div>
+                 @Html.DisplayFor(model=>item.SPTOUR.TenSPTour)
+             </div>
+         </div>
+         <div class="col-2">
+             <p>Ngày đặt tour</p>
+             <div>
+                 @Html.DisplayFor(model=>item.NgayDat)
+             </div>
+         </div>
+         <div class="col-2">
+             <p>Tổng tiền tour</p>
+             <div>
+                 @Html.DisplayFor(model=>item.TongTienTour)
+             </div>
+         </div>
+         <div class="col-2">
+             <p>Tình trạng</p>
+             <div>
+                 @Html.DisplayFor(model=>item.TinhTrang)
+             </div>
+         </div>
+    </div>
+    <div class="row lichsutour">
+        <div class="col-8">
+            <img src="~/Images/@item.SPTOUR.HinhAnh" />
+        </div>
+        <div class="col-4">
+            <div class="aDelete">
+                <a href="#myModal" class="trigger-btn" data-toggle="modal">Huỷ Tour</a>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <!-- Modal HTML -->
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog modal-confirm">
+            <div class="modal-content">
+                <div class="modal-header flex-column">
+                    <h4 class="modal-title w-100">Bạn chắc chắn muốn huỷ Tour?</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Nếu bạn huỷ công ty chúng tôi sẽ không chịu trách nhiệm về những khoản phí khi bạn đã thanh toán. Xin cảm ơn!</p>
+                </div>
+                <div class="modal-footer justify-content-center btnDelete">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger" style="text-decoration-line:none!important;color:white;font-weight:bold">@Html.ActionLink("Huỷ", "XoaHD", new { id = item.ID_HoaDon })</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>

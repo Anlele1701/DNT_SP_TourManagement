@@ -24,23 +24,18 @@ namespace TOURDL.Models
         }
     
         public string ID_SPTour { get; set; }
-        [StringLength(100)]
         public string TenSPTour { get; set; }
-        [StringLength(100)]
         public Nullable<int> GiaNguoiLon { get; set; }
         public Nullable<System.DateTime> NgayKhoiHanh { get; set; }
-        [Required]
-        public string NgayDi { set; get; }
-        public string ThoiGianDi { get; set; }
+        //public string NgayDi { set; get; }
+        //public string ThoiGianDi { get; set; }
         public Nullable<System.DateTime> NgayKetThuc { get; set; }
-        [Required]
-        public string NgayVe { set; get; }
-        public string ThoiGianVe { get; set; }
+        //public string NgayVe { set; get; }
+        //public string ThoiGianVe { get; set; }
         public string MoTa { get; set; }
         public string DiemTapTrung { get; set; }
         public string DiemDen { get; set; }
         public Nullable<int> SoNguoi { get; set; }
-        [Required]
         public string HinhAnh { get; set; }
         public Nullable<int> GiaTreEm { get; set; }
         public Nullable<int> ID_NV { get; set; }

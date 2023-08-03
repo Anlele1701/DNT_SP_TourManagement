@@ -151,3 +151,16 @@ h6 {
         -webkit-transition: all 0.3s ease-in-out;
         transition: all 0.3s ease-in-out;
     }
+.col-sm-6 a {
+    text-decoration: none;
+    color: black;
+    word-wrap: break-word;
+}
+.history a {
+    font-weight: bold;
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 5px;
+    background: #5cb85c;
+    color:white;
+}

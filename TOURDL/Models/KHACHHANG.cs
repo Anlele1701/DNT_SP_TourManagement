@@ -9,6 +9,7 @@
 
 namespace TOURDL.Models
 {
+    using Microsoft.SqlServer.Server;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
@@ -21,33 +22,38 @@ namespace TOURDL.Models
             this.HOADONs = new HashSet<HOADON>();
         }
         [Display(Name ="ID User")]
-        public int ID_KH { get; set; }
+        public int ID_KH { get; set; }///////////
         [Display(Name = "Họ Tên")]
         [DataType(DataType.Text)]
         [Required(ErrorMessage = "This field is required")]
-        public string HoTen_KH { get; set; }
-        [Display(Name ="Giới Tính")]
-        public string GioiTinh_KH { get; set; }
+        public string HoTen_KH { get; set; }///////////
+        [Display(Name = "Giới Tính (Nam/Nữ)")]
+        [Required(ErrorMessage = "This field is required")]
+        [RegularExpression("^(Nam|Nữ)$", ErrorMessage = "Please enter 'Nam' or 'Nữ'")]
+        public string GioiTinh_KH { get; set; }///////////
         [Display(Name ="Ngày Sinh")]
-        public Nullable<System.DateTime> NgaySinh_KH { get; set; }
+        [DataType(DataType.Date)]
+
+        public Nullable<System.DateTime> NgaySinh_KH { get; set; }///////////
         [Display(Name ="Mật khẩu")]
         [Required(ErrorMessage = "This field is required")]
         [DataType(DataType.Password)]
-        public string MatKhau { get; set; }
+        public string MatKhau { get; set; }///////////
         [Display(Name ="Căn Cước Công Dân")]
-        public string CCCD { get; set; }
+        [DataType(DataType.Text)]
+        public string CCCD { get; set; }///////////
         [Display(Name ="Số Điện Thoại")]
         [DataType(DataType.PhoneNumber)]
         [Required(ErrorMessage = "This field is required")]
-        public string SDT_KH { get; set; }
+        public string SDT_KH { get; set; }///////////
         [Display(Name = "Email")]
         [Required(ErrorMessage = "This field is required")]
         [DataType(DataType.EmailAddress)]
-        public string Mail_KH { get; set; }
-        public Nullable<int> Diem { get; set; }
-    
+        public string Mail_KH { get; set; }///////////
+        public Nullable<int> Diem { get; set; }///////////
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HOADON> HOADONs { get; set; }
+        public virtual ICollection<HOADON> HOADONs { get; set; }///////////
     }
     
 

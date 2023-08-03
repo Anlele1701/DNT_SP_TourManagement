@@ -4,7 +4,9 @@
     ViewBag.Title = "profile";
     Layout = "~/Views/Shared/CusLayout.cshtml";
 }
-<link rel="stylesheet" href="~/CSS/Profile.css"/>
+<link rel="stylesheet" href="~/CSS/Profile.css" />
+
+
 <div class="page-content page-container" id="page-content">
     <div class="padding">
         <div class="row container d-flex justify-content-center">
@@ -42,30 +44,32 @@
                                 <p class="m-b-20 p-b-5 b-b-default f-w-600">Thông tin cá nhân</p>
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <p class="m-b-10 f-w-600">Email</p>
-                                        <h6 class="text-muted f-w-400" style="text-decoration-line:none;color:black!important;text-overflow:ellipsis">@Html.DisplayFor(model => model.Mail_KH)</h6>
+                                        <p class="m-b-10 f-w-600"><i class="fa-regular fa-envelope" style="padding-right:5px"></i>Email</p>
+                                        <p>
+                                            @Html.DisplayFor(model => model.Mail_KH)
+                                        </p>
                                     </div>
                                     <div class="col-sm-6">
-                                        <p class="m-b-10 f-w-600">Phone</p>
-                                        <h6 class="text-muted f-w-400">@Html.DisplayFor(model => model.SDT_KH)</h6>
+                                        <p class="m-b-10 f-w-600"><i class="fa-solid fa-mobile-screen" style="padding-right:5px"></i>Phone</p>
+                                        <h6 class="text-muted f-w-400">+84 | @Html.DisplayFor(model => model.SDT_KH)</h6>
                                     </div>
                                 </div>
-                                <br />
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <p class="m-b-10 f-w-600">Giới tính</p>
+                                        <p class="m-b-10 f-w-600"><i class="fa-solid fa-venus-mars" style="padding-right:5px"></i>Giới tính</p>
                                         <h6 class="text-muted f-w-400">@Html.DisplayFor(model => model.GioiTinh_KH)</h6>
                                     </div>
                                     <div class="col-sm-6">
-                                        <p class="m-b-10 f-w-600">CCCD</p>
+                                        <p class="m-b-10 f-w-600"><i class="fa-regular fa-address-card" style="padding-right:5px"></i>CCCD</p>
                                         <h6 class="text-muted f-w-400">@Html.DisplayFor(model => model.CCCD)</h6>
                                     </div>
                                 </div>
-                                <ul class="social-link list-unstyled m-t-40 m-b-10">
-                                    <li><a href="#!" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="facebook" data-abc="true"><i class="mdi mdi-facebook feather icon-facebook facebook" aria-hidden="true"></i></a></li>
-                                    <li><a href="#!" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="twitter" data-abc="true"><i class="mdi mdi-twitter feather icon-twitter twitter" aria-hidden="true"></i></a></li>
-                                    <li><a href="#!" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="instagram" data-abc="true"><i class="mdi mdi-instagram feather icon-instagram instagram" aria-hidden="true"></i></a></li>
-                                </ul>
+                                <hr />
+                                <div class="row">
+                                    <div class="col-sm-6 history">
+                                        <a href="@Url.Action("TourHistory", "HOADONs", new { id = Session["IDUser"] })">Lịch sử tour đã đặt</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

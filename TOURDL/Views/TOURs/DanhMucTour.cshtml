@@ -1,5 +1,5 @@
-﻿@model IEnumerable<TOURDL.Models.SPTOUR>
-
+﻿@model PagedList.IPagedList<TOURDL.Models.SPTOUR>
+@using PagedList.Mvc
 @{
     ViewBag.Title = "DanhMucTour";
     Layout = "~/Views/Shared/CusLayout.cshtml";
@@ -8,10 +8,21 @@
 <link rel="stylesheet" href="~/CSS/DanhMucSanPhamVaTour.css" />
 <div class="head">
     @*<img id="hero-image" src="~/Images/bua/pic2.jpg"/>*@
-    <div style="text-align:center;font-size:40px;font-weight:bold;text-transform:uppercase;margin-top:20px; z-index:10; position:absolute; bottom:5%;left:5%;color:white;z-index:5;">trang chủ / Danh mục tour</div>
+    <div style="text-align:center;font-size:40px;font-weight:bold;text-transform:uppercase;margin-top:20px; z-index:1; position:absolute; bottom:5%;left:5%;color:white">trang chủ / Danh mục tour</div>
     <video autoplay loop muted plays-inline class="hero-image"><source src="~/Images/ocean.mp4" /></video>
 
 </div>
+<form asp-action="DanhMucTour" method="get" class="form-inline">
+    <input type="text" name="name" placeholder="Nhập tên tour" />
+    <i class="fa-solid fa-magnifying-glass"></i>
+
+    <input type="number" name="to" placeholder="Giá từ" />
+    <i class="fa-solid fa-up-long"></i>
+
+    <input type="number" name="from" placeholder="Đến" />
+    <i class="fa-solid fa-down-long"></i>
+    <button><i style="margin:5px" class="fa-solid fa-magnifying-glass"></i>Search</button>
+</form>
 <div>
     @foreach (var item in Model)
     {
@@ -35,4 +46,6 @@
         </div>
     }
 </div>
-
+<div class="pagination">
+    @Html.PagedListPager(Model, page => Url.Action("DanhMucTour", new { page, name = Request.QueryString["name"], from = Request.QueryString["from"], to = Request.QueryString["to"] }))
+</div>

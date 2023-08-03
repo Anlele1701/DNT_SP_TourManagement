@@ -34,10 +34,10 @@
                             <a class="nav-link" href="@Url.Action("DanhMucTour","TOURs")">Danh mục Tour</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#DichVu">Dịch vụ</a>
+                            <a class="nav-link" href="#">Dịch vụ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#About">Về chúng tôi</a>
+                            <a class="nav-link" href="@Url.Action("About","Home")">Về chúng tôi</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav me-auto" style="color:white;float:right!important">
@@ -73,7 +73,7 @@
 
     <div>@RenderBody()</div>
     <!-- Footer -->
-    <section class="img-fluid">
+    <div class="img-fluid">
         <footer class="bg-secondary text-white">
             <!-- Grid container -->
             <div class="container p-4 bg-secondary">
@@ -146,7 +146,7 @@
             </div>
             <!-- Copyright -->
         </footer>
-    </section>
+    </div>
     <!-- Footer -->
     <script>
         window.addEventListener("load", () => {

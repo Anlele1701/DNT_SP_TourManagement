@@ -1,0 +1,56 @@
+﻿body {
+}
+.div-navbar {
+    text-transform: uppercase;
+    padding: 0px;
+    height: auto;
+    width: 100%;
+    background-image: linear-gradient(to bottom right, #00FFB4 0%, #0EB0DC 48%, #1D43B7 80%, #06006D 100%);
+    padding: 25px 0 25px 0;
+}
+
+.nav-item .nav-link:hover {
+    color: white;
+    font-weight: bold;
+    opacity: 1;
+}
+.aDelete a{
+    text-decoration:none;
+    color:black;
+    font-weight:700;
+}
+.lichsutour p {
+    border: 1px solid red;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.lichsutour {
+    margin: 20px;
+    text-align: center;
+}
+
+    .lichsutour img {
+        object-fit: cover;
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+    }
+    .lichsutour a {
+        text-align: center;
+        background:red;
+        padding:20px;
+        color:white;
+        bottom:50%;
+        left:0;
+        position:absolute
+    }
+        .lichsutour a:hover {
+            text-decoration: none;
+            color: white;
+            background: #5cb85c;
+            transition: 0.5s;
+        }
+        .lichsutour hr{
+            height:5px;
+        }

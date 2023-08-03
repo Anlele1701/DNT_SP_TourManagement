@@ -64,6 +64,9 @@
     <Reference Include="Irony, Version=1.0.11.0, Culture=neutral, PublicKeyToken=ca48ace7223ead47, processorArchitecture=MSIL">
       <HintPath>..\packages\Irony.NetCore.1.0.11\lib\net461\Irony.dll</HintPath>
     </Reference>
+    <Reference Include="JetBrains.Annotations, Version=4242.42.42.42, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\packages\JetBrains.Annotations.2022.3.1\lib\net20\JetBrains.Annotations.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
       <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
@@ -214,6 +217,9 @@
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
+    <Reference Include="X.PagedList, Version=8.4.7.0, Culture=neutral, PublicKeyToken=525ccaa9023f010c, processorArchitecture=MSIL">
+      <HintPath>..\packages\X.PagedList.8.4.7\lib\netstandard2.0\X.PagedList.dll</HintPath>
+    </Reference>
     <Reference Include="XLParser, Version=1.5.2.0, Culture=neutral, PublicKeyToken=63397e1e46bb91b4, processorArchitecture=MSIL">
       <HintPath>..\packages\XLParser.1.5.2\lib\net461\XLParser.dll</HintPath>
     </Reference>
@@ -237,7 +243,6 @@
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\SPTOURsController.cs" />
     <Compile Include="Controllers\TOURsController.cs" />
-    <Compile Include="DisplayName.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -295,6 +300,7 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\PagedList.css" />
+    <Content Include="CSS\AboutUs.css" />
     <Content Include="CSS\AdminAdd.css" />
     <Content Include="CSS\AdminLayout.css" />
     <Content Include="CSS\ChiTietTour.css" />
@@ -305,15 +311,23 @@
     <Content Include="CSS\ModalDatTour.css" />
     <Content Include="CSS\Profile.css" />
     <Content Include="CSS\Register.css" />
+    <Content Include="CSS\ThongBaoXoa.css" />
+    <Content Include="CSS\TourHistory.css" />
     <Content Include="CSS\TrangChu.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\An.jpg" />
+    <Content Include="Images\An.png" />
     <Content Include="Images\banner.png" />
     <Content Include="Images\beautiful-girl-standing-boat-looking-mountains-ratchaprapha-dam-khao-sok-national-park-surat-thani-province-thailand.jpg" />
+    <Content Include="Images\banner1.jpg" />
     <Content Include="Images\bua\pic2.jpg" />
     <Content Include="Images\bua\pic1.jpg" />
     <Content Include="Images\Dalat.jpg" />
+    <Content Include="Images\dalat1.jpg" />
+    <Content Include="Images\dalat2.jpg" />
+    <Content Include="Images\dalat3.jpg" />
     <Content Include="Images\DaLatMain.jpg" />
     <Content Include="Images\dalattour.jpg" />
     <Content Include="Images\dalatvn.jpg" />
@@ -324,21 +338,40 @@
     <Content Include="Images\gmail.png" />
     <Content Include="Images\halongbay.jpg" />
     <Content Include="Images\Hanoi.jpg" />
+    <Content Include="Images\hanoi2.jpg" />
+    <Content Include="Images\hanoi3.jpg" />
     <Content Include="Images\HoXuanHuong.jpg" />
     <Content Include="Images\hue.jpg" />
+    <Content Include="Images\Huy.jpg" />
     <Content Include="Images\logo-visa.png" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\logo3.jpg" />
     <Content Include="Images\Main.png" />
     <Content Include="Images\momo.jpg" />
+    <Content Include="Images\Ngoc.jpg" />
+    <Content Include="Images\Ngoc.png" />
     <Content Include="Images\nhaTrang.jpg" />
     <Content Include="Images\ocean.mp4" />
     <Content Include="Images\ocean_-_65560 %28720p%29.mp4" />
     <Content Include="Images\saigon.jpg" />
+    <Content Include="Images\sapa.jpg" />
+    <Content Include="Images\sapa1.jpg" />
+    <Content Include="Images\banner2.jpg" />
     <Content Include="Images\suongmudalat.jpg" />
+    <Content Include="Images\TA.jpg" />
+    <Content Include="Images\Thanh.jpg" />
+    <Content Include="Images\tphcm1.jpg" />
+    <Content Include="Images\tphcm2.jpg" />
+    <Content Include="Images\tphcm3.jpg" />
     <Content Include="Images\TravelDalat.png" />
+    <Content Include="Images\TuanAnh.png" />
+    <Content Include="Images\vacations-1354563.jpg" />
+    <Content Include="Images\banner4.jpg" />
     <Content Include="Images\videoHome.mp4" />
+    <Content Include="Images\vietnam_-_25171 %28Original%29.mp4" />
     <Content Include="Images\visa.jpg" />
+    <Content Include="Images\Vy.jpg" />
+    <Content Include="Images\Vy.png" />
     <Content Include="Images\zalo.jpg" />
     <Content Include="Images\Hanoi1.jpg" />
     <Content Include="Models\TourDL.Context.tt">
@@ -351,6 +384,7 @@
       <DependentUpon>TourDL.edmx</DependentUpon>
       <LastGenOutput>TourDL.cs</LastGenOutput>
     </Content>
+    <Content Include="Scripts\AnimationAboutUs.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -454,6 +488,8 @@
     <Content Include="Views\DatTour\Create.cshtml" />
     <Content Include="Views\HOADONs\HoaDon.cshtml" />
     <Content Include="Views\HOADONs\DeleteHD.cshtml" />
+    <Content Include="Views\HOADONs\XoaHD.cshtml" />
+    <Content Include="Views\HOADONs\TourHistory.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
