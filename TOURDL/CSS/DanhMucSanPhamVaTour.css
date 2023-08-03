@@ -11,7 +11,6 @@
     position:absolute;
     z-index:3;
 }
-
 .nav-item .nav-link {
     color: white;
 }
@@ -30,7 +29,7 @@
 
 .img-border {
     border-radius: 10px;
-}
+}   
 
 .card-list-tour p {
     font-style: italic;

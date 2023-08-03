@@ -28,20 +28,22 @@
     {
         <div class="card mb-3" style="border:none;width:auto;height:auto;margin:20px">
             <div class="row g-0 border-card">
+                <div class="col-md-1"></div>
                 <div class="col-md-4">
                     <img src="~/Images/@item.HinhAnh" class="img-fluid rounded-start img-border" alt="...">
                 </div>
-                <div class="col-md-4 card-list-tour card-list-tour-text-center">
+                <div class="col-md-3 card-list-tour card-list-tour-text-center">
                     <h3>@Html.DisplayFor(modelItem => item.TenSPTour)</h3>
                     <p>@Html.DisplayFor(modelItem => item.MoTa)</p>
                     <div>
                         <a class="hover-link" style="background:none;font-size:20px;margin:0 20px 0 20px" href="@Url.Action("ChiTietTour","ChiTietTour", new {id=item.ID_SPTour})">Xem chi tiết</a>
                     </div>
                 </div>
-                <div class="col-md-4 card-list-tour card-list-tour-text-center">
+                <div class="col-md-3 card-list-tour card-list-tour-text-center">
                     <a style="color:white">Giá: @Html.DisplayFor(modelItem => item.GiaNguoiLon)VND</a>
                     @*<a href="@Url.Action("Index", "ChiTietTour", new {id=item.ID_SPTour})">Giá</a>*@
                 </div>
+                <div class="col-md-1"></div>
             </div>
         </div>
     }
