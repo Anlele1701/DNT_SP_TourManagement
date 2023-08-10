@@ -9,77 +9,84 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<h2 style="text-align:center">Lịch sử đặt Tour</h2>
+<h2 style="text-align:center;font-weight:bolder">Lịch sử đặt Tour</h2>
 
-@foreach (var item in Model)
-{
-    <div class="row lichsutour">
-         <div class="col-2">
-             <p>ID Hoá Đơn</p>
-             <div>
-                 HD @Html.DisplayFor(model => item.ID_HoaDon)
-             </div>
-         </div>
-         <div class="col-2">
-             <p>Tên Khách Hàng</p>
-             <div>
-                 @Html.DisplayFor(model=>item.KHACHHANG.HoTen_KH)
-             </div>
-         </div>
-         <div class="col-2">
-             <p>Tên Tour</p>
-             <div>
-                 @Html.DisplayFor(model=>item.SPTOUR.TenSPTour)
-             </div>
-         </div>
-         <div class="col-2">
-             <p>Ngày đặt tour</p>
-             <div>
-                 @Html.DisplayFor(model=>item.NgayDat)
-             </div>
-         </div>
-         <div class="col-2">
-             <p>Tổng tiền tour</p>
-             <div>
-                 @Html.DisplayFor(model=>item.TongTienTour)
-             </div>
-         </div>
-         <div class="col-2">
-             <p>Tình trạng</p>
-             <div>
-                 @Html.DisplayFor(model=>item.TinhTrang)
-             </div>
-         </div>
-    </div>
-    <div class="row lichsutour">
-        <div class="col-8">
-            <img src="~/Images/@item.SPTOUR.HinhAnh" />
-        </div>
-        <div class="col-4">
-            <div class="aDelete">
-                <a href="#myModal" class="trigger-btn" data-toggle="modal">Huỷ Tour</a>
-            </div>
-        </div>
-    </div>
-    <hr />
-    <!-- Modal HTML -->
-    <div id="myModal" class="modal fade">
-        <div class="modal-dialog modal-confirm">
-            <div class="modal-content">
-                <div class="modal-header flex-column">
-                    <h4 class="modal-title w-100">Bạn chắc chắn muốn huỷ Tour?</h4>
+
+<div class="container p-5">
+    <div class="row row-cols-1 row-cols-md-4 g-5">
+        @foreach (var item in Model)
+        {
+            <div class="invoice-card">
+                <div class="invoice-title">
+                    <div id="main-title">
+                        <h4>Hoá đơn</h4>
+                        <span>#ID @Html.DisplayFor(modelItem => item.ID_HoaDon)</span>
+                    </div>
+
+                    <span id="date">@Html.DisplayFor(modelItem => item.NgayDat)</span>
+                    <span>@Html.DisplayFor(modelItem => item.KHACHHANG.HoTen_KH)</span>
+                    <br />
+                    <span>Phone: @Session["SDT"]</span>
                 </div>
-                <div class="modal-body">
-                    <p>Nếu bạn huỷ công ty chúng tôi sẽ không chịu trách nhiệm về những khoản phí khi bạn đã thanh toán. Xin cảm ơn!</p>
+
+                <div class="invoice-details">
+                    <table class="invoice-table">
+                        <thead>
+                            <tr>
+                                <td>Tour</td>
+                                <td>Người Lớn:Trẻ em</td>
+                                <td>Giá/vé</td>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr class="row-data">
+                                <td>@Html.DisplayFor(modelItem => item.SPTOUR.TenSPTour)</td>
+                                <td id="unit">@Html.DisplayFor(modelItem => item.SLNguoiLon) : @Html.DisplayFor(modelItem => item.SLTreEm)</td>
+                                <td>@Html.DisplayFor(modelItem => item.SPTOUR.GiaNguoiLon)</td>
+                            </tr>
+
+                            <tr class="calc-row">
+                                <td colspan="2">Total</td>
+                                <td>@Html.DisplayFor(modelItem => item.TongTienTour)</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-                <div class="modal-footer justify-content-center btnDelete">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-danger" style="text-decoration-line:none!important;color:white;font-weight:bold">@Html.ActionLink("Huỷ", "XoaHD", new { id = item.ID_HoaDon })</button>
+
+                <div class="invoice-footer">
+                    <button type="button" class="btn btn-secondary" style="font-weight:bold;color:white;margin-right:20px" data-toggle="modal" data-target="#exampleModal">
+                        Huỷ
+                    </button>
+                    @*<button class="btn btn-secondary" id="later"><a style="text-decoration:none;color:white;font-weight:bold" href="#exampleModal" class="trigger-btn" data-toggle="modal">Huỷ</a></button>*@
+                    <button class="btn btn-primary" style="font-weight:bold;color:white">Thanh Toán</button>
                 </div>
             </div>
-        </div>
+            <div id="exampleModal" class="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title w-100" id="exampleModalLabel">Bạn chắc chắn muốn huỷ Tour ?</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Nếu bạn huỷ công ty chúng tôi sẽ không chịu trách nhiệm về những khoản phí khi bạn đã thanh toán. Xin cảm ơn!</p>
+                        </div>
+                        <div class="modal-footer" >
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-secondary" style="background: #C70039;">@Html.ActionLink("Huỷ", "XoaHD", new { id = item.ID_HoaDon })</button>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        }
+
     </div>
-}
+
+</div>
+
+
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>

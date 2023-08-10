@@ -4,6 +4,7 @@ using DocumentFormat.OpenXml.Office2010.Excel;
 using Microsoft.Ajax.Utilities;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Threading.Tasks;
@@ -111,6 +112,11 @@ namespace TOURDL.Controllers
                 return RedirectToAction("HoaDon","HOADONs",new {id=hOADON.ID_HoaDon});
             }
         }
+        public ActionResult Checkout(int id)
+        {
+            var data = db.HOADONs.Find(id);
+            return View(data);
+        }
         //public ActionResult Booking()
         //{
 
@@ -123,7 +129,7 @@ namespace TOURDL.Controllers
         //    {
         //        ViewBag.Notification = "Hoá đơn đã có";
         //    }
-        //    else
+        //    elses
         //    {
         //        db.HOADONs.Add(hoadon);
         //        db.SaveChanges();

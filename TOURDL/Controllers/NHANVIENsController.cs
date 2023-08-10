@@ -1,10 +1,14 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.SqlClient;
+using System.Globalization;
 using System.Linq;
 using System.Net;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 using TOURDL.Models;
 
@@ -122,6 +126,49 @@ namespace TOURDL.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+        public ActionResult Charts()
+        {
+            var data = db.HOADONs.ToList();
+            var count=data.Count;
+            var sum = data.Sum(s=>s.TongTienTour);
+            var labels = count;
+            var duLieu = sum;
+
+            ViewBag.Labels = labels;
+            ViewBag.Revenue = duLieu;
+
+            return View();
+        }
+        public ActionResult GetData()
+        {
+            TourDLEntities context=new TourDLEntities();
+
+            var query = context.HOADONs.Include("SPTOUR").GroupBy(p => p.SPTOUR.TenSPTour)
+                .Select(g => new { name = g.Key, count = g.Sum(w=>w.TongTienTour) }).ToList();//
+            return Json(query,JsonRequestBehavior.AllowGet);
+        }
+        public ActionResult DashBoard()
+        {
+            var hoadons = db.HOADONs.ToList();
+            int total = 0;
+
+            foreach (var hoadon in hoadons)
+            {
+                total+=(int)hoadon.TongTienTour;
+                string idsptour = hoadon.ID_SPTour;
+                var spTour = hoadon.SPTOUR;
+
+                if (spTour!=null)
+                {
+                    string spTourName = spTour.TenSPTour;
+                    int spTourTien = total;
+                }
+            }
+
+            
+
+            return View();
         }
     }
 }

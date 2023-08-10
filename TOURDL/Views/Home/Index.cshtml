@@ -89,8 +89,8 @@
                 </div>
             </div>
     </section>
-    <section class="animate-css sec-2 show-animate">
-        <div class="card mb-3 card-tour pt-5 py-5" style="margin:0px 20px;">
+    <section class="animate-css sec-2">
+        <div class="card mb-3 card-tour pt-5 py-5">
             <div class="row g-0 ">
                 <div class="col-md-1"></div>
                 <div class="col-md-5 animate ">
@@ -116,28 +116,40 @@
     <div class="back-image-gradients">
         @*<img class="img-fluid back-image" style="width:100vw;height:300px; filter:blur(1px);" src="~/Images/beautiful-girl-standing-boat-looking-mountains-ratchaprapha-dam-khao-sok-national-park-surat-thani-province-thailand.jpg" />*@
     </div>
-    <div class="row back-image-text" style="font-size:50px; top:100px !important">
-        <div class="col-3">
-            <i class="fa-solid fa-plane-departure" style="color:#0026ff"></i>
-            <p>Hơn 7800 Tour đã hoàn thành</p>
+    <div class="row back-image-text" style="font-size:50px; top:100px !important;">
+        <div class="col-3 hover-icon">
+            <a href="@Url.Action("About","Home")">
+                <i class="fa-solid fa-plane-departure" style="color:#0026ff"></i>
+                <p>Hơn 7800 Tour đã hoàn thành</p>
+            </a>
+            
         </div>
-        <div class="col-3">
-            <i class="fa-sharp fa-solid fa-star" style="color:yellow"></i>
-            <p>Hơn 3800 lượt đánh giá 5 sao</p>
+        <div class="col-3 hover-icon">
+            <a href="@Url.Action("About","Home")">
+                <i class="fa-sharp fa-solid fa-star" style="color:yellow"></i>
+                <p>Hơn 3800 lượt đánh giá 5 sao</p>
+            </a>
+            
         </div>
-        <div class="col-3">
-            <i class="fa-solid fa-route" style="color:#0094ff"></i>
-            <p>Hơn 1200 địa điểm du lịch</p>
+        <div class="col-3 hover-icon">
+            <a href="@Url.Action("About","Home")">
+                <i class="fa-solid fa-route" style="color:#0094ff"></i>
+                <p>Hơn 1200 địa điểm du lịch</p>
+            </a>
+            
         </div>
-        <div class="col-3" style="color:#ffffff">
-            <i class="fa-solid fa-comments"></i>
-            <p>Giải đáp hơn 13400 thắc mắc</p>
+        <div class="col-3 hover-icon" style="color:#f9f9f9">
+            <a href="@Url.Action("About","Home")">
+                <i class="fa-solid fa-comments"></i>
+                <p>Giải đáp hơn 13400 thắc mắc</p>
+            </a>
+            
         </div>
     </div>
 </div>
 <div class="animate-css">
     <section class="animate-css sec-4">
-        <div class="position-relative marquee-container py-5 animate" style="margin:16px; border-bottom:solid;border-color:gainsboro;border-width:thin;">
+        <div class="position-relative marquee-container animate" style=" border-bottom:solid;border-color:gainsboro;border-width:thin;">
             <div class="marquee d-flex justify-content-around" style="font-size: 55px;font-weight:bold;text-transform:uppercase; ">
                 <span>
                     Khám phá thế giới cùng chúng tôi<span class="showRight-animate" style="--i: 1; background: #fff"></span>

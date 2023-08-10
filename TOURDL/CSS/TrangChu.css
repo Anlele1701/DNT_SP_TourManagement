@@ -1,4 +1,5 @@
-﻿body {
+﻿    @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+body {
     margin: 0 auto;
     padding: 0;
     width: auto;
@@ -569,7 +570,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 70vh;
+    min-height: 100vh;
     flex-direction: column;
     overflow-x: hidden;
 }
@@ -668,3 +669,60 @@ section.show-animate .animate {
         color: black;
         opacity: 0.8;
     }
+
+
+.login-css{
+
+}
+.sign-out {
+    background: #116D6E;
+    padding:0px 15px;
+    border:1px solid none;
+    opacity:0.7;
+    border-radius:8px;
+    transition:0.8s;
+}
+.sign-out a{
+    color:white;
+    font-weight:bold;
+    transition:0.8s;
+}
+.sign-out:hover{
+    transform:scale(1.2);
+    opacity:1;
+}
+.sign-out a:hover {
+    color: white !important;
+}
+.hover-icon{
+    transition: 0.8s;
+    opacity:1;
+}
+    .hover-icon:hover {
+        transform: scale(1.2);
+    }
+.hover-icon a{
+    text-decoration:none!important;
+}
+.sign-up {
+    background: #116D6E;
+    padding: 0px 15px;
+    border: 1px solid none;
+    opacity: 0.7;
+    border-radius: 8px;
+    transition: 0.8s;
+}
+.sign-up a {
+    color: white;
+    font-weight: bold;
+    transition: 0.8s;
+    opacity:1;
+}
+
+.sign-up:hover {
+    transform: scale(1.2);
+    opacity: 1;
+}
+.sign-up a{
+    color:white!important;
+}

@@ -5,8 +5,7 @@
     padding: 0px;
     height: auto;
     width: 100%;
-    background-image: linear-gradient(to bottom right, #00FFB4 0%, #0EB0DC 48%, #1D43B7 80%, #06006D 100%);
-    padding: 25px 0 25px 0;
+    background: #8CABFF;
 }
 
 .nav-item .nav-link:hover {
@@ -54,3 +53,133 @@
         .lichsutour hr{
             height:5px;
         }
+
+
+
+        /*------------------------------*/
+.invoice-card {
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 10px 30px 5px rgba(0, 0, 0, 0.15);
+  margin:10px 40px;  
+}
+
+.invoice-card > div {
+  margin: 5px 0px;
+}
+
+.invoice-title {
+  flex: 3;
+}
+
+.invoice-title #date {
+  display: block;
+  margin: 8px 0;
+  font-size: 12px;
+}
+
+.invoice-title #main-title {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2em;
+}
+
+.invoice-title #main-title h4 {
+  letter-spacing: 2.5px;
+}
+
+.invoice-title span {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.invoice-details {
+  flex: 1;
+  border-top: 0.5px dashed grey;
+  border-bottom: 0.5px dashed grey;
+  display: flex;
+  align-items: center;
+}
+
+.invoice-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.invoice-table thead tr td {
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: grey;
+  padding: 8px 0;
+}
+
+.invoice-table thead tr td:nth-last-child(1),
+.row-data td:nth-last-child(1),
+.calc-row td:nth-last-child(1)
+{
+  text-align: right;
+}
+
+.invoice-table tbody tr td {
+    padding: 8px 0;
+    letter-spacing: 0;
+}
+
+.invoice-table .row-data #unit {
+  text-align: center;
+}
+
+.invoice-table .row-data span {
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.invoice-footer {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.invoice-footer #later {
+  margin-right: 5px;
+}
+
+.btn {
+  border: none;
+  padding: 5px 0px;
+  background: none;
+  cursor: pointer;
+  letter-spacing: 1px;
+  outline: none;
+}
+
+.btn.btn-secondary {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.btn.btn-primary {
+  color: var(--primary-color);
+}
+
+.btn#later {
+  margin-right: 2em;
+}
+
+.center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.modal-footer a {
+    text-decoration: none !important;
+    color: black;
+    font-weight: bold;
+}
+.modal-footer a:hover {
+    text-decoration: none !important;
+    color: white;
+}

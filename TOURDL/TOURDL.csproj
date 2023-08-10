@@ -310,7 +310,6 @@
     <Content Include="CSS\Login.css" />
     <Content Include="CSS\ModalDatTour.css" />
     <Content Include="CSS\Profile.css" />
-    <Content Include="CSS\Register.css" />
     <Content Include="CSS\ThongBaoXoa.css" />
     <Content Include="CSS\TourHistory.css" />
     <Content Include="CSS\TrangChu.css" />
@@ -400,6 +399,7 @@
     </Content>
     <Content Include="libman.json" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\DashBoard.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
@@ -490,6 +490,10 @@
     <Content Include="Views\HOADONs\DeleteHD.cshtml" />
     <Content Include="Views\HOADONs\XoaHD.cshtml" />
     <Content Include="Views\HOADONs\TourHistory.cshtml" />
+    <Content Include="Views\DatTour\Checkout.cshtml" />
+    <Content Include="Views\NHANVIENs\Charts.cshtml" />
+    <Content Include="Views\NHANVIENs\DashBoard.cshtml" />
+    <Content Include="Views\NHANVIENs\GetData.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
