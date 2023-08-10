@@ -9,28 +9,22 @@
     @*<img id="hero-image" src="~/Images/bua/pic2.jpg"/>*@
     <div style="text-align:center;font-size:40px;font-weight:bold;text-transform:uppercase;margin-top:20px; z-index:10; position:absolute; bottom:5%;left:5%;color:white;">trang chủ / Danh mục tour</div>
     <video autoplay loop muted plays-inline class="hero-image"><source src="~/Images/ocean.mp4" /></video>
-
 </div>
-<div>
-    @foreach (var item in Model)
-    {
-        <div class="card mb-3">
-            <div class="row g-0 border-card">
-                <div class="col-md-4">
-                    <img src="~/Images/@item.HinhAnh" class="img-fluid rounded-start img-border" alt="...">
-                </div>
-                <div class="col-md-4 card-list-tour card-list-tour-text-center">
-                    <h3>@Html.DisplayFor(modelItem => item.TenSPTour)</h3>
-                    <p>@Html.DisplayFor(modelItem => item.MoTa)</p>
-                    <div>
-                        <a class="hover-link" style="background:none;font-size:20px;margin:0 20px 0 20px" href="@Url.Action("ChiTietTour","ChiTietTour", new {id=item.ID_SPTour})">Xem chi tiết</a>
+
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        @foreach (var item in Model)
+        {
+            <div class="col col-danhmuctour">
+                <div class="card"style="margin:20px 40px;border-radius:15px;box-shadow:1px 0px 5px #808080">
+                    <img class="card-img-top" src="~/Images/@item.HinhAnh" alt="Card image cap">
+                    <div class="card-body" style="text-align:left;">
+                        <h5 class="card-title">@Html.DisplayFor(modelItem => item.TenSPTour)</h5>
+                        <p class="card-text">@Html.DisplayFor(modelItem => item.GiaNguoiLon)VND</p>
+                        <a href="@Url.Action("ChiTietTour", "ChiTietTour", new { id = item.ID_SPTour })" class="btn btn-primary">Xem Chi Tiết</a>
                     </div>
                 </div>
-                <div class="col-md-4 card-list-tour card-list-tour-text-center">
-                    <a style="color:white">Giá: @Html.DisplayFor(modelItem => item.GiaNguoiLon)VND</a>
-                    @*<a href="@Url.Action("Index", "ChiTietTour", new {id=item.ID_SPTour})">Giá</a>*@
-                </div>
             </div>
-        </div>
-    }
+        }
+    </div>
 </div>

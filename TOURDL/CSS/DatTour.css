@@ -7,7 +7,7 @@
     padding: 0px;
     height: auto;
     width: 100%;
-    background-image: linear-gradient(to bottom right, #00FFB4 0%, #0EB0DC 48%, #1D43B7 80%, #06006D 100%);
+    background: #8CABFF;
 }
 
 .nav-item .nav-link:hover {
@@ -63,7 +63,6 @@ input[type=submit] {
 
 .container {
     border-radius: 5px;
-    padding: 20px;
 }
 
 /* Clear floats after the columns */

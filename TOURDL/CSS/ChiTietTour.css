@@ -15,8 +15,10 @@ img {
     padding: 0px;
     height: auto;
     width: 100%;
-    background-image: linear-gradient(to bottom right, #00FFB4 0%, #0EB0DC 48%, #1D43B7 80%, #06006D 100%);
-    padding:25px 0 25px 0;
+    -webkit-backdrop-filter: blur(3px);
+    background: #8CABFF;
+    /*background-color: rgba(225,225,225,0.1);
+    backdrop-filter: blur(3px);*/
 }
 
 .nav-item .nav-link:hover {
@@ -24,10 +26,7 @@ img {
     font-weight: bold;
     opacity: 1;
 }
-.chitiettour h2 {
-    font-weight: bold;
-    text-align: center;
-}
+
 
 .chitiettour h3 {
     font-weight: bold;
@@ -45,12 +44,41 @@ img {
     margin: 16px 0 16px 0;
 }
 .ngoaitour a {
-    width:100%;
-    height:auto;
     border: 2px solid none;
     background: dodgerblue;
     font-size: 24px;
     border-radius: 10px;
     padding:10px;
-    font-weight:bold;
+    font-weight:bold;   
+    transition:1s;
+}
+.ngoaitour a:hover{
+    background:#4800ff;
+}
+.title {
+    font-size: 48px;
+    color: black;
+    font-family:Arial;
+    text-transform:uppercase;
+}
+
+.particletext {
+    position: relative;
+    color: transparent;
+    font-weight: 800;
+    background-color: #1e80db !important;
+    background-position: 50% 50%;
+    background: url(https://i.imgur.com/OLQtRxV.png) repeat-y;
+    -webkit-background-clip: text;
+    animation: slide 2s linear infinite;
+}
+
+@keyframes slide {
+    0% {
+        background-position: 50% 50%;
+    }
+
+    100% {
+        background-position: 60% 100%;
+    }
 }
