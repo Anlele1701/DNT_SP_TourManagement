@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
 using TOURDL.Models;
@@ -89,11 +90,11 @@ namespace TOURDL.Controllers
             {
                 ViewBag.Notification = "Ngày sinh phải nhỏ hơn ngày hiện tại";
             }
-            else if (khachhang.CCCD.Length != 12 && !int.TryParse(khachhang.CCCD,out _))
+            else if (khachhang.CCCD.Length != 12 || !Regex.IsMatch(khachhang.CCCD, @"^[0-9]+$"))
             {
                 ViewBag.Notification = "Căn Cước Công Dân vui lòng nhập đủ 12 số và không bao gồm chữ,kí tự";
             }
-            else if (khachhang.SDT_KH.Length < 10 || khachhang.SDT_KH.Length > 11 || !int.TryParse(khachhang.SDT_KH, out _))
+            else if (khachhang.SDT_KH.Length != 10 || !Regex.IsMatch(khachhang.SDT_KH, @"^[0-9]+$"))
             {
                 ViewBag.Notification = "Số điện thoại phải có từ 10 hoặc 11 số và không bao gồm chữ,kí tự";
             }
