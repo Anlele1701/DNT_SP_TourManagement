@@ -145,8 +145,9 @@ namespace TOURDL.Controllers
             TourDLEntities context=new TourDLEntities();
 
             var query = context.HOADONs.Include("SPTOUR").GroupBy(p => p.SPTOUR.TenSPTour)
-                .Select(g => new { name = g.Key, count = g.Sum(w => w.TongTienTour) }).ToList();//
-            return Json(query,JsonRequestBehavior.AllowGet);
+                .Select(g => new { tensptour = g.Key, countsptour = g.Sum(w => w.TongTienTour) }).ToList();//
+            ViewBag.Values= query;
+            return View();
         }
         public ActionResult ShowData()
         {

@@ -135,8 +135,8 @@ namespace TOURDL.Controllers
         [HttpGet]
         public ActionResult DanhMucTour(string name,int? to,int? from,int page=1)
         {
-            page = page < 1 ? 1 : page;
-            int pageSize = 3;
+            page = page < 1 ? 1 : page;/////
+            int pageSize = 3;/////////
             var tours = from t in db.SPTOURs select t;
             if (!string.IsNullOrEmpty(name))
             {
@@ -157,7 +157,7 @@ namespace TOURDL.Controllers
                 }
             }
             tours = tours.OrderBy(x => x.ID_SPTour);
-            var toursPage = tours.ToPagedList(page, pageSize);
+            var toursPage = tours.ToPagedList(page, pageSize);//////
             return View(toursPage);
         }
         //[HttpGet]
