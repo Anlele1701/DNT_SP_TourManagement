@@ -44,7 +44,5 @@
     }
     </div>
 </div>
-<div class="pagination">
-    @Html.PagedListPager(Model, page => Url.Action("DanhMucTour", new { page, name = Request.QueryString["name"], from = Request.QueryString["from"], to = Request.QueryString["to"] }))
-</div>
+
 

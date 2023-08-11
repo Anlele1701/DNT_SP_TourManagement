@@ -55,13 +55,16 @@ namespace TOURDL.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID_SPTour,TenSPTour,GiaNguoiLon,NgayKhoiHanh,NgayKetThuc,MoTa,DiemTapTrung,DiemDen,SoNguoi,HinhAnh,GiaTreEm,ID_NV,ID_TOUR")] SPTOUR sPTOUR)
         {
-            if (ModelState.IsValid)
+            if(db.SPTOURs.Any(t=>t.TenSPTour.Equals(sPTOUR.TenSPTour, StringComparison.OrdinalIgnoreCase)))
+            {
+                ModelState.AddModelError("TenSPTour", "Tên tour đã tồn tại");
+            }
+            else if(ModelState.IsValid)
             {
                 db.SPTOURs.Add(sPTOUR);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
             ViewBag.ID_NV = new SelectList(db.NHANVIENs, "ID_NV", "HoTen_NV", sPTOUR.ID_NV);
             ViewBag.ID_TOUR = new SelectList(db.TOURs, "ID_TOUR", "TenTour", sPTOUR.ID_TOUR);
             return View(sPTOUR);
@@ -91,12 +94,17 @@ namespace TOURDL.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ID_SPTour,TenSPTour,GiaNguoiLon,NgayKhoiHanh,NgayKetThuc,MoTa,DiemTapTrung,DiemDen,SoNguoi,HinhAnh,GiaTreEm,ID_NV,ID_TOUR")] SPTOUR sPTOUR)
         {
-            if (ModelState.IsValid)
+            if (db.SPTOURs.Any(t => t.ID_SPTour != sPTOUR.ID_SPTour && t.TenSPTour.Equals(sPTOUR.TenSPTour, StringComparison.OrdinalIgnoreCase)))
+            {
+                ModelState.AddModelError("TenSPTour", "Tên tour đã tồn tại");
+            }
+            else if (ModelState.IsValid)
             {
                 db.Entry(sPTOUR).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+
             ViewBag.ID_NV = new SelectList(db.NHANVIENs, "ID_NV", "HoTen_NV", sPTOUR.ID_NV);
             ViewBag.ID_TOUR = new SelectList(db.TOURs, "ID_TOUR", "TenTour", sPTOUR.ID_TOUR);
             return View(sPTOUR);

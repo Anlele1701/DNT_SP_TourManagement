@@ -726,3 +726,6 @@ section.show-animate .animate {
 .sign-up a{
     color:white!important;
 }
+.dropdown-danhmuc a:hover{
+    transform:scale(1.1);
+}
