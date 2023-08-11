@@ -145,8 +145,28 @@ namespace TOURDL.Controllers
             TourDLEntities context=new TourDLEntities();
 
             var query = context.HOADONs.Include("SPTOUR").GroupBy(p => p.SPTOUR.TenSPTour)
-                .Select(g => new { name = g.Key, count = g.Sum(w=>w.TongTienTour) }).ToList();//
+                .Select(g => new { name = g.Key, count = g.Sum(w => w.TongTienTour) }).ToList();//
             return Json(query,JsonRequestBehavior.AllowGet);
+        }
+        public ActionResult ShowData()
+        {
+            return View();
+        }
+        [HttpPost]
+        public List<object> GetShowData()
+        {
+            TourDLEntities context = new TourDLEntities();
+
+            List<object> data=new List<object>();
+
+            List<string> labels = context.HOADONs.Select(s => s.SPTOUR.TenSPTour).ToList();
+            data.Add(labels);
+
+            List<int?> price = context.HOADONs.Select(s =>s.TongTienTour).ToList();
+            int? totalPrice = price.Sum();
+            data.Add(totalPrice);
+
+            return data;  
         }
         public ActionResult DashBoard()
         {

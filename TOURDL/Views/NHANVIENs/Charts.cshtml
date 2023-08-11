@@ -3,33 +3,34 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.3.3/chart.min.js" integrity="sha512-fMPPLjF/Xr7Ga0679WgtqoSyfUoQgdt8IIxJymStR5zV3Fyb6B3u/8DcaZ6R6sXexk5Z64bCgo2TYyn760EdcQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <div>
-  <canvas id="myChart"></canvas>
+    <canvas id="myChart"></canvas>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
+
+    var labels = [];
+    var counts = [];
+    for (int i = 0;i<h)
     const ctx = document.getElementById('myChart');
 
-    var labels = @Html.Raw(Json.Encode(ViewBag.Labels));
-    var revenue = @Html.Raw(Json.Encode(ViewBag.Revenue));
-
-  new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: labels,
-      datasets: [{
-          label: 'Doanh Thu',
-          data: revenue,
-        borderWidth: 1
-      }]
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 3, 5, 2, 3],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
         }
-      }
-    }
-  });
-</script>   
+    });
+</script>

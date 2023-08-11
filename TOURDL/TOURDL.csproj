@@ -494,6 +494,7 @@
     <Content Include="Views\NHANVIENs\Charts.cshtml" />
     <Content Include="Views\NHANVIENs\DashBoard.cshtml" />
     <Content Include="Views\NHANVIENs\GetData.cshtml" />
+    <Content Include="Views\NHANVIENs\ShowData.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
