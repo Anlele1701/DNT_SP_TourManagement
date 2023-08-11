@@ -31,7 +31,7 @@ namespace TOURDL.Controllers
         {
             using (TourDLEntities context = new TourDLEntities())
             {
-                int employCount = context.NHANVIENs.Count(); // Đếm số lượng bản ghi trong bảng HOADON
+                int employCount = context.KHACHHANGs.Count(); // Đếm số lượng bản ghi trong bảng HOADON
                 return Json(new { count = employCount }, JsonRequestBehavior.AllowGet);
             }
         }
