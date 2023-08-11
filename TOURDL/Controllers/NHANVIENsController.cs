@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -17,7 +18,6 @@ namespace TOURDL.Controllers
     public class NHANVIENsController : Controller
     {
         private TourDLEntities db = new TourDLEntities();
-
         // GET: NHANVIENs
         public ActionResult Index()
         {
@@ -127,27 +127,17 @@ namespace TOURDL.Controllers
             }
             base.Dispose(disposing);
         }
-        public ActionResult Charts()
-        {
-            var data = db.HOADONs.ToList();
-            var count=data.Count;
-            var sum = data.Sum(s=>s.TongTienTour);
-            var labels = count;
-            var duLieu = sum;
-
-            ViewBag.Labels = labels;
-            ViewBag.Revenue = duLieu;
-
-            return View();
-        }
         public ActionResult GetData()
         {
-            TourDLEntities context=new TourDLEntities();
+            TourDLEntities context = new TourDLEntities();
 
             var query = context.HOADONs.Include("SPTOUR")
                 .GroupBy(p => p.SPTOUR.TenSPTour)
-                .Select(g => new { name = g.Key, count = g.Sum(w => w.TongTienTour)}).ToList();//
-            return Json(query,JsonRequestBehavior.AllowGet);
+                .Select(g => new { name = g.Key, count = g.Sum(w => w.TongTienTour) }).ToList();
+
+            ViewBag.ChartData = query;
+
+            return View();
         }
 
         public ActionResult DashBoard()
