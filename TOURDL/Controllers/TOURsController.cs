@@ -18,9 +18,14 @@ namespace TOURDL.Controllers
         private TourDLEntities db = new TourDLEntities();
 
         // GET: TOURs
-        public ActionResult Index()
+        public ActionResult Index(string SearchString)
         {
-            return View(db.TOURs.ToList());
+            var tour = db.TOURs.ToList();
+            if (!string.IsNullOrEmpty(SearchString))
+            {
+                tour = tour.Where(s => s.TenTour.Contains(SearchString) || s.ID_TOUR.Contains(SearchString)).ToList();
+            }
+            return View(tour);
         }
 
         // GET: TOURs/Details/5

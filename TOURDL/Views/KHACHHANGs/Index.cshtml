@@ -30,6 +30,12 @@
 <div style=" background: #FFFFFF; border-radius:10px; padding:1rem;">
     <h2 style="">QUẢN LÝ KHÁCH HÀNG</h2>
 
+    <form asp-action="Index" method="get" class="form-inline" style="padding-left:140px">
+        <input type="text" name="SearchString" placeholder="gmail hoặc tên" />
+
+        <button><i class="fa-solid fa-magnifying-glass"></i>Search</button>
+    </form>
+
     <p>
         <button>@Html.ActionLink("Thêm mới khách hàng", "Create")</button>
     </p>

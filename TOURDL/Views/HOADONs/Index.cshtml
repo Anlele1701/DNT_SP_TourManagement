@@ -36,6 +36,13 @@
     <button>
         @Html.ActionLink("Xuất excel ", "ExportToExcel")
     </button>
+    <form asp-action="Index" method="get" class="form-inline" style="padding-left:140px">
+        <input type="text" name="SearchString" placeholder="Nhập tên khách hàng" />
+
+        <input type="date" name="SearchDate" placeholder="Nhập ngày đặt"/>
+        
+        <button><i class="fa-solid fa-magnifying-glass"></i>Search</button>
+    </form>
     <p>
         <button>@Html.ActionLink("THÊM HÓA ĐƠN MỚI", "Create")</button>
     </p>
@@ -61,38 +68,38 @@
                     Hành động
                 </th>
             </tr>
-            </thead>
-            @foreach (var item in Model)
-            {
-                <tr style="text-align:center;">
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ID_HoaDon)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ID_KH)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.KHACHHANG.HoTen_KH)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.TinhTrang)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.NgayDat)
-                    </td>
-                    <td style="text-align:center;">
-                        <button>
-                            @Html.ActionLink("Edit ", "Edit", new { id = item.ID_HoaDon }, new { @class = "edit" })
-                        </button>
-                        <button>
-                            @Html.ActionLink("Detail", "Details", new { id = item.ID_HoaDon }, new { @class = "detail" })
-                        </button>
-                        <button>
-                            @Html.ActionLink("Delete", "Delete", new { id = item.ID_HoaDon }, new { @class = "delete" })
-                        </button>
-                    </td>
-                </tr>
-            }
+        </thead>
+        @foreach (var item in Model)
+        {
+            <tr style="text-align:center;">
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID_HoaDon)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID_KH)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KHACHHANG.HoTen_KH)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TinhTrang)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgayDat)
+                </td>
+                <td style="text-align:center;">
+                    <button>
+                        @Html.ActionLink("Edit ", "Edit", new { id = item.ID_HoaDon }, new { @class = "edit" })
+                    </button>
+                    <button>
+                        @Html.ActionLink("Detail", "Details", new { id = item.ID_HoaDon }, new { @class = "detail" })
+                    </button>
+                    <button>
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ID_HoaDon }, new { @class = "delete" })
+                    </button>
+                </td>
+            </tr>
+        }
 
     </table>
 </div>

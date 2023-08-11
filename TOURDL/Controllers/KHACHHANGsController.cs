@@ -15,9 +15,14 @@ namespace TOURDL.Controllers
         private TourDLEntities db = new TourDLEntities();
 
         // GET: KHACHHANGs
-        public ActionResult Index()
+        public ActionResult Index(string SearchString)
         {
-            return View(db.KHACHHANGs.ToList());
+            var kh = db.KHACHHANGs.ToList();
+            if (!string.IsNullOrEmpty(SearchString))
+            {
+                kh= kh.Where(s=>s.HoTen_KH.Contains(SearchString)||s.Mail_KH.Contains(SearchString)).ToList();
+            }
+            return View(kh);
         }
 
         // GET: KHACHHANGs/Details/5
