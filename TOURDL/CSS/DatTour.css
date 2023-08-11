@@ -19,6 +19,9 @@ input {
     border: 10px solid #ccc;
     border-radius: 20px;
 }
+input[type=number]{
+    padding:10px;
+}
 
     input[type=text], select, textarea {
         width: 100%;

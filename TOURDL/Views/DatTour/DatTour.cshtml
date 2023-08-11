@@ -39,29 +39,32 @@
             </div>
         </div><div class="row">
             <div class="col-25">
-                <label>Số khách</label><label style="color:red">*</label>
+                <label>Số người lớn</label><label style="color:red">*</label>
             </div>
             <div class="col-75">
-                <select name="songuoilon">
+                <input type="number" name="songuoilon" min="1" placeholder="Nhập số lượng người lớn">
+                @*<select name="songuoilon">
+
                     <option value="10">dưới 10 người</option>
                     <option value="20">dưới 20 người</option>
                     <option value="30">dưới 30 người</option>
                     <option value="40">dưới 40 người</option>
                     <option value="50">dưới 50 người</option>
-                </select>
+                </select>*@
             </div>
         </div><div class="row">
             <div class="col-25">
-                <label>Số khách</label><label style="color:red">*</label>
+                <label>Số Trẻ em</label><label style="color:red">*</label>
             </div>
             <div class="col-75">
-                <select name="sotreem">
+                <input type="number" name="sotreem" min="0" placeholder="Nhập số lượng trẻ em">
+                @*<select name="sotreem">
                     <option value="10">dưới 10 người</option>
                     <option value="20">dưới 20 người</option>
                     <option value="30">dưới 30 người</option>
                     <option value="40">dưới 40 người</option>
                     <option value="50">dưới 50 người</option>
-                </select>
+                </select>*@
             </div>
         </div>
         <input type="hidden" name="idkh" value="@Session["IDUser"]" />

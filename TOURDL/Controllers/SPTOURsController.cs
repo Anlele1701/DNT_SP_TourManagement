@@ -15,10 +15,14 @@ namespace TOURDL.Controllers
         private TourDLEntities db = new TourDLEntities();
 
         // GET: SPTOURs
-        public ActionResult Index()
+        public ActionResult Index(string SearchString)
         {
-            var sPTOURs = db.SPTOURs.Include(s => s.NHANVIEN).Include(s => s.TOUR);
-            return View(sPTOURs.ToList());
+            var sptour = db.SPTOURs.ToList();
+            if (!string.IsNullOrEmpty(SearchString))
+            {
+                sptour = sptour.Where(s => s.TenSPTour.Contains(SearchString)||s.TOUR.ID_TOUR.Contains(SearchString)).ToList();
+            }
+            return View(sptour);
         }
 
         // GET: SPTOURs/Details/5

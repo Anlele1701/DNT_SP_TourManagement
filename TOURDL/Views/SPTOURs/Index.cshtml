@@ -35,6 +35,11 @@
 
     <h2 style="">QUẢN LÝ SẢN PHẨM TOUR</h2>
 
+    <form asp-action="Index" method="get" class="form-inline" style="padding-left:140px">
+        <input type="text" name="SearchString" placeholder="tên hoặc loại tour" />
+
+        <button><i class="fa-solid fa-magnifying-glass"></i>Search</button>
+    </form>
     <p>
         <button>@Html.ActionLink("THÊM SẢN PHẨM MỚI", "Create")</button>
     </p>
@@ -93,8 +98,8 @@
                     @Html.DisplayFor(modelItem => item.NHANVIEN.HoTen_NV)
                 </td>
                 <td>
-                    <button>  
-                    @Html.ActionLink("Edit", "Edit", new { id = item.ID_SPTour }, new { @class = "edit" })
+                    <button>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ID_SPTour }, new { @class = "edit" })
                     </button>
                     <button>
                         @Html.ActionLink("Details", "Details", new { id = item.ID_SPTour }, new { @class = "detail" })
@@ -107,4 +112,4 @@
         }
 
     </table>
-    </div>
+</div>

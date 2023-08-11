@@ -1,12 +1,10 @@
-﻿    using ClosedXML.Excel;
+﻿using ClosedXML.Excel;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using TOURDL.Models;
 
@@ -51,9 +49,17 @@ namespace TOURDL.Controllers
         }
 
         // GET: HOADONs
-        public ActionResult Index()
+        public ActionResult Index(string SearchString,DateTime? SearchDate)
         {
             var hOADONs = db.HOADONs.Include(h => h.KHACHHANG).Include(h => h.SPTOUR);
+            if (!string.IsNullOrEmpty(SearchString))
+            {
+                hOADONs=hOADONs.Where(s=>s.KHACHHANG.SDT_KH.Contains(SearchString)||s.KHACHHANG.HoTen_KH.Contains(SearchString));
+            }
+            if (SearchDate.HasValue)
+            {
+                hOADONs=hOADONs.Where(s=>s.NgayDat==SearchDate.Value);
+            }
             return View(hOADONs.ToList());
         }
 
