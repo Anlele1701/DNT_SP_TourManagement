@@ -28,5 +28,14 @@ namespace TOURDL.Controllers
 
             return View();
         }
+        public ActionResult GetData()
+        {
+            TourDLEntities context = new TourDLEntities();
+
+            var query = context.HOADONs.Include("SPTOUR")
+                .GroupBy(p => p.SPTOUR.TenSPTour)
+                .Select(g => new { name = g.Key, count = g.Sum(w => w.TongTienTour) });//
+            return Json(query, JsonRequestBehavior.AllowGet);
+        }
     }
 }

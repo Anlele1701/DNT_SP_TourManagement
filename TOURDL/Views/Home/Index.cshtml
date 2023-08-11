@@ -70,22 +70,22 @@
     <section class="animate-css sec-1">
             <div class="card mb-3 card-tour pt-5 py-5">
                 <div class="row g-0">
-                    <div class="col-md-5 animate">
-                        <img src="https://www.weather2travel.com/images_blog/island-resort-in-the-maldives.jpg" class="img-fluid" alt="..." style="object-fit:cover;max-width:100%;height:auto; border-radius:20px;">
-                    </div>
                     <div class="col-md-1"></div>
                     <div class="col-md-5 animate">
-                        <div class="card-body" style="text-align:center">
+                        <img src="https://www.weather2travel.com/images_blog/island-resort-in-the-maldives.jpg" class="img-fluid" alt="..." style="object-fit:cover;max-width:100%;height:auto; border-radius:20px;">
+                    </div>     
+                    <div class="col-md-1"></div>
+                    <div class="col-md-4 animate">
+                        <div class="card-body" style="text-align:left">
                             <h3 class="card-title animate" style="text-transform:uppercase">chúng tôi <font color="#0094ff">cung cấp</font></h3>
                             <p class="animate" style="font-size:20px">
                                 Với đội ngũ nhân viên nhiệt tình, giàu kinh nghiệm và giàu kiến thức về du lịch, chúng tôi không chỉ cung cấp cho khách hàng các dịch vụ chuyên nghiệp mà còn giúp khách hàng lên kế hoạch chuyến đi một cách tỉ mỉ và hiệu quả nhất.
                             </p>
-                            <p class="animate"   style="font-size:20px;">
+                            <p class="animate" style="font-size:20px;">
                                 Cung cấp đầy đủ các dịch vụ du lịch, bao gồm đặt vé máy bay, đặt khách sạn, tour du lịch, vé tham quan, hướng dẫn viên du lịch, và nhiều dịch vụ khác liên quan đến hoạt động du lịch.
                             </p>
                         </div>
                     </div>
-                    <div class="col-md-1"></div>
                 </div>
             </div>
     </section>
@@ -94,7 +94,7 @@
             <div class="row g-0 ">
                 <div class="col-md-1"></div>
                 <div class="col-md-5 animate ">
-                    <div class="card-body" style="text-align:center">
+                    <div class="card-body" style="text-align:left">
                         <h3 class="card-title animate" style="text-transform:uppercase">chúng tôi <font color="#0094ff">đảm bảo</font> </h3>
                         <p class="animate" style="font-size:20px;">
                             Mang đến cho khách hàng những trải nghiệm du lịch tuyệt vời và đảm bảo sự hài lòng của khách hàng.
@@ -187,30 +187,6 @@
         }
     </div>
 </div>
-@*<div class="animate-css">
-    <section class="animate-css sec-3">
-        <div style="text-align:center">
-            <div class="row g-0" style="text-align:center">
-                @foreach (var item in Model)
-                {
-                    <div class="col-md-4 col-tours">
-                        <div class="wrapper">
-                            <div class="wrapper-image" style="">
-                                <a class="animate" href="@Url.Action("DanhMucSanPham", "TOURs", new {id=item.ID_TOUR})">
-                                    <img src="~/Images/@item.HinhTour" class="animate" alt="Card image cap" />
-                                    <div class="wrapper-content" style="">
-                                        <h2 class="animate"> @Html.DisplayFor(modelItem => item.TenTour)</h2>
-                                        <p class="animate">@Html.DisplayFor(modelItem => item.MoTa)</p>
-                                    </div>
-                                </a>
 
-                            </div>
-                        </div>
-                    </div>
-                }
-            </div>
-        </div>
-    </section>
-</div>*@
 <!-- Home start-->
 <script src="~/Scripts/AnimationAboutUs.js"></script>

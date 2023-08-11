@@ -675,7 +675,6 @@ section.show-animate .animate {
 
 }
 .sign-out {
-    background: #116D6E;
     padding:0px 15px;
     border:1px solid none;
     opacity:0.7;
@@ -686,6 +685,7 @@ section.show-animate .animate {
     color:white;
     font-weight:bold;
     transition:0.8s;
+    text-decoration:none;
 }
 .sign-out:hover{
     transform:scale(1.2);
@@ -705,19 +705,19 @@ section.show-animate .animate {
     text-decoration:none!important;
 }
 .sign-up {
-    background: #116D6E;
     padding: 0px 15px;
-    border: 1px solid none;
     opacity: 0.7;
     border-radius: 8px;
     transition: 0.8s;
+    text-decoration:none;
 }
-.sign-up a {
-    color: white;
-    font-weight: bold;
-    transition: 0.8s;
-    opacity:1;
-}
+    .sign-up a {
+        color: white;
+        font-weight: bold;
+        transition: 0.8s;
+        opacity: 1;
+        text-decoration: none;
+    }
 
 .sign-up:hover {
     transform: scale(1.2);
