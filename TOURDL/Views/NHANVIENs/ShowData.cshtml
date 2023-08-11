@@ -1,0 +1,33 @@
+﻿@{ 
+    Layout = null;
+}
+
+<input id="ID" value="Show Graph" type="button"/>
+<div>
+    <canvas style="max-width:400px;max-height:400px" id="myChart"></canvas>
+</div>
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script type="text/javascript">
+    $(function () {
+        $("#ID").click(function () {
+            $.ajax({
+                type: "Post",
+                url: "/NHANVIENs/GetShowData",
+                data: "",
+                contextType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: OnSuccessResult,
+                error: OnError
+            });
+            function OnSuccessResult(data) {
+
+            }
+            function OnError(err) {
+
+            }
+        });
+    });
+</script>

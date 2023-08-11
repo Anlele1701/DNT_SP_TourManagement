@@ -7,9 +7,10 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <link rel="stylesheet" href="~/CSS/DanhMucSanPhamVaTour.css" />
+
 <div class="head">
-    @*<img id="hero-image" src="~/Images/bua/pic2.jpg"/>*@
     <div style="text-align:center;font-size:40px;font-weight:bold;text-transform:uppercase;margin-top:20px; z-index:1; position:absolute; bottom:5%;left:5%;color:white">trang chủ / Danh mục tour</div>
     <video autoplay loop muted plays-inline class="hero-image"><source src="~/Images/ocean.mp4" /></video>
 
@@ -45,3 +46,4 @@
 <div class="pagination">
     @Html.PagedListPager(Model, page => Url.Action("DanhMucTour", new { page, name = Request.QueryString["name"], from = Request.QueryString["from"], to = Request.QueryString["to"] }))
 </div>
+

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
 using TOURDL.Models;
@@ -72,9 +73,30 @@ namespace TOURDL.Controllers
         [HttpPost]
         public ActionResult Signup(KHACHHANG khachhang)
         {
+            DateTime ngayHienTai=DateTime.Now;
             if (db.KHACHHANGs.Any(x => x.Mail_KH == khachhang.Mail_KH))
             {
                 ViewBag.Notification = "Tài khoản đã tồn tại";
+            }
+            else if (string.IsNullOrEmpty(khachhang.Mail_KH) || khachhang.GioiTinh_KH == null || khachhang.NgaySinh_KH == null || string.IsNullOrEmpty(khachhang.MatKhau) || string.IsNullOrEmpty(khachhang.CCCD) || string.IsNullOrEmpty(khachhang.SDT_KH) || string.IsNullOrEmpty(khachhang.HoTen_KH))
+            {
+                ViewBag.Notification = "Vui lòng nhập đủ thông tin nhé ! Xin cảm ơn";
+            }
+            else if (!(khachhang.GioiTinh_KH == "Nam" || khachhang.GioiTinh_KH == "Nữ"))
+            {
+                ViewBag.Notification = "Giới tính chỉ có thể là 'Nam' hoặc 'Nữ'";
+            }
+            else if (khachhang.NgaySinh_KH>ngayHienTai)
+            {
+                ViewBag.Notification = "Ngày sinh phải nhỏ hơn ngày hiện tại";
+            }
+            else if (khachhang.CCCD.Length != 12 || !Regex.IsMatch(khachhang.CCCD, @"^[0-9]+$"))
+            {
+                ViewBag.Notification = "Căn Cước Công Dân vui lòng nhập đủ 12 số và không bao gồm chữ,kí tự";
+            }
+            else if (khachhang.SDT_KH.Length != 10 || !Regex.IsMatch(khachhang.SDT_KH, @"^[0-9]+$"))
+            {
+                ViewBag.Notification = "Số điện thoại phải có từ 10 hoặc 11 số và không bao gồm chữ,kí tự";
             }
             else
             {

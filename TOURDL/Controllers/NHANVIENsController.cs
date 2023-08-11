@@ -176,7 +176,26 @@ namespace TOURDL.Controllers
             ViewBag.TourData = query3;
             return View();
         }
+        public ActionResult ShowData()
+        {
+            return View();
+        }
+        [HttpPost]
+        public List<object> GetShowData()
+        {
+            TourDLEntities context = new TourDLEntities();
 
+            List<object> data=new List<object>();
+
+            List<string> labels = context.HOADONs.Select(s => s.SPTOUR.TenSPTour).ToList();
+            data.Add(labels);
+
+            List<int?> price = context.HOADONs.Select(s =>s.TongTienTour).ToList();
+            int? totalPrice = price.Sum();
+            data.Add(totalPrice);
+
+            return data;  
+        }
         public ActionResult DashBoard()
         {
             var hoadons = db.HOADONs.ToList();
