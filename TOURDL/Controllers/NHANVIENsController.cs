@@ -19,6 +19,33 @@ namespace TOURDL.Controllers
     {
         private TourDLEntities db = new TourDLEntities();
         // GET: NHANVIENs
+        public ActionResult CountBookedTours()
+        {
+            using (TourDLEntities context = new TourDLEntities())
+            {
+                int bookedToursCount = context.HOADONs.Count(); // Đếm số lượng bản ghi trong bảng HOADON
+                return Json(new { count = bookedToursCount }, JsonRequestBehavior.AllowGet);
+            }
+        }
+        public ActionResult CountEmploy()
+        {
+            using (TourDLEntities context = new TourDLEntities())
+            {
+                int employCount = context.NHANVIENs.Count(); // Đếm số lượng bản ghi trong bảng HOADON
+                return Json(new { count = employCount }, JsonRequestBehavior.AllowGet);
+            }
+        }
+        public ActionResult TotalBookingAmount()
+        {
+            using (TourDLEntities context = new TourDLEntities())
+            {
+                // Truy vấn dữ liệu từ bảng HOADON
+                var totalAmount = context.HOADONs.Sum(h => h.TongTienTour);
+
+                // Trả về tổng tiền dạng JSON hoặc View
+                return Json(new { TotalAmount = totalAmount }, JsonRequestBehavior.AllowGet);
+            }
+        }
         public ActionResult Index()
         {
             return View(db.NHANVIENs.ToList());
@@ -136,7 +163,17 @@ namespace TOURDL.Controllers
                 .Select(g => new { name = g.Key, count = g.Sum(w => w.TongTienTour) }).ToList();
 
             ViewBag.ChartData = query;
+            var query2 = context.HOADONs.Include("SPTOUR")
+                .GroupBy(p => p.SPTOUR.TenSPTour)
+                .Select(g => new { name = g.Key, count = g.Sum(w => w.SLNguoiLon + w.SLTreEm) }).ToList();
 
+            ViewBag.KhachData = query2;
+
+
+            var query3 = context.TOURs.Include("SPTOUR")
+            .GroupBy(p => p.TenTour)
+            .Select(g => new { name = g.Key, count = g.Sum(w => w.SPTOURs.Count()) }).ToList();
+            ViewBag.TourData = query3;
             return View();
         }
         public ActionResult ShowData()
