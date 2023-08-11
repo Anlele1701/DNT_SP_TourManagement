@@ -45,12 +45,12 @@
                 <input type="number" name="songuoilon" min="1" placeholder="Nhập số lượng người lớn">
                 @*<select name="songuoilon">
 
-                    <option value="10">dưới 10 người</option>
-                    <option value="20">dưới 20 người</option>
-                    <option value="30">dưới 30 người</option>
-                    <option value="40">dưới 40 người</option>
-                    <option value="50">dưới 50 người</option>
-                </select>*@
+                        <option value="10">dưới 10 người</option>
+                        <option value="20">dưới 20 người</option>
+                        <option value="30">dưới 30 người</option>
+                        <option value="40">dưới 40 người</option>
+                        <option value="50">dưới 50 người</option>
+                    </select>*@
             </div>
         </div><div class="row">
             <div class="col-25">
@@ -59,18 +59,19 @@
             <div class="col-75">
                 <input type="number" name="sotreem" min="0" placeholder="Nhập số lượng trẻ em">
                 @*<select name="sotreem">
-                    <option value="10">dưới 10 người</option>
-                    <option value="20">dưới 20 người</option>
-                    <option value="30">dưới 30 người</option>
-                    <option value="40">dưới 40 người</option>
-                    <option value="50">dưới 50 người</option>
-                </select>*@
+                        <option value="10">dưới 10 người</option>
+                        <option value="20">dưới 20 người</option>
+                        <option value="30">dưới 30 người</option>
+                        <option value="40">dưới 40 người</option>
+                        <option value="50">dưới 50 người</option>
+                    </select>*@
             </div>
         </div>
         <input type="hidden" name="idkh" value="@Session["IDUser"]" />
         <input type="hidden" name="gianguoilon" value="@Model.GiaNguoiLon" />
         <input type="hidden" name="giatreem" value="@Model.GiaTreEm" />
         <input type="hidden" name="idsptour" value="@Model.ID_SPTour" />
+        <div class="alert alert-danger" style="background:none!important;border:none;color:red">@ViewBag.Noti</div>
 
         if (Session["IDUser"] != null)
         {

@@ -507,6 +507,7 @@
     <Content Include="Views\NHANVIENs\DashBoard.cshtml" />
     <Content Include="Views\NHANVIENs\GetData.cshtml" />
     <Content Include="Views\NHANVIENs\ShowData.cshtml" />
+    <Content Include="Views\Profile\editProfile.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

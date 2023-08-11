@@ -10,6 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Services.Description;
 using TOURDL.Models;
 
 namespace TOURDL.Controllers
@@ -84,16 +85,22 @@ namespace TOURDL.Controllers
             return View(data);
         }
         [HttpPost]
-        public ActionResult DatTour(FormCollection form)
+        public ActionResult DatTour(FormCollection form,string id)
         {
+            HOADON hOADON = new HOADON();
+            var sptour = db.SPTOURs.FirstOrDefault(s => s.ID_SPTour == id);
             if (form["idkh"] == "")
             {
                 return RedirectToAction("DangNhap", "Login");
             }
+            else if (sptour.SoNguoi <= 0)
+            {
+                ViewBag.Noti = "Hết số lượng chỗ ngồi";
+                return View(sptour);
+            }
             else
             {
                 
-                HOADON hOADON = new HOADON();
                 hOADON.ID_SPTour = form["idsptour"];
                 hOADON.NgayDat = DateTime.Now;
                 hOADON.TinhTrang = "Chưa TT";
@@ -110,15 +117,19 @@ namespace TOURDL.Controllers
 
                 int tongtien = (slnguoilon * giaguoilon) + (sltreem * giatreem);
                 int soluong = slnguoilon + sltreem;
-
-                KHACHHANG kHACHHANG=new KHACHHANG();
-
-
                 Session["SoLuong"] = soluong;
                 hOADON.TongTienTour = tongtien;
+                ////////////////
+                ///
+                int SoLuongSPTOUR = (int)sptour.SoNguoi;
+                SoLuongSPTOUR -= soluong;
+                sptour.SoNguoi = SoLuongSPTOUR;
+                db.Entry(sptour).State = EntityState.Modified;
+                db.SaveChanges();
+
                 db.HOADONs.Add(hOADON);
                 db.SaveChanges();
-                return RedirectToAction("HoaDon", "HOADONs", new { id = hOADON.ID_HoaDon });
+                
                 //if (slnguoilon < 0 || sltreem <0)
                 //{
                 //    ViewBag.Notification = "Số lượng người lớn không hợp lệ";
@@ -146,6 +157,7 @@ namespace TOURDL.Controllers
                 //}
 
             }
+            return RedirectToAction("HoaDon", "HOADONs", new { id = hOADON.ID_HoaDon });
         }
         public ActionResult Checkout(int id)
         {
