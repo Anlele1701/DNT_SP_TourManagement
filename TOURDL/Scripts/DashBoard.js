@@ -1,67 +1,75 @@
-﻿// Data retrieved from https://netmarketshare.com
+﻿//From Below Json result how to set "xAxis-> title" as StudentName
+//From Below Json result how to set "xAxis->categories" as AcademicYear 
+//From Below Json result how to set "series-> name" as Subject
+//From Below Json result how to set "series-> data" as Marks 
 
+
+var data = [
+	{
+		"StudentName": "Henry",
+		"Subject": "English",
+		"Marks": 81,
+		"AcademicYear": "2011"
+	},
+	{
+		"StudentName": "Henry",
+		"Subject": "English",
+		"Marks": 83,
+		"AcademicYear": "2012"
+	},
+	{
+		"StudentName": "Henry",
+		"Subject": "Mathematics",
+		"Marks": 76,
+		"AcademicYear": "2011"
+	},
+	{
+		"StudentName": "Henry",
+		"Subject": "Mathematics",
+		"Marks": 56,
+		"AcademicYear": "2012"
+	}
+]
 
 Highcharts.chart('container', {
-    chart: {
-        plotBackgroundColor: null,
-        plotBorderWidth: null,
-        plotShadow: false,
-        type: 'pie'
-    },
-    title: {
-        text: 'Browser market shares in May, 2020',
-        align: 'left'
-    },
-    tooltip: {
-        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-    },
-    accessibility: {
-        point: {
-            valueSuffix: '%'
-        }
-    },
-    plotOptions: {
-        pie: {
-            allowPointSelect: true,
-            cursor: 'pointer',
-            dataLabels: {
-                enabled: true,
-                format: '<b>{point.name}</b>: {point.percentage:.1f} %'
-            }
-        }
-    },
-    series: [{
-        name: 'Brands',
-        colorByPoint: true,
-        data: [{
-            name: 'Chrome',
-            y: 70.67,
-            sliced: true,
-            selected: true
-        }, {
-            name: 'Edge',
-            y: 14.77
-        }, {
-            name: 'Firefox',
-            y: 4.86
-        }, {
-            name: 'Safari',
-            y: 2.63
-        }, {
-            name: 'Internet Explorer',
-            y: 1.53
-        }, {
-            name: 'Opera',
-            y: 1.40
-        }, {
-            name: 'Sogou Explorer',
-            y: 0.84
-        }, {
-            name: 'QQ',
-            y: 0.51
-        }, {
-            name: 'Other',
-            y: 2.6
-        }]
-    }]
+	chart: {
+		type: 'bar'
+	},
+	title: {
+		text: 'Stack chart'
+	},
+	xAxis: {
+		title: {
+			text: 'Student Name - Henry'
+		},
+		categories: [2011, 2012]
+	},
+	yAxis: {
+		min: 0,
+		title: {
+			text: 'Marks'
+		}
+	},
+	legend: {
+		reversed: true
+	},
+	plotOptions: {
+		series: {
+			stacking: 'normal'
+			,
+			dataLabels: {
+				enabled: true,
+				color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+			}
+		}
+	},
+	series: [{
+		name: 'English',
+		data: [81, 83]
+	},
+	{
+		name: 'Mathematics',
+		data: [76, 56]
+	}
+	]
 });

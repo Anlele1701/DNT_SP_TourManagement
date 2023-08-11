@@ -154,38 +154,7 @@ img {
             width:100%;
         }
 }
-@keyframes Up{
-    0%{
-        opacity:0;
-        transform:translateY(100px);
-    }
-    100%{
-        opacity:1;
-        transform:translateY(0px);
-    }
-}
-@keyframes Right {
-    0% {
-        opacity: 0;
-        transform: translateX(-100px);
-    }
 
-    100% {
-        opacity: 1;
-        transform: translateX(0px);
-    }
-}
-@keyframes zoom-out {
-    0% {
-        opacity:0.33;
-        transform:scale(0.33);
-    }
-
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
 /* Hide scrollbar for Chrome, Safari and Opera */
 body::-webkit-scrollbar {
     display: none;

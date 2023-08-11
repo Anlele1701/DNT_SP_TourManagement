@@ -11,7 +11,6 @@
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
-
 <figure class="highcharts-figure">
     <div id="container"></div>
     <p class="highcharts-description">
@@ -22,10 +21,9 @@
 
 <script>
     $(document).ready(function () {
-        var data=@Html.Raw(Json, Encode(Model));
-
-        var TenTour = [];
-        var TongTien = [];
+        $getJSON("/NHANVIENs/GetData", function (data) {
+            var TenTour = [];
+            var TongTien = [];
 
         
         for (var i = 0; i < data.length; i++) {
@@ -34,42 +32,42 @@
 
         }
 
-        // Data retrieved https://en.wikipedia.org/wiki/List_of_cities_by_average_temperature
-        Highcharts.chart('container', {
-            chart: {
-                type: 'column'
-            },
-            title: {
-                text: 'Tổng tiền theo tên Tour'
-            },
-            subtitle: {
-                text: 'Source: ' +
-                    '<a href="https://en.wikipedia.org/wiki/List_of_cities_by_average_temperature" ' +
-                    'target="_blank">Wikipedia.com</a>'
-            },
-            xAxis: {
-                categories: data
-
-            },
-            yAxis: {
+            // Data retrieved https://en.wikipedia.org/wiki/List_of_cities_by_average_temperature
+            Highcharts.chart('container', {
+                chart: {
+                    type: 'line'
+                },
                 title: {
-                    text: 'Tổng tiền (VND)'
-                }
-            },
-            plotOptions: {
-                line: {
-                    dataLabels: {
-                        enabled: true
-                    },
-                    enableMouseTracking: false
-                }
-            },
-            series: [{
-                name: 'Tổng tiền',
-                data: data
-
-            }]
+                    text: 'Monthly Average Temperature'
+                },
+                subtitle: {
+                    text: 'Source: ' +
+                        '<a href="https://en.wikipedia.org/wiki/List_of_cities_by_average_temperature" ' +
+                        'target="_blank">Wikipedia.com</a>'
+                },
+                xAxis: {
+                    categories: TenTour
+                  
+                },
+                yAxis: {
+                    title: {
+                        text: 'Temperature (°C)'
+                    }
+                },
+                plotOptions: {
+                    line: {
+                        dataLabels: {
+                            enabled: true
+                        },
+                        enableMouseTracking: false
+                    }
+                },
+                series: [{
+                    name: 'Tổng tiền',
+                    data: TongTien
+                    
+                }]
+            });
         });
     });
 </script>
-

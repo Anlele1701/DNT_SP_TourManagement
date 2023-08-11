@@ -79,7 +79,7 @@
 /* BEGIN EXTERNAL SOURCE */
 
     $(document).ready(function () {
-        $.getJson("/NHANVIENs/GetData", function (data) {
+        $.getJson("/NHANVIENsCONTROLLER/GetData", function (data) {
             var TenTour = [];
             var TongTien = [];
 
