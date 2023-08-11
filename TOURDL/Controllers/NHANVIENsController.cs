@@ -131,18 +131,12 @@ namespace TOURDL.Controllers
         {
             TourDLEntities context = new TourDLEntities();
 
-<<<<<<< HEAD
-            var query = context.HOADONs.Include("SPTOUR").GroupBy(p => p.SPTOUR.TenSPTour)
-                .Select(g => new { tensptour = g.Key, countsptour = g.Sum(w => w.TongTienTour) }).ToList();//
-            ViewBag.Values= query;
-=======
             var query = context.HOADONs.Include("SPTOUR")
                 .GroupBy(p => p.SPTOUR.TenSPTour)
                 .Select(g => new { name = g.Key, count = g.Sum(w => w.TongTienTour) }).ToList();
 
             ViewBag.ChartData = query;
 
->>>>>>> 65f4988185925ddd3ebc2cb8a8e83030633ac868
             return View();
         }
         public ActionResult ShowData()

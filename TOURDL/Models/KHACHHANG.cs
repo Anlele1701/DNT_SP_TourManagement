@@ -25,29 +25,22 @@ namespace TOURDL.Models
         public int ID_KH { get; set; }///////////
         [Display(Name = "Họ Tên")]
         [DataType(DataType.Text)]
-        [Required(ErrorMessage = "This field is required")]
         public string HoTen_KH { get; set; }///////////
         [Display(Name = "Giới Tính (Nam/Nữ)")]
-        [Required(ErrorMessage = "This field is required")]
-        [RegularExpression("^(Nam|Nữ)$", ErrorMessage = "Please enter 'Nam' or 'Nữ'")]
         public string GioiTinh_KH { get; set; }///////////
         [Display(Name ="Ngày Sinh")]
         [DataType(DataType.Date)]
 
         public Nullable<System.DateTime> NgaySinh_KH { get; set; }///////////
         [Display(Name ="Mật khẩu")]
-        [Required(ErrorMessage = "This field is required")]
         [DataType(DataType.Password)]
         public string MatKhau { get; set; }///////////
         [Display(Name ="Căn Cước Công Dân")]
-        [DataType(DataType.Text)]
         public string CCCD { get; set; }///////////
         [Display(Name ="Số Điện Thoại")]
         [DataType(DataType.PhoneNumber)]
-        [Required(ErrorMessage = "This field is required")]
         public string SDT_KH { get; set; }///////////
         [Display(Name = "Email")]
-        [Required(ErrorMessage = "This field is required")]
         [DataType(DataType.EmailAddress)]
         public string Mail_KH { get; set; }///////////
         public Nullable<int> Diem { get; set; }///////////
