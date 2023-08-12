@@ -1,0 +1,55 @@
+﻿@model TOURDL.Models.HOADON
+@{
+    ViewBag.Title = "Momo";
+    Layout = "~/Views/Shared/CusLayout.cshtml";
+}
+<style>
+    .div-navbar {
+        text-transform: uppercase;
+        padding: 0px;
+        height: auto;
+        width: 100%;
+        -webkit-backdrop-filter: blur(3px);
+        background: #8CABFF;
+        /*background-color: rgba(225,225,225,0.1);
+    backdrop-filter: blur(3px);*/
+    }
+    span{
+        font-weight:bold;
+        margin-left:20px;
+    }
+</style>
+<h2 style="text-align:center">Thanh Toán Momo</h2>
+<div class="card mb-3" style="max-width: 100%;border:none">
+    <div class="row g-0">
+        <div class="col-md-3"></div>
+        <div class="col-md-3">
+            <img src="~/Images/momoTA.jpg" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-3">
+            <div class="card-body">
+                <h6>
+                    <span>ID Hoá Đơn:</span>
+                    @Html.DisplayFor(model => model.ID_HoaDon)
+                </h6>
+                <h6>
+                    <span>Họ tên khách hàng:</span>
+                    @Html.DisplayFor(modelItem => modelItem.KHACHHANG.HoTen_KH)
+                </h6>
+                <h6>
+                    <span>Điểm đến:</span>
+                    @Html.DisplayFor(modelItem => modelItem.SPTOUR.DiemDen)
+                </h6>
+                <h6>
+                    <span>Nhân viên thanh toán:</span>
+                    @Html.DisplayFor(modelItem => modelItem.SPTOUR.NHANVIEN.HoTen_NV)
+                </h6>
+                <h6 style="font-weight:bold">
+                    <span>Số tiền phải thanh toán:</span>
+                    @Html.DisplayFor(modelItem => modelItem.TongTienTour)
+                </h6>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>

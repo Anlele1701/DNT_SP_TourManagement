@@ -55,11 +55,24 @@
                 </div>
 
                 <div class="invoice-footer">
-                    <button type="button" class="btn btn-secondary" style="font-weight:bold;color:white;margin-right:20px" data-toggle="modal" data-target="#exampleModal">
+                    <button type="button" class="btn btn-secondary" style="font-weight:bold;color:white;margin-right:10px" data-toggle="modal" data-target="#exampleModal">
                         Huỷ
                     </button>
                     @*<button class="btn btn-secondary" id="later"><a style="text-decoration:none;color:white;font-weight:bold" href="#exampleModal" class="trigger-btn" data-toggle="modal">Huỷ</a></button>*@
-                    <button class="btn btn-primary" style="font-weight:bold;color:white">Thanh Toán</button>
+                    @*<button class="btn btn-primary" style="font-weight: bold; color: white; margin-right: 10px">
+        <a style="color:white!important;font-weight:bold;text-decoration:none" href="@Url.Action("ThanhToan", "HOADONs", new { id = item.KHACHHANG.ID_KH })">Thanh Toán</a>*@
+                    @*</button>*@
+                    @if ( item.TinhTrang == "Chưa TT")
+                    {
+                        <button class="btn btn-primary" style="font-weight:bold;color:white;background:purple">
+                            <a style="color:white!important;font-weight:bold;text-decoration:none" href="@Url.Action("Momo", "HOADONs", new { id = item.ID_HoaDon })">Thanh Toán </a>
+                        </button>
+                    }else if (item.TinhTrang=="Đã TT") { 
+                        <div style="background:green;color:white;padding-inline:10px;font-weight:bold;border-radius:5px">
+                            Đã Thanh Toán
+                        </div>
+                    }
+
                 </div>
             </div>
             <div id="exampleModal" class="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

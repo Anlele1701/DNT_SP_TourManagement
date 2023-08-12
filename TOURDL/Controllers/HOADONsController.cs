@@ -191,5 +191,10 @@ namespace TOURDL.Controllers
             var data=db.HOADONs.Where(t=>t.ID_KH==id).ToList();
             return View(data);
         }
+        public ActionResult Momo(int id)
+        {
+            var data = db.HOADONs.Find(id);
+            return View(data);
+        }
     }
 }

@@ -359,6 +359,7 @@
     <Content Include="Images\logo3.jpg" />
     <Content Include="Images\Main.png" />
     <Content Include="Images\momo.jpg" />
+    <Content Include="Images\momoTA.jpg" />
     <Content Include="Images\Ngoc.jpg" />
     <Content Include="Images\Ngoc.png" />
     <Content Include="Images\nhaTrang.jpg" />
@@ -510,6 +511,7 @@
     <Content Include="Views\NHANVIENs\ShowData.cshtml" />
     <Content Include="Views\Profile\editProfile.cshtml" />
     <Content Include="Views\TOURs\DanhMucTours.cshtml" />
+    <Content Include="Views\HOADONs\Momo.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

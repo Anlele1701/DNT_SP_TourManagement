@@ -129,33 +129,6 @@ namespace TOURDL.Controllers
 
                 db.HOADONs.Add(hOADON);
                 db.SaveChanges();
-                
-                //if (slnguoilon < 0 || sltreem <0)
-                //{
-                //    ViewBag.Notification = "Số lượng người lớn không hợp lệ";
-                //}
-                //else
-                //{
-                //    HOADON hOADON = new HOADON();
-                //    hOADON.ID_SPTour = form["idsptour"];
-                //    hOADON.NgayDat = DateTime.Now;
-                //    hOADON.TinhTrang = "Chưa TT";
-                //    hOADON.ID_KH = int.Parse(form["idkh"]);
-                //    hOADON.SLNguoiLon = int.Parse(form["songuoilon"]);
-                //    hOADON.SLTreEm = int.Parse(form["sotreem"]);
-
-                //    int giaguoilon = int.Parse(form["gianguoilon"]);
-                //    int giatreem = int.Parse(form["giatreem"]);
-                //    int tongtien = (slnguoilon * giaguoilon) + (sltreem * giatreem);
-                //    int soluong = slnguoilon + sltreem;
-
-                //    Session["SoLuong"] = soluong;
-                //    hOADON.TongTienTour = tongtien;
-                //    db.HOADONs.Add(hOADON);
-                //    db.SaveChanges();
-                //    return RedirectToAction("HoaDon", "HOADONs", new { id = hOADON.ID_HoaDon });
-                //}
-
             }
             return RedirectToAction("HoaDon", "HOADONs", new { id = hOADON.ID_HoaDon });
         }
@@ -164,28 +137,6 @@ namespace TOURDL.Controllers
             var data = db.HOADONs.Find(id);
             return View(data);
         }
-        //public ActionResult Booking()
-        //{
-
-        //    return View();
-        //}
-        //[HttpPost]
-        //public ActionResult Booking(HOADON hoadon)
-        //{
-        //    if (db.HOADONs.Any(x=>x.ID_HoaDon==hoadon.ID_HoaDon))
-        //    {
-        //        ViewBag.Notification = "Hoá đơn đã có";
-        //    }
-        //    elses
-        //    {
-        //        db.HOADONs.Add(hoadon);
-        //        db.SaveChanges();
-        //        Session["IDUserSS"] = hoadon.ID_KH.ToString();
-        //        Session["IDSPTour"] = hoadon.ID_SPTour.ToString();
-        //        Session["IDHoaDon"] = hoadon.ID_HoaDon.ToString();
-        //        return RedirectToAction("Index", "Home",new {id=hoadon.ID_HoaDon});
-        //    }
-        //    return View();
-        //}
+        
     }
 }
