@@ -165,6 +165,11 @@ namespace TOURDL.Controllers
             var toursPage = tours.ToPagedList(page, pageSize);//////
             return View(toursPage);
         }
+        public ActionResult DanhMucTours()
+        {
+            var listTour=db.TOURs.ToList();
+            return View(listTour);
+        }
         //[HttpGet]
         //public ActionResult TimKiem(string name)
         //{

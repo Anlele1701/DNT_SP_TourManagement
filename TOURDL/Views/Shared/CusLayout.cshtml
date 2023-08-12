@@ -1,5 +1,4 @@
-﻿@model IEnumerable<TOURDL.Models.TOUR>
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -32,15 +31,7 @@
                             <a class="nav-link" href="@Url.Action("DanhMucTour","TOURs")">Tất cả tour</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="danhMucLink" style="cursor:pointer" onclick="toggleDropdown();">Danh mục tour</i></a>
-                            <ul id="dropdown" class="dropdown" style="display:none">
-                                @foreach (var item in Model)
-                                {
-                                    <li class="dropdown-danhmuc" style="margin:5px">
-                                        <a style="color:white;font-weight:bold" href="@Url.Action("DanhMucSanPham", "TOURs", new { id = item.ID_TOUR })">@item.TenTour</a>
-                                    </li>
-                                }
-                            </ul>
+                            <a class="nav-link" href="@Url.Action("DanhMucTours","TOURs")">Danh Mục Tour</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="@Url.Action("About","Home")">Về chúng tôi</a>

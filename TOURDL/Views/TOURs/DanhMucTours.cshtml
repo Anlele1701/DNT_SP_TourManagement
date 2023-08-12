@@ -1,0 +1,33 @@
+﻿@model IEnumerable<TOURDL.Models.TOUR>
+
+@{
+    ViewBag.Title = "DanhMucTours";
+    Layout = "~/Views/Shared/CusLayout.cshtml";
+}
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<link rel="stylesheet" href="~/CSS/DanhMucSanPhamVaTour.css" />
+<div class="head">
+    <div style="text-align:center;font-size:40px;font-weight:bold;text-transform:uppercase;margin-top:20px; z-index:1; position:absolute; bottom:5%;left:5%;color:white">trang chủ / Danh mục tours</div>
+    <video autoplay loop muted plays-inline class="hero-image"><source src="~/Images/ocean.mp4" /></video>
+
+</div>
+<div class="container" style="width:100%;height:auto;">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        @foreach (var item in Model)
+        {
+            <div class="col col-danhmuctour">
+                <div class="card" style="margin:20px 40px;border-radius:15px;box-shadow:1px 0px 5px #808080">
+                    <img class="card-img-top" src="~/Images/@item.HinhTour" alt="Card image cap">
+                    <div class="card-body" style="text-align:left;">
+                        <p class="card-text" style="margin-bottom:0px; font-size:15px"> @Html.DisplayFor(modelItem => item.ID_TOUR)</p>
+                        <h5 class="card-title">@Html.DisplayFor(modelItem => item.TenTour)</h5>
+                        <p class="card-text">@string.Format("{0:#,#}đ", Convert.ToDecimal(item.GiaTour))</p>
+                        <a href="@Url.Action("DanhMucSanPham", "TOURs", new { id = item.ID_TOUR })" class="btn btn-primary">Xem Chi Tiết</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
